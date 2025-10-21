@@ -6,108 +6,1387 @@
     <title>Arc Raiders Weapons Database: Stats, Types & Effectiveness</title>
     <meta name="description" content="Explore the complete Arc Raiders weapons database. Find detailed statistics, damage values, mod slots, and effectiveness ratings for all assault rifles, SMGs, shotguns, and more.">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #0a0a0a; color: #e0e0e0; }
-        main { max-width: 960px; margin: 20px auto; padding: 30px; background-color: #141414; border-radius: 8px; border: 1px solid #252525; }
-        h1 { color: #ffffff; font-size: 2.5em; margin-bottom: 20px; text-align: center; }
-        h2 { color: #ffffff; font-size: 1.8em; margin-top: 25px; margin-bottom: 15px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; }
-        h3 { color: #b8b8b8; font-size: 1.4em; margin-top: 20px; margin-bottom: 10px; }
-        p { margin-bottom: 15px; color: #a0a0a0; }
-        ul { list-style-type: disc; margin-left: 25px; margin-bottom: 15px; }
-        ul ul { list-style-type: circle; margin-left: 20px; }
-        li { margin-bottom: 8px; color: #a0a0a0; }
-        strong { font-weight: 600; color: #ffffff; }
-        .call-to-action { font-style: italic; color: #b0b0b0; margin-top: 20px; padding: 15px; background-color: #1a1a1a; border-left: 3px solid #3a7bc8; border-radius: 4px; }
-        a { color: #3a7bc8; text-decoration: none; }
-        a:hover { color: #5a9ae0; text-decoration: underline; }
-        .nav-home { text-align: center; margin-bottom: 20px; }
-        .nav-home a { display: inline-block; color: #3a7bc8; text-decoration: none; padding: 8px 16px; border: 1px solid #3a7bc8; border-radius: 4px; transition: all 0.3s ease; }
-        .nav-home a:hover { background-color: #3a7bc8; color: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #0a0a0a; color: #e0e0e0; }
+        
+        /* Header */
+        header { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+        .logo-section { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 50px; width: auto; filter: invert(1); }
+        .site-title { font-size: 1.5em; font-weight: 600; color: #ffffff; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { color: #b0b0b0; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        nav a:hover, nav a.active { color: #3a7bc8; }
+        
+        main { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+        
+        .page-header { text-align: center; margin-bottom: 50px; }
+        .page-header h1 { font-size: 3em; margin-bottom: 15px; background: linear-gradient(135deg, #3a7bc8 0%, #5a9ae0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-header p { font-size: 1.15em; color: #b0b0b0; max-width: 800px; margin: 0 auto; }
+        
+        .category-section { margin: 60px 0; }
+        .category-header { margin-bottom: 30px; padding-bottom: 15px; border-bottom: 2px solid #2a2a2a; }
+        .category-header h2 { font-size: 2.2em; color: #ffffff; margin-bottom: 8px; }
+        .category-count { color: #808080; font-size: 0.9em; }
+        
+        .weapons-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 25px; }
+        
+        .weapon-card { background: #141414; border-radius: 12px; border: 1px solid #252525; overflow: hidden; transition: all 0.3s ease; }
+        .weapon-card:hover { transform: translateY(-5px); border-color: #3a7bc8; box-shadow: 0 10px 30px rgba(58, 123, 200, 0.15); }
+        
+        .weapon-image { width: 100%; height: 200px; background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+        .weapon-image img { max-width: 90%; max-height: 90%; object-fit: contain; display: block; }
+        .weapon-image img.loaded { opacity: 1; }
+        .weapon-placeholder { font-size: 4em; opacity: 0.2; color: #3a7bc8; position: absolute; z-index: 1; }
+        .weapon-image-fallback { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        .weapon-image-fallback .weapon-icon { font-size: 3em; opacity: 0.3; margin-bottom: 10px; }
+        .weapon-image-fallback .weapon-label { font-size: 1.1em; font-weight: 600; color: #3a7bc8; opacity: 0.5; }
+        
+        .weapon-content { padding: 25px; }
+        
+        .weapon-header { margin-bottom: 15px; }
+        .weapon-tier { display: inline-block; background: #2a2a2a; padding: 4px 12px; border-radius: 4px; font-size: 0.75em; color: #808080; margin-bottom: 8px; }
+        .weapon-name { font-size: 1.6em; color: #ffffff; font-weight: 600; margin-bottom: 8px; }
+        .weapon-ammo { display: inline-flex; align-items: center; gap: 6px; background: #1a1a1a; padding: 6px 12px; border-radius: 6px; font-size: 0.85em; color: #b0b0b0; margin-bottom: 12px; }
+        
+        .weapon-description { color: #a0a0a0; font-size: 0.95em; line-height: 1.6; margin-bottom: 15px; }
+        .weapon-effectiveness { color: #3a7bc8; font-size: 0.9em; margin-bottom: 15px; font-style: italic; }
+        
+        .weapon-specs { display: flex; gap: 20px; margin-bottom: 20px; padding: 15px; background: #1a1a1a; border-radius: 8px; }
+        .spec-item { flex: 1; text-align: center; }
+        .spec-label { font-size: 0.8em; color: #808080; margin-bottom: 4px; }
+        .spec-value { font-size: 1.3em; color: #ffffff; font-weight: 600; }
+        
+        .weapon-stats { }
+        .stat-row { margin-bottom: 12px; }
+        .stat-header { display: flex; justify-content: space-between; margin-bottom: 6px; }
+        .stat-name { font-size: 0.85em; color: #b0b0b0; }
+        .stat-value { font-size: 0.85em; color: #ffffff; font-weight: 500; }
+        .stat-bar-bg { height: 6px; background: #1a1a1a; border-radius: 3px; overflow: hidden; }
+        .stat-bar-fill { height: 100%; background: linear-gradient(90deg, #3a7bc8 0%, #5a9ae0 100%); border-radius: 3px; transition: width 0.3s ease; }
+        
+        .weapon-weight { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #2a2a2a; font-size: 0.9em; color: #808080; }
+        
+        footer { background-color: #0f0f0f; text-align: center; padding: 40px 20px; margin-top: 80px; border-top: 1px solid #252525; }
+        footer p { margin: 8px 0; font-size: 0.9em; color: #808080; }
+        
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; height: auto; padding: 20px; }
+            nav ul { flex-direction: column; gap: 15px; align-items: center; }
+            .weapons-grid { grid-template-columns: 1fr; }
+            .weapon-specs { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
-    <main>
-        <div class="nav-home">
-            <a href="../index.html">← Back to Home</a>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../logo.png" alt="ARC Raiders Logo" class="logo-img">
+                <span class="site-title">Arc Raiders Hub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../guides/index.html">Guides</a></li>
+                    <li><a href="../maps/index.html">Maps</a></li>
+                    <li><a href="../skills/index.html">Skills</a></li>
+                    <li><a href="../loadouts/index.html">Loadouts</a></li>
+                    <li><a href="index.html" class="active">Weapons</a></li>
+                </ul>
+            </nav>
         </div>
-        <h1>The ARC Raiders Armory: Your Complete Weapon Database</h1>
-        
-        <p>Arm yourself with knowledge! This is your ultimate resource for every weapon available in ARC Raiders. Explore detailed statistics, understand their effectiveness against different ARC machines, and find the perfect firearm to complement your playstyle.</p>
+    </header>
 
-        <h2>Weapon Categories & Highlights:</h2>
+    <main>
+        <div class="page-header">
+            <h1>ARC Raiders Armory</h1>
+            <p>Complete weapon database with detailed statistics, damage values, and effectiveness ratings. Find the perfect weapon for your playstyle and build.</p>
+        </div>
 
-        <h3>Assault Rifles:</h3>
-        <p>Versatile and balanced for various combat ranges.</p>
-        <ul>
-            <li><strong>Kettle:</strong> Semi-automatic, quick and accurate, but with low bullet velocity.</li>
-            <li><strong>Rattler:</strong> Fully automatic, affordable, unique 2-bullet reload.</li>
-            <li><strong>Arpeggio:</strong> A 3-round burst rifle with decent damage and accuracy.</li>
-            <li><strong>Tempest:</strong> Fully automatic with moderate fire rate and accuracy.</li>
-        </ul>
+        <!-- Battle Rifles -->
+        <section class="category-section">
+            <div class="category-header">
+                <h2>Battle Rifles</h2>
+                <span class="category-count">2 Weapons</span>
+            </div>
+            <div class="weapons-grid">
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/ferro.png" alt="Ferro">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <div class="weapon-tier">Level I</div>
+                            <h3 class="weapon-name">Ferro</h3>
+                            <div class="weapon-ammo">⚫ Heavy Ammo</div>
+                        </div>
+                        <p class="weapon-description">Heavy break-action rifle. Packs a punch, but must be reloaded between every shot.</p>
+                        <p class="weapon-effectiveness">Very effective against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">1</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">40%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 40%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">1.6%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 1.6%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">53%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 53%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stability</span>
+                                    <span class="stat-value">78%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 78%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">32%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 32%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">8%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 8%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>8 KG</span>
+                        </div>
+                    </div>
+                </div>
 
-        <h3>Battle Rifles:</h3>
-        <p>Powerful, high-damage options, particularly effective against armored targets.</p>
-        <ul>
-            <li><strong>Ferro:</strong> Heavy break-action rifle, single-shot, very effective against ARC armor.</li>
-            <li><strong>Renegade:</strong> Lever-action, high damage, accuracy, and headshot potential, somewhat effective against ARC armor.</li>
-        </ul>
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/renegade.png" alt="Renegade">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <div class="weapon-tier">Level I</div>
+                            <h3 class="weapon-name">Renegade</h3>
+                            <div class="weapon-ammo">🟡 Medium Ammo</div>
+                        </div>
+                        <p class="weapon-description">Lever-action battle rifle with high damage output, accuracy, and headshot damage.</p>
+                        <p class="weapon-effectiveness">Somewhat effective against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">8</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">35%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 35%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">3%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 3%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">70%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 70%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stability</span>
+                                    <span class="stat-value">83%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 83%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">37%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 37%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">16%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 16%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>10 KG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <h3>Light Machine Guns (LMGs):</h3>
-        <p>Designed for sustained suppressive fire with large magazines.</p>
-        <ul>
-            <li><strong>Torrente:</strong> High-capacity (60 rounds) semi-automatic LMG, moderate fire rate.</li>
-        </ul>
+        <!-- Assault Rifles -->
+        <section class="category-section">
+            <div class="category-header">
+                <h2>Assault Rifles</h2>
+                <span class="category-count">4 Weapons</span>
+            </div>
+            <div class="weapons-grid">
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/kettle.png" alt="Kettle">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Kettle</h3>
+                            <div class="weapon-ammo">🔵 Light Ammo</div>
+                        </div>
+                        <p class="weapon-description">Semi-automatic assault rifle. Quick and accurate, but has low bullet velocity and takes a long time to reload.</p>
+                        <p class="weapon-effectiveness">Weak against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">20</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">10%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 10%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">28%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 28%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>7 KG</span>
+                        </div>
+                    </div>
+                </div>
 
-        <h3>Pistols:</h3>
-        <p>Reliable secondary weapons for emergencies or specific tactical uses.</p>
-        <ul>
-            <li><strong>Hairpin:</strong> Single-action with a built-in silencer, ideal for stealth.</li>
-            <li><strong>Burletta:</strong> Semi-automatic, decent damage/accuracy, fire rate limited by trigger pull.</li>
-            <li><strong>Anvil:</strong> Hand Cannon, high damage/headshot, slow handling, very effective against ARC armor.</li>
-            <li><strong>Venator:</strong> Semi-automatic, fires two shots per shot.</li>
-        </ul>
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/rattler.png" alt="Rattler">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Rattler</h3>
+                            <div class="weapon-ammo">🟡 Medium Ammo</div>
+                        </div>
+                        <p class="weapon-description">Fully automatic assault rifle. An affordable offensive option, but must be reloaded 2 bullets at a time.</p>
+                        <p class="weapon-effectiveness">Somewhat effective against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">10</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">9%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 9%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">40%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 40%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">51%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 51%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stability</span>
+                                    <span class="stat-value">71%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 71%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">57%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 57%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">14%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 14%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>6 KG</span>
+                        </div>
+                    </div>
+                </div>
 
-        <h3>Shotguns:</h3>
-        <p>Devastating at close range, with high damage output.</p>
-        <ul>
-            <li><strong>Il Toro:</strong> Pump-action, large bullet spread, high damage at close range, sharp falloff.</li>
-            <li><strong>Vulcano:</strong> Semi-automatic, good bullet spread, sharp falloff.</li>
-        </ul>
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/arpeggio.png" alt="Arpeggio">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Arpeggio</h3>
+                            <div class="weapon-ammo">🟡 Medium Ammo</div>
+                        </div>
+                        <p class="weapon-description">A 3-round burst assault rifle with decent damage output and accuracy.</p>
+                        <p class="weapon-effectiveness">Somewhat effective against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">24</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">11%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 11%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">54%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 54%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>7 KG</span>
+                        </div>
+                    </div>
+                </div>
 
-        <h3>Sniper Rifles:</h3>
-        <p>Precision weapons for long-range engagements and high-value targets.</p>
-        <ul>
-            <li><strong>Osprey:</strong> Scoped bolt-action, reliable damage and accuracy.</li>
-            <li><strong>Jupiter:</strong> Bolt-action, exceptional damage/accuracy, slow handling, very effective against ARC armor.</li>
-        </ul>
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/tempest.png" alt="Tempest">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Tempest</h3>
+                            <div class="weapon-ammo">🟡 Medium Ammo</div>
+                        </div>
+                        <p class="weapon-description">Fully automatic assault rifle with moderate fire rate and accuracy.</p>
+                        <p class="weapon-effectiveness">Somewhat effective against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">33</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">12%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 12%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">40%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 40%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">54%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 54%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">52%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 52%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">14%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 14%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>11 KG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <h3>Submachine Guns (SMGs):</h3>
-        <p>High fire rate weapons for close-to-medium range combat.</p>
-        <ul>
-            <li><strong>Stitcher:</strong> Full-auto, good damage but low fire rate, can be hard to control.</li>
-            <li><strong>Bobcat:</strong> Full-auto, high fire rate but low accuracy.</li>
-        </ul>
+        <!-- Pistols -->
+        <section class="category-section">
+            <div class="category-header">
+                <h2>Pistols</h2>
+                <span class="category-count">4 Weapons</span>
+            </div>
+            <div class="weapons-grid">
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/hairpin.png" alt="Hairpin">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Hairpin</h3>
+                            <div class="weapon-ammo">🔵 Light Ammo</div>
+                        </div>
+                        <p class="weapon-description">Single-action pistol with a built-in silencer. Great for stealth, but tricky in combat.</p>
+                        <p class="weapon-effectiveness">Weak against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">8</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">20%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 20%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">9%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 9%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">40%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 40%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stability</span>
+                                    <span class="stat-value">92%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 92%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">77%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 77%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">70%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 70%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>3 KG</span>
+                        </div>
+                    </div>
+                </div>
 
-        <h3>Special Weapons:</h3>
-        <p>Unique and often experimental firearms with distinct capabilities.</p>
-        <ul>
-            <li><strong>Equalizer:</strong> High-capacity experimental beam rifle, extremely effective against ARC armor and limbs.</li>
-        </ul>
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/burletta.png" alt="Burletta">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Burletta</h3>
+                            <div class="weapon-ammo">🔵 Light Ammo</div>
+                        </div>
+                        <p class="weapon-description">Semi-automatic pistol with decent damage output and accuracy. Can be fired as fast as you can pull the trigger.</p>
+                        <p class="weapon-effectiveness">Weak against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">12</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">10%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 10%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">28%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 28%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">42%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 42%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stability</span>
+                                    <span class="stat-value">75%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 75%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">86%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 86%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">24%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 24%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>4 KG</span>
+                        </div>
+                    </div>
+                </div>
 
-        <h2>Understanding Weapon Stats:</h2>
-        <ul>
-            <li><strong>Damage:</strong> Raw damage output.</li>
-            <li><strong>Fire Rate:</strong> How quickly the weapon fires.</li>
-            <li><strong>Range:</strong> Effective engagement distance.</li>
-            <li><strong>Stability:</strong> How much the weapon recoils.</li>
-            <li><strong>Agility:</strong> How quickly you can move or aim down sights.</li>
-            <li><strong>Stealth:</strong> How much noise the weapon generates.</li>
-            <li><strong>Weight (KG):</strong> Impact on overall encumbrance.</li>
-            <li><strong>Mod Slots:</strong> Number of available slots for weapon attachments.</li>
-        </ul>
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/anvil.png" alt="Anvil">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Anvil</h3>
+                            <div class="weapon-ammo">⚫ Heavy Ammo</div>
+                        </div>
+                        <p class="weapon-description">Single-action hand cannon with high damage output and headshot damage, but slow handling.</p>
+                        <p class="weapon-effectiveness">Very effective against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">6</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">40%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 40%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">3%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 3%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">51%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 51%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stability</span>
+                                    <span class="stat-value">67%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 67%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">56%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 56%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">10%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 10%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>5 KG</span>
+                        </div>
+                    </div>
+                </div>
 
-        <h2>Coming Soon: The Full Interactive Weapon Database!</h2>
-        <p class="call-to-action">Our complete interactive weapon database will soon feature real-time damage comparisons, detailed mod slot breakdowns, optimal attachment recommendations, and community-rated weapon tiers. Get ready to find your perfect arsenal!</p>
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/venator.png" alt="Venator">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Venator</h3>
+                            <div class="weapon-ammo">🟡 Medium Ammo</div>
+                        </div>
+                        <p class="weapon-description">Semi-automatic pistol that fires two shots at a time.</p>
+                        <p class="weapon-effectiveness">Somewhat effective against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">10</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">10%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 10%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">22%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 22%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">48%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 48%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stability</span>
+                                    <span class="stat-value">71%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 71%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">78%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 78%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">12%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 12%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>2 KG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SMGs -->
+        <section class="category-section">
+            <div class="category-header">
+                <h2>Submachine Guns</h2>
+                <span class="category-count">2 Weapons</span>
+            </div>
+            <div class="weapons-grid">
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/stitcher.png" alt="Stitcher">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Stitcher</h3>
+                            <div class="weapon-ammo">🔵 Light Ammo</div>
+                        </div>
+                        <p class="weapon-description">Full automatic SMG. Deals good damage, but has quite a low fire-rate and can be hard to control.</p>
+                        <p class="weapon-effectiveness">Weak against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">20</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">8%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 8%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">45.3%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 45.3%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">38.9%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 38.9%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">74.8%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 74.8%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">19%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 19%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>5 KG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/bobcat.png" alt="Bobcat">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Bobcat</h3>
+                            <div class="weapon-ammo">🔵 Light Ammo</div>
+                        </div>
+                        <p class="weapon-description">Fully automatic SMG with high fire rate but low accuracy.</p>
+                        <p class="weapon-effectiveness">Weak against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">30</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">7%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 7%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">66.7%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 66.7%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">45.3%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 45.3%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">74.3%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 74.3%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">21%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 21%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>7 KG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shotguns -->
+        <section class="category-section">
+            <div class="category-header">
+                <h2>Shotguns</h2>
+                <span class="category-count">2 Weapons</span>
+            </div>
+            <div class="weapons-grid">
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/il_toro.png" alt="Il Toro">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Il Toro</h3>
+                            <div class="weapon-ammo">🔴 Shotgun Ammo</div>
+                        </div>
+                        <p class="weapon-description">Pump-action shotgun with large bullet spread, sharp falloff, and high damage output.</p>
+                        <p class="weapon-effectiveness">Somewhat effective against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">5</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">76%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 76%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">3%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 3%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">22.3%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 22.3%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stability</span>
+                                    <span class="stat-value">77.2%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 77.2%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">63.9%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 63.9%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">18%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 18%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>8 KG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/vulcano.png" alt="Vulcano">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Vulcano</h3>
+                            <div class="weapon-ammo">🔴 Shotgun Ammo</div>
+                        </div>
+                        <p class="weapon-description">Semi-automatic shotgun with good bullet spread but sharp falloff.</p>
+                        <p class="weapon-effectiveness">Somewhat effective against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">4</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">58%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 58%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">8.3%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 8.3%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">22.1%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 22.1%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stability</span>
+                                    <span class="stat-value">70.3%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 70.3%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">70.7%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 70.7%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">15%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 15%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>8 KG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LMGs -->
+        <section class="category-section">
+            <div class="category-header">
+                <h2>Light Machine Guns</h2>
+                <span class="category-count">1 Weapon</span>
+            </div>
+            <div class="weapons-grid">
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/torrente.png" alt="Torrente">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Torrente</h3>
+                            <div class="weapon-ammo">🟡 Medium Ammo</div>
+                        </div>
+                        <p class="weapon-description">Full-auto LMG with high magazine capacity and sustained fire capability.</p>
+                        <p class="weapon-effectiveness">Somewhat effective against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">60</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">7%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 7%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">48.3%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 48.3%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">49.9%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 49.9%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stability</span>
+                                    <span class="stat-value">78.2%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 78.2%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">39.8%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 39.8%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">1%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 1%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>12 KG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sniper Rifles -->
+        <section class="category-section">
+            <div class="category-header">
+                <h2>Sniper Rifles</h2>
+                <span class="category-count">2 Weapons</span>
+            </div>
+            <div class="weapons-grid">
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/osprey.png" alt="Osprey">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Osprey</h3>
+                            <div class="weapon-ammo">🟡 Medium Ammo</div>
+                        </div>
+                        <p class="weapon-description">A scoped bolt-action sniper rifle with reliable damage output and accuracy.</p>
+                        <p class="weapon-effectiveness">Somewhat effective against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">8</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">45%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 45%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">2.7%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 2.7%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">80.3%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 80.3%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stability</span>
+                                    <span class="stat-value">85.4%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 85.4%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">45.9%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 45.9%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">12%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 12%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>7 KG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/jupiter.png" alt="Jupiter">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Jupiter</h3>
+                            <div class="weapon-ammo">⚫ Heavy Ammo</div>
+                        </div>
+                        <p class="weapon-description">A bolt-action sniper rifle with exceptional damage output and accuracy, but slow handling.</p>
+                        <p class="weapon-effectiveness">Very effective against ARC armor plating</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">5</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">55%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 55%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">7.67%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 7.67%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Range</span>
+                                    <span class="stat-value">71.7%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 71.7%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stability</span>
+                                    <span class="stat-value">73.5%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 73.5%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">39.2%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 39.2%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stealth</span>
+                                    <span class="stat-value">5%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 5%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>9 KG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Weapons -->
+        <section class="category-section">
+            <div class="category-header">
+                <h2>Special Weapons</h2>
+                <span class="category-count">1 Weapon</span>
+            </div>
+            <div class="weapons-grid">
+                <div class="weapon-card">
+                    <div class="weapon-image">
+                        <img src="../images/weapons/equalizer.png" alt="Equalizer">
+                    </div>
+                    <div class="weapon-content">
+                        <div class="weapon-header">
+                            <h3 class="weapon-name">Equalizer</h3>
+                            <div class="weapon-ammo">⚡ Energy Ammo</div>
+                        </div>
+                        <p class="weapon-description">A high capacity experimental beam rifle.</p>
+                        <p class="weapon-effectiveness">Extremely effective against ARC armor plating and limbs</p>
+                        <div class="weapon-specs">
+                            <div class="spec-item">
+                                <div class="spec-label">Magazine</div>
+                                <div class="spec-value">50</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-label">Mod Slots</div>
+                                <div class="spec-value">3</div>
+                            </div>
+                        </div>
+                        <div class="weapon-stats">
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Damage</span>
+                                    <span class="stat-value">8%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 8%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Fire Rate</span>
+                                    <span class="stat-value">33.33%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 33.33%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Stability</span>
+                                    <span class="stat-value">84.6%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 84.6%"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <div class="stat-header">
+                                    <span class="stat-name">Agility</span>
+                                    <span class="stat-value">44.6%</span>
+                                </div>
+                                <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 44.6%"></div></div>
+                            </div>
+                        </div>
+                        <div class="weapon-weight">
+                            <span>Weight</span>
+                            <span>14 KG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <p>All game content © Embark Studios AB. Not affiliated with or endorsed by Embark Studios.</p>
+    </footer>
 </body>
 </html>
-

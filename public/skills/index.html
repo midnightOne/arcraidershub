@@ -6,59 +6,131 @@
     <title>Arc Raiders Skills & Progression: Build Your Raider's Abilities</title>
     <meta name="description" content="Explore the three core skill trees in Arc Raiders – Survival, Mobility, and Conditioning. Understand character progression and how to optimize your Raider's unique abilities.">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #0a0a0a; color: #e0e0e0; }
-        main { max-width: 960px; margin: 20px auto; padding: 30px; background-color: #141414; border-radius: 8px; border: 1px solid #252525; }
-        h1 { color: #ffffff; font-size: 2.5em; margin-bottom: 20px; text-align: center; }
-        h2 { color: #ffffff; font-size: 1.8em; margin-top: 25px; margin-bottom: 15px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; }
-        h3 { color: #b8b8b8; font-size: 1.4em; margin-top: 20px; margin-bottom: 10px; }
-        p { margin-bottom: 15px; color: #a0a0a0; }
-        ul { list-style-type: disc; margin-left: 25px; margin-bottom: 15px; }
-        ul ul { list-style-type: circle; margin-left: 20px; }
-        li { margin-bottom: 8px; color: #a0a0a0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #0a0a0a; color: #e0e0e0; }
+        
+        /* Header */
+        header { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+        .logo-section { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 50px; width: auto; filter: invert(1); }
+        .site-title { font-size: 1.5em; font-weight: 600; color: #ffffff; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { color: #b0b0b0; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        nav a:hover, nav a.active { color: #3a7bc8; }
+        
+        main { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        
+        .page-header { text-align: center; margin-bottom: 50px; }
+        .page-header h1 { font-size: 3em; margin-bottom: 15px; background: linear-gradient(135deg, #3a7bc8 0%, #5a9ae0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-header p { font-size: 1.15em; color: #b0b0b0; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+        
+        h2 { color: #ffffff; font-size: 2em; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #2a2a2a; }
+        h3 { color: #b8b8b8; font-size: 1.4em; margin: 25px 0 15px; }
+        p { margin-bottom: 20px; color: #a0a0a0; line-height: 1.8; }
+        ul { margin: 15px 0 25px 25px; }
+        li { margin-bottom: 12px; color: #a0a0a0; line-height: 1.7; }
         strong { font-weight: 600; color: #ffffff; }
-        .call-to-action { font-style: italic; color: #b0b0b0; margin-top: 20px; padding: 15px; background-color: #1a1a1a; border-left: 3px solid #3a7bc8; border-radius: 4px; }
-        a { color: #3a7bc8; text-decoration: none; }
-        a:hover { color: #5a9ae0; text-decoration: underline; }
-        .nav-home { text-align: center; margin-bottom: 20px; }
-        .nav-home a { display: inline-block; color: #3a7bc8; text-decoration: none; padding: 8px 16px; border: 1px solid #3a7bc8; border-radius: 4px; transition: all 0.3s ease; }
-        .nav-home a:hover { background-color: #3a7bc8; color: #ffffff; }
+        
+        .skill-tree { background: #141414; padding: 25px; border-radius: 8px; border: 1px solid #252525; margin: 30px 0; }
+        .skill-tree h3 { margin-top: 0; color: #3a7bc8; }
+        
+        .coming-soon { background: #1a1a1a; border-left: 3px solid #3a7bc8; padding: 25px; border-radius: 8px; margin: 50px 0; }
+        .coming-soon h2 { border: none; margin-top: 0; margin-bottom: 15px; }
+        .coming-soon p { color: #b0b0b0; font-style: italic; }
+        
+        footer { background-color: #0f0f0f; text-align: center; padding: 40px 20px; margin-top: 80px; border-top: 1px solid #252525; }
+        footer p { margin: 8px 0; font-size: 0.9em; color: #808080; }
+        
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; height: auto; padding: 20px; }
+            nav ul { flex-direction: column; gap: 15px; align-items: center; }
+            .page-header h1 { font-size: 2.2em; }
+        }
     </style>
 </head>
 <body>
-    <main>
-        <div class="nav-home">
-            <a href="../index.html">← Back to Home</a>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../logo.png" alt="ARC Raiders Logo" class="logo-img">
+                <span class="site-title">Arc Raiders Hub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../guides/index.html">Guides</a></li>
+                    <li><a href="../maps/index.html">Maps</a></li>
+                    <li><a href="index.html" class="active">Skills</a></li>
+                    <li><a href="../loadouts/index.html">Loadouts</a></li>
+                    <li><a href="../weapons/index.html">Weapons</a></li>
+                </ul>
+            </nav>
         </div>
-        <h1>Forge Your Raider: Understanding Skills & Progression in ARC Raiders</h1>
-        
-        <p>Your Raider's abilities are crucial for survival and success on the surface. ARC Raiders features a robust progression system centered around three distinct skill trees, allowing you to tailor your playstyle.</p>
+    </header>
 
-        <h2>Character Progression Overview:</h2>
+    <main>
+        <div class="page-header">
+            <h1>Forge Your Raider</h1>
+            <p>Master the three skill trees and optimize your abilities to dominate the surface.</p>
+        </div>
+
+        <h2>Character Progression Overview</h2>
         <p>As you scavenge and survive, you'll collect items to craft, upgrade your gear, and enhance your character's inherent skills. These improvements are vital for facing increasingly dangerous threats.</p>
 
-        <h2>The Three Skill Trees:</h2>
+        <h2>The Three Skill Trees</h2>
 
-        <h3>Survival:</h3>
-        <ul>
-            <li><strong>Focus:</strong> Enhances your Raider's durability, health regeneration, and overall resilience against damage and environmental hazards.</li>
-            <li><strong>Benefit:</strong> Become a tougher combatant, capable of enduring more punishment and recovering faster.</li>
-        </ul>
+        <div class="skill-tree">
+            <h3>⚡ Conditioning</h3>
+            <p><strong>Focus:</strong> Improves your Raider's physical prowess, including stamina, carrying capacity, weapon handling, and combat proficiencies.</p>
+            <p><strong>Notable Skills:</strong></p>
+            <ul>
+                <li><strong>Youthful Lungs:</strong> Increase your max stamina (Major skill, up to 5 points)</li>
+                <li><strong>Proper Breathing:</strong> Your stamina regenerates faster (Up to 5 points)</li>
+                <li><strong>Stubborn Mule:</strong> Your stamina regeneration is less affected by being over-encumbered (Up to 5 points)</li>
+                <li><strong>Used To The Weight:</strong> Wearing a shield doesn't slow you down as much (Up to 5 points)</li>
+                <li><strong>Three Deep Breaths:</strong> After an ability drains your stamina, you recover more quickly (Up to 5 points)</li>
+                <li><strong>Good As New:</strong> While under a healing effect, stamina regeneration is increased (Major skill)</li>
+            </ul>
+            <p><strong>Benefit:</strong> Carry more valuable loot, maintain stamina during intense combat, and optimize your physical capabilities.</p>
+        </div>
 
-        <h3>Mobility:</h3>
-        <ul>
-            <li><strong>Focus:</strong> Boosts your movement speed, stamina, agility, and efficiency in traversing the environment.</li>
-            <li><strong>Benefit:</strong> Outmaneuver enemies, quickly reposition during combat, and efficiently navigate complex maps.</li>
-        </ul>
+        <div class="skill-tree">
+            <h3>🏃 Mobility</h3>
+            <p><strong>Focus:</strong> Boosts your movement speed, agility, and efficiency in traversing the environment and dodging threats.</p>
+            <p><strong>Notable Skills:</strong></p>
+            <ul>
+                <li><strong>Pep In Your Step:</strong> Increase your default movement speed (Major skill, up to 5 points)</li>
+                <li><strong>Run Forest Run:</strong> While sprinting, you move faster (Up to 5 points)</li>
+                <li><strong>Gym Addict:</strong> When entering the raid, you spawn with more stamina (Up to 5 points)</li>
+                <li><strong>Long Distance Runner:</strong> Sprinting consumes less stamina (Up to 5 points)</li>
+                <li><strong>Hare:</strong> You're faster while crouched (Major skill)</li>
+            </ul>
+            <p><strong>Benefit:</strong> Outmaneuver enemies, quickly reposition during combat, escape dangerous situations, and efficiently navigate complex maps.</p>
+        </div>
 
-        <h3>Conditioning:</h3>
-        <ul>
-            <li><strong>Focus:</strong> Improves your Raider's physical prowess, increasing carrying capacity, weapon handling, and specific combat proficiencies.</li>
-            <li><strong>Benefit:</strong> Carry more valuable loot, wield weapons with greater stability, and optimize your offensive capabilities.</li>
-        </ul>
+        <div class="skill-tree">
+            <h3>❤️ Survival</h3>
+            <p><strong>Focus:</strong> Enhances your Raider's durability, health regeneration, resistance to damage, and overall survivability.</p>
+            <p><strong>Notable Skills:</strong></p>
+            <ul>
+                <li><strong>Thick Skin:</strong> Increase your maximum health (Major skill, up to 5 points)</li>
+                <li><strong>Fast Metabolism:</strong> Your health regenerates faster (Up to 5 points)</li>
+                <li><strong>No Time To Bleed:</strong> When healing, the duration of the effect is longer (Up to 5 points)</li>
+                <li><strong>Medicinal Knowledge:</strong> When you heal, the effect is more potent (Up to 5 points)</li>
+                <li><strong>Toughness:</strong> You resist being downed for longer (Major skill)</li>
+            </ul>
+            <p><strong>Benefit:</strong> Become a tougher combatant, capable of enduring more punishment, recovering faster from damage, and surviving encounters that would eliminate less prepared Raiders.</p>
+        </div>
 
-        <h2>Coming Soon: Interactive Build Planner & Community Ideas!</h2>
-        <p class="call-to-action">Our advanced skill planner will soon allow you to theorycraft, save, and share optimal skill allocations across all three trees. Discover powerful community-created builds and refine your ultimate Raider!</p>
+        <div class="coming-soon">
+            <h2>Coming Soon: Interactive Build Planner!</h2>
+            <p>Interactive skill tree planner with full prerequisite chains, optimal build recommendations, and the ability to save and share your custom builds with the community!</p>
+        </div>
     </main>
+
+    <footer>
+        <p>All game content © Embark Studios AB. Not affiliated with or endorsed by Embark Studios.</p>
+    </footer>
 </body>
 </html>
-

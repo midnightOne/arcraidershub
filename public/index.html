@@ -6,33 +6,89 @@
     <title>Arc Raiders Guide - Strategies, Maps, Weapons & Loadouts</title>
     <meta name="description" content="Your ultimate Arc Raiders resource hub. Explore comprehensive guides, interactive maps, weapon databases, skill trees, and optimized loadouts for the extraction shooter Arc Raiders.">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #0a0a0a; color: #e0e0e0; }
-        header { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); color: #ffffff; padding: 60px 20px; text-align: center; border-bottom: 1px solid #2a2a2a; }
-        header h1 { font-size: 3em; margin: 0 0 10px 0; color: #ffffff; }
-        header p { font-size: 1.2em; margin: 0; color: #a0a0a0; }
-        main { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-        .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 40px 0; }
-        .card { background: #141414; border-radius: 8px; padding: 30px; border: 1px solid #252525; transition: transform 0.3s ease, border-color 0.3s ease; }
-        .card:hover { transform: translateY(-5px); border-color: #3a7bc8; }
-        .card h2 { color: #ffffff; font-size: 1.8em; margin-top: 0; margin-bottom: 15px; }
-        .card p { color: #a0a0a0; margin-bottom: 20px; line-height: 1.5; }
-        .card a { display: inline-block; background-color: #2d5a8f; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: 500; transition: background-color 0.3s ease; }
-        .card a:hover { background-color: #3a7bc8; }
-        .intro { text-align: center; margin-bottom: 40px; }
-        .intro h2 { color: #ffffff; font-size: 2.2em; margin-bottom: 15px; }
-        .intro p { color: #b0b0b0; font-size: 1.1em; max-width: 800px; margin: 0 auto; line-height: 1.6; }
-        footer { background-color: #0f0f0f; color: #808080; text-align: center; padding: 30px 20px; margin-top: 60px; border-top: 1px solid #252525; }
-        footer p { margin: 0; }
-        .coming-soon { background-color: #1a1a1a; border-left: 3px solid #3a7bc8; padding: 20px; border-radius: 4px; margin: 40px 0; }
-        .coming-soon h3 { color: #ffffff; margin-top: 0; }
-        .coming-soon p { color: #a0a0a0; margin-bottom: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #0a0a0a; color: #e0e0e0; }
+        
+        /* Modern Header */
+        header { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+        .logo-section { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 50px; width: auto; }
+        .site-title { font-size: 1.5em; font-weight: 600; color: #ffffff; }
+        .site-subtitle { font-size: 0.85em; color: #808080; display: block; }
+        
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { color: #b0b0b0; text-decoration: none; font-weight: 500; transition: color 0.3s ease; font-size: 0.95em; }
+        nav a:hover { color: #3a7bc8; }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 80px 20px; text-align: center; border-bottom: 1px solid #2a2a2a; }
+        .hero h1 { font-size: 3.5em; margin-bottom: 20px; background: linear-gradient(135deg, #3a7bc8 0%, #5a9ae0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { font-size: 1.3em; color: #b0b0b0; max-width: 800px; margin: 0 auto; }
+        
+        main { max-width: 1400px; margin: 0 auto; padding: 60px 20px; }
+        
+        .intro { text-align: center; margin-bottom: 60px; }
+        .intro h2 { color: #ffffff; font-size: 2.5em; margin-bottom: 20px; }
+        .intro p { color: #b0b0b0; font-size: 1.15em; max-width: 900px; margin: 0 auto; line-height: 1.8; }
+        
+        /* Card Grid */
+        .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin: 40px 0; }
+        .card { background: #141414; border-radius: 12px; padding: 35px; border: 1px solid #252525; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #3a7bc8 0%, #5a9ae0 100%); transform: scaleX(0); transition: transform 0.3s ease; }
+        .card:hover::before { transform: scaleX(1); }
+        .card:hover { transform: translateY(-5px); border-color: #3a7bc8; box-shadow: 0 10px 30px rgba(58, 123, 200, 0.15); }
+        .card-icon { font-size: 2.5em; margin-bottom: 15px; }
+        .card h2 { color: #ffffff; font-size: 1.8em; margin-bottom: 15px; font-weight: 600; }
+        .card p { color: #a0a0a0; margin-bottom: 25px; line-height: 1.6; }
+        .card a { display: inline-block; background: linear-gradient(135deg, #2d5a8f 0%, #3a7bc8 100%); color: #ffffff; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 500; transition: all 0.3s ease; }
+        .card a:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(58, 123, 200, 0.3); }
+        
+        /* Coming Soon Box */
+        .coming-soon { background: #1a1a1a; border-left: 3px solid #3a7bc8; padding: 30px; border-radius: 8px; margin: 60px 0; }
+        .coming-soon h3 { color: #ffffff; margin-bottom: 15px; font-size: 1.5em; }
+        .coming-soon p { color: #a0a0a0; line-height: 1.7; }
+        
+        /* Footer */
+        footer { background-color: #0f0f0f; color: #808080; text-align: center; padding: 40px 20px; margin-top: 80px; border-top: 1px solid #252525; }
+        footer p { margin: 8px 0; font-size: 0.9em; }
+        footer a { color: #3a7bc8; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; height: auto; padding: 20px; }
+            nav ul { flex-direction: column; gap: 15px; align-items: center; }
+            .hero h1 { font-size: 2.5em; }
+            .section-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>🎮 ARC Raiders Guide Hub</h1>
-        <p>Your Ultimate Resource for Mastering the Extraction Shooter</p>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="logo.png" alt="ARC Raiders Logo" class="logo-img">
+                <div>
+                    <span class="site-title">Arc Raiders Hub</span>
+                    <span class="site-subtitle">Community Guide & Database</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="guides/index.html">Guides</a></li>
+                    <li><a href="maps/index.html">Maps</a></li>
+                    <li><a href="skills/index.html">Skills</a></li>
+                    <li><a href="loadouts/index.html">Loadouts</a></li>
+                    <li><a href="weapons/index.html">Weapons</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
+    <div class="hero">
+        <h1>Master ARC Raiders</h1>
+        <p>Your ultimate resource for strategies, weapons, skills, and everything you need to survive and thrive in the extraction shooter</p>
+    </div>
 
     <main>
         <div class="intro">
@@ -42,31 +98,36 @@
 
         <div class="section-grid">
             <div class="card">
-                <h2>📚 Guides</h2>
+                <div class="card-icon">📚</div>
+                <h2>Guides</h2>
                 <p>Master the core gameplay loop, event walkthroughs like The Harvester, extraction strategies, and essential beginner tips to survive the surface.</p>
                 <a href="guides/index.html">View Guides</a>
             </div>
 
             <div class="card">
-                <h2>🗺️ Maps</h2>
+                <div class="card-icon">🗺️</div>
+                <h2>Maps</h2>
                 <p>Explore all confirmed maps including Dam Battlegrounds, Spaceport, and Buried City. Find extraction points, loot zones, and tactical navigation tips.</p>
                 <a href="maps/index.html">Explore Maps</a>
             </div>
 
             <div class="card">
-                <h2>⚡ Skills & Progression</h2>
+                <div class="card-icon">⚡</div>
+                <h2>Skills & Progression</h2>
                 <p>Understand the three skill trees—Survival, Mobility, and Conditioning—and learn how to optimize your Raider's abilities for your playstyle.</p>
                 <a href="skills/index.html">View Skills</a>
             </div>
 
             <div class="card">
-                <h2>🎒 Loadouts</h2>
+                <div class="card-icon">🎒</div>
+                <h2>Loadouts</h2>
                 <p>Discover optimal gear combinations for different scenarios. From budget builds to high-risk setups, plan your perfect raid kit.</p>
                 <a href="loadouts/index.html">Browse Loadouts</a>
             </div>
 
             <div class="card">
-                <h2>🔫 Weapons Database</h2>
+                <div class="card-icon">🔫</div>
+                <h2>Weapons Database</h2>
                 <p>Complete arsenal guide featuring all weapon types with detailed stats, effectiveness ratings, and tactical recommendations for every firearm.</p>
                 <a href="weapons/index.html">View Weapons</a>
             </div>
@@ -80,7 +141,7 @@
 
     <footer>
         <p>&copy; 2025 Arc Raiders Guide Hub. Fan-made resource for the Arc Raiders community.</p>
+        <p style="margin-top: 5px;">All game content © Embark Studios AB. Not affiliated with or endorsed by Embark Studios.</p>
     </footer>
 </body>
 </html>
-

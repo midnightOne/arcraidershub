@@ -6,36 +6,75 @@
     <title>Arc Raiders Maps: Overview, Tactical Info & Extraction Points</title>
     <meta name="description" content="Explore all confirmed Arc Raiders maps: Dam Battlegrounds, Spaceport, Buried City, Stella Montis, and Blue Gate. Find tactical information, loot zones, and crucial extraction strategies.">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #0a0a0a; color: #e0e0e0; }
-        main { max-width: 960px; margin: 20px auto; padding: 30px; background-color: #141414; border-radius: 8px; border: 1px solid #252525; }
-        h1 { color: #ffffff; font-size: 2.5em; margin-bottom: 20px; text-align: center; }
-        h2 { color: #ffffff; font-size: 1.8em; margin-top: 25px; margin-bottom: 15px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; }
-        h3 { color: #b8b8b8; font-size: 1.4em; margin-top: 20px; margin-bottom: 10px; }
-        p { margin-bottom: 15px; color: #a0a0a0; }
-        ul { list-style-type: disc; margin-left: 25px; margin-bottom: 15px; }
-        ul ul { list-style-type: circle; margin-left: 20px; }
-        li { margin-bottom: 8px; color: #a0a0a0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #0a0a0a; color: #e0e0e0; }
+        
+        /* Header */
+        header { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+        .logo-section { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 50px; width: auto; filter: invert(1); }
+        .site-title { font-size: 1.5em; font-weight: 600; color: #ffffff; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { color: #b0b0b0; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        nav a:hover, nav a.active { color: #3a7bc8; }
+        
+        main { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        
+        .page-header { text-align: center; margin-bottom: 50px; }
+        .page-header h1 { font-size: 3em; margin-bottom: 15px; background: linear-gradient(135deg, #3a7bc8 0%, #5a9ae0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-header p { font-size: 1.15em; color: #b0b0b0; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+        
+        h2 { color: #ffffff; font-size: 2em; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #2a2a2a; }
+        h3 { color: #b8b8b8; font-size: 1.4em; margin: 25px 0 15px; }
+        p { margin-bottom: 20px; color: #a0a0a0; line-height: 1.8; }
+        ul { margin: 15px 0 25px 25px; }
+        li { margin-bottom: 12px; color: #a0a0a0; line-height: 1.7; }
         strong { font-weight: 600; color: #ffffff; }
-        .call-to-action { font-style: italic; color: #b0b0b0; margin-top: 20px; padding: 15px; background-color: #1a1a1a; border-left: 3px solid #3a7bc8; border-radius: 4px; }
-        a { color: #3a7bc8; text-decoration: none; }
-        a:hover { color: #5a9ae0; text-decoration: underline; }
-        .nav-home { text-align: center; margin-bottom: 20px; }
-        .nav-home a { display: inline-block; color: #3a7bc8; text-decoration: none; padding: 8px 16px; border: 1px solid #3a7bc8; border-radius: 4px; transition: all 0.3s ease; }
-        .nav-home a:hover { background-color: #3a7bc8; color: #ffffff; }
+        
+        .coming-soon { background: #1a1a1a; border-left: 3px solid #3a7bc8; padding: 25px; border-radius: 8px; margin: 50px 0; }
+        .coming-soon h2 { border: none; margin-top: 0; margin-bottom: 15px; }
+        .coming-soon p { color: #b0b0b0; font-style: italic; }
+        
+        footer { background-color: #0f0f0f; text-align: center; padding: 40px 20px; margin-top: 80px; border-top: 1px solid #252525; }
+        footer p { margin: 8px 0; font-size: 0.9em; color: #808080; }
+        
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; height: auto; padding: 20px; }
+            nav ul { flex-direction: column; gap: 15px; align-items: center; }
+            .page-header h1 { font-size: 2.2em; }
+        }
     </style>
 </head>
 <body>
-    <main>
-        <div class="nav-home">
-            <a href="../index.html">← Back to Home</a>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../logo.png" alt="ARC Raiders Logo" class="logo-img">
+                <span class="site-title">Arc Raiders Hub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../guides/index.html">Guides</a></li>
+                    <li><a href="index.html" class="active">Maps</a></li>
+                    <li><a href="../skills/index.html">Skills</a></li>
+                    <li><a href="../loadouts/index.html">Loadouts</a></li>
+                    <li><a href="../weapons/index.html">Weapons</a></li>
+                </ul>
+            </nav>
         </div>
-        <h1>Explore the Worlds of ARC Raiders: Your Map Reconnaissance Hub</h1>
-        
-        <p>The world of ARC Raiders is vast and perilous, with each map presenting unique challenges and opportunities. Understanding the terrain, hazards, and key locations is vital for successful raids and extractions.</p>
+    </header>
 
-        <h2>Confirmed Maps in ARC Raiders:</h2>
+    <main>
+        <div class="page-header">
+            <h1>Explore the Worlds of ARC Raiders</h1>
+            <p>Understanding the terrain, hazards, and key locations is vital for successful raids and extractions.</p>
+        </div>
 
-        <h3>Dam Battlegrounds:</h3>
+        <h2>Confirmed Maps in ARC Raiders</h2>
+
+        <h3>Dam Battlegrounds</h3>
         <ul>
             <li><strong>Availability:</strong> Always Available</li>
             <li><strong>Risk Level:</strong> Medium</li>
@@ -43,7 +82,7 @@
             <li><strong>Key Features:</strong> Consistent spawns, balanced PvE and PvP encounters, multiple extraction points.</li>
         </ul>
 
-        <h3>Spaceport:</h3>
+        <h3>Spaceport</h3>
         <ul>
             <li><strong>Availability:</strong> Limited Time</li>
             <li><strong>Risk Level:</strong> High</li>
@@ -51,7 +90,7 @@
             <li><strong>Key Features:</strong> High-value loot, intense PvP zones, advanced enemy types.</li>
         </ul>
 
-        <h3>Buried City:</h3>
+        <h3>Buried City</h3>
         <ul>
             <li><strong>Availability:</strong> Limited Time</li>
             <li><strong>Risk Level:</strong> High</li>
@@ -59,21 +98,21 @@
             <li><strong>Key Features:</strong> Environmental hazards, unique loot, predominantly close-quarters combat.</li>
         </ul>
 
-        <h3>Stella Montis:</h3>
+        <h3>Stella Montis</h3>
         <ul>
             <li><strong>Availability:</strong> Upcoming</li>
             <li><strong>Description:</strong> A newly confirmed map, promising fresh environments and strategic challenges.</li>
         </ul>
 
-        <h3>Blue Gate:</h3>
+        <h3>Blue Gate</h3>
         <ul>
             <li><strong>Availability:</strong> Upcoming</li>
             <li><strong>Description:</strong> Another confirmed map set to expand the diverse battlegrounds of ARC Raiders.</li>
         </ul>
 
-        <h2>Tactical Information for Map Success:</h2>
+        <h2>Tactical Information for Map Success</h2>
 
-        <h3>Map Navigation Tips:</h3>
+        <h3>Map Navigation Tips</h3>
         <ul>
             <li>Memorize extraction point locations before deploying.</li>
             <li>Utilize high ground for superior visibility and strategic positioning.</li>
@@ -82,16 +121,21 @@
             <li>Time your movements in sync with any potential map rotation schedules.</li>
         </ul>
 
-        <h3>Loot Zone Strategy:</h3>
+        <h3>Loot Zone Strategy</h3>
         <ul>
             <li><strong>Safe Zones:</strong> Begin in lower-risk areas with basic loot and minimal enemy presence to build your initial gear.</li>
             <li><strong>Hot Zones:</strong> Progress to high-traffic areas offering premium loot and heavy enemy presence once adequately equipped.</li>
             <li><strong>Extraction Points:</strong> Designated areas for safely leaving the map. These are often medium-risk, with moderate enemy presence. Be wary of other players.</li>
         </ul>
 
-        <h2>Coming Soon: Interactive Maps!</h2>
-        <p class="call-to-action">Our interactive maps for each location are under active development. Prepare for detailed layouts, precise resource spawn locations, and community-sourced points of interest. Check back soon for the ultimate in-game navigation tool!</p>
+        <div class="coming-soon">
+            <h2>Coming Soon: Interactive Maps!</h2>
+            <p>Our interactive maps for each location are under active development. Prepare for detailed layouts, precise resource spawn locations, and community-sourced points of interest. Check back soon for the ultimate in-game navigation tool!</p>
+        </div>
     </main>
+
+    <footer>
+        <p>All game content © Embark Studios AB. Not affiliated with or endorsed by Embark Studios.</p>
+    </footer>
 </body>
 </html>
-

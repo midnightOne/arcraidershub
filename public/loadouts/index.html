@@ -3,67 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arc Raiders Loadouts: Gear Planning & Optimal Builds</title>
-    <meta name="description" content="Discover optimal Arc Raiders loadouts for diverse combat scenarios. Plan your gear, weapons, shields, and utilities for successful raids and extractions.">
+    <title>Arc Raiders Loadouts: Budget Ferro+Stitcher Combo & Best Builds</title>
+    <meta name="description" content="Master the Ferro+Stitcher combo, discover the hidden hammer AOE weapon, and learn essential shield/bandage tips. Proven budget builds with crafting costs and combat strategies from actual raids.">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #0a0a0a; color: #e0e0e0; }
-        main { max-width: 960px; margin: 20px auto; padding: 30px; background-color: #141414; border-radius: 8px; border: 1px solid #252525; }
-        h1 { color: #ffffff; font-size: 2.5em; margin-bottom: 20px; text-align: center; }
-        h2 { color: #ffffff; font-size: 1.8em; margin-top: 25px; margin-bottom: 15px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; }
-        h3 { color: #b8b8b8; font-size: 1.4em; margin-top: 20px; margin-bottom: 10px; }
-        p { margin-bottom: 15px; color: #a0a0a0; }
-        ul { list-style-type: disc; margin-left: 25px; margin-bottom: 15px; }
-        ul ul { list-style-type: circle; margin-left: 20px; }
-        li { margin-bottom: 8px; color: #a0a0a0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #0a0a0a; color: #e0e0e0; }
+        
+        /* Header */
+        header { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+        .logo-section { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 50px; width: auto; filter: invert(1); }
+        .site-title { font-size: 1.5em; font-weight: 600; color: #ffffff; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { color: #b0b0b0; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        nav a:hover, nav a.active { color: #3a7bc8; }
+        
+        main { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        
+        .page-header { text-align: center; margin-bottom: 50px; }
+        .page-header h1 { font-size: 3em; margin-bottom: 15px; background: linear-gradient(135deg, #3a7bc8 0%, #5a9ae0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-header p { font-size: 1.15em; color: #b0b0b0; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+        
+        h2 { color: #ffffff; font-size: 2em; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #2a2a2a; }
+        h3 { color: #b8b8b8; font-size: 1.4em; margin: 25px 0 15px; }
+        p { margin-bottom: 20px; color: #a0a0a0; line-height: 1.8; }
+        ul { margin: 15px 0 25px 25px; }
+        li { margin-bottom: 12px; color: #a0a0a0; line-height: 1.7; }
         strong { font-weight: 600; color: #ffffff; }
-        .call-to-action { font-style: italic; color: #b0b0b0; margin-top: 20px; padding: 15px; background-color: #1a1a1a; border-left: 3px solid #3a7bc8; border-radius: 4px; }
-        a { color: #3a7bc8; text-decoration: none; }
-        a:hover { color: #5a9ae0; text-decoration: underline; }
-        .nav-home { text-align: center; margin-bottom: 20px; }
-        .nav-home a { display: inline-block; color: #3a7bc8; text-decoration: none; padding: 8px 16px; border: 1px solid #3a7bc8; border-radius: 4px; transition: all 0.3s ease; }
-        .nav-home a:hover { background-color: #3a7bc8; color: #ffffff; }
+        
+        .loadout-card { background: #141414; padding: 30px; border-radius: 8px; border: 1px solid #252525; margin: 30px 0; }
+        .loadout-card h3 { margin-top: 0; color: #3a7bc8; }
+        
+        .coming-soon { background: #1a1a1a; border-left: 3px solid #3a7bc8; padding: 25px; border-radius: 8px; margin: 50px 0; }
+        .coming-soon h2 { border: none; margin-top: 0; margin-bottom: 15px; }
+        .coming-soon p { color: #b0b0b0; font-style: italic; }
+        
+        footer { background-color: #0f0f0f; text-align: center; padding: 40px 20px; margin-top: 80px; border-top: 1px solid #252525; }
+        footer p { margin: 8px 0; font-size: 0.9em; color: #808080; }
+        
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; height: auto; padding: 20px; }
+            nav ul { flex-direction: column; gap: 15px; align-items: center; }
+            .page-header h1 { font-size: 2.2em; }
+        }
     </style>
 </head>
 <body>
-    <main>
-        <div class="nav-home">
-            <a href="../index.html">← Back to Home</a>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../logo.png" alt="ARC Raiders Logo" class="logo-img">
+                <span class="site-title">Arc Raiders Hub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../guides/index.html">Guides</a></li>
+                    <li><a href="../maps/index.html">Maps</a></li>
+                    <li><a href="../skills/index.html">Skills</a></li>
+                    <li><a href="index.html" class="active">Loadouts</a></li>
+                    <li><a href="../weapons/index.html">Weapons</a></li>
+                </ul>
+            </nav>
         </div>
-        <h1>Optimize Your Kit: Crafting Effective Loadouts in ARC Raiders</h1>
-        
-        <p>Your choice of loadout before entering a raid is paramount to your success and survival. Understand the components of a powerful kit and how to adapt your gear to the challenges ahead.</p>
+    </header>
 
-        <h2>Essential Loadout Components:</h2>
+    <main>
+        <div class="page-header">
+            <h1>Battle-Tested Loadouts</h1>
+            <p>Budget-friendly weapon combos and gear strategies from actual raids. Learn what works, what doesn't, and how to stay in the fight without going broke.</p>
+        </div>
+
+        <h2>Essential Loadout Components</h2>
         <ul>
             <li><strong>Weapons:</strong> Carefully select your primary and secondary firearms based on your preferred engagement range and target types.</li>
-            <li><strong>Shields:</strong> Crucial for personal defense against both ARC machines and hostile Raiders.</li>
-            <li><strong>Utilities:</strong> Equip essential items like bandages for health, shield rechargers for sustained defense, and various gadgets for tactical advantages.</li>
+            <li><strong>Shields:</strong> Don't forget to buy or craft a shield recharger—this is critical because <strong>shields don't regenerate on their own</strong> in ARC Raiders. You need to actively recharge them. <em>Pro tip:</em> If you find ARC Powercells topside during a raid, you can actually use them to top up your shield the same way. Just put them into your quick-use slot and "use" them like you would a shield recharger.</li>
+            <li><strong>Bandages:</strong> Never—and I mean <em>never</em>—go out without bandages. They're crafted from 5 cloth each and have a stack size of 5. Here's the inventory optimization trick: if you have enough cloth, always craft 5 bandages at once. Why? Because whether you craft 1 bandage or 5, they still occupy one inventory slot. Might as well max out that stack.</li>
         </ul>
 
-        <h2>Loadout Types:</h2>
+        <h2>Loadout Types</h2>
 
-        <h3>Free Loadouts:</h3>
-        <p>Available for risk-free runs, providing basic gear at no cost. Ideal for exploring new maps without fear of losing valuable personal items. Note: Free Loadouts do not include a Safe Box.</p>
+        <h3>Free Loadouts</h3>
+        <p>Available for risk-free runs, providing basic gear at no cost. Ideal for exploring new maps without fear of losing valuable personal items. <strong>Note:</strong> Free Loadouts do not include a safe pocket.</p>
 
-        <h3>Personal Gear & Safe Box:</h3>
-        <p>When you bring your own equipped gear, you gain access to a single Safe Box slot. Any item placed here is saved, even if you are eliminated during the raid, making it vital for securing rare blueprints or high-value loot.</p>
+        <h3>Personal Gear & safe pocket</h3>
+        <p>When you bring your own equipped gear, you gain access to a single safe pocket slot. Any item placed here is saved, even if you are eliminated during the raid, making it vital for securing rare blueprints or high-value loot.</p>
 
-        <h2>Example Loadout: The "Anvil Precision" (Budget Hard-Hitter)</h2>
+        <h2>Proven Budget Loadouts</h2>
 
-        <p><strong>Concept:</strong> This simple, cost-effective loadout focuses on delivering significant damage with precision, making it an excellent choice for players confident in their aim and looking for economical power.</p>
+        <div class="loadout-card">
+            <h3>💰 The "Ferro+Stitcher" Combo (Dirt Cheap Meta)</h3>
+            <p><strong>Why This Works:</strong> This is <em>the</em> classic budget loadout that every serious Raider should know. It's cheap to craft, effective in combat, and even if you lose everything, Scrappy—your trusty rooster—will bring you more materials after each raid to craft it again.</p>
+            
+            <p><strong>Crafting Requirements:</strong></p>
+            <ul>
+                <li><strong>Ferro:</strong> 3x Metal Parts, 5x Rubber Parts</li>
+                <li><strong>Stitcher:</strong> 6x Metal Parts, 7x Rubber Parts</li>
+                <li><strong>Total Cost:</strong> 9x Metal Parts, 12x Rubber Parts (abundant materials you'll never run out of)</li>
+            </ul>
 
-        <h3>Key Weapon: Anvil (Hand Cannon)</h3>
-        <ul>
-            <li><strong>Description:</strong> A single-action hand cannon with high damage output and headshot potential. While its handling is slow, its stopping power makes it effective against even heavily armored ARC units.</li>
-            <li><strong>Effectiveness:</strong> Very effective against ARC armor plating.</li>
-            <li><strong>Ammo Type:</strong> Heavy Ammo</li>
-        </ul>
+            <p><strong>The Combat Flow:</strong></p>
+            <p>Here's how you actually use this loadout in a fight. The Ferro hits hard—really hard. We're talking 3 shots to kill a player wearing a light shield. But here's the catch: you have to reload after <em>every single shot</em>. That's where the Stitcher comes in.</p>
+            
+            <p><strong>Engagement Strategy:</strong></p>
+            <ol style="margin-left: 25px;">
+                <li><strong>Open with Ferro:</strong> Land that first precise shot for massive damage. If you're accurate, you've already won half the fight.</li>
+                <li><strong>Swap to Stitcher:</strong> Instead of standing there reloading the Ferro, immediately switch to your Stitcher and finish them off with full-auto fire.</li>
+                <li><strong>Reload Ferro during downtime:</strong> Between engagements, reload your Ferro so it's ready for the next opener.</li>
+            </ol>
 
-        <p><strong>Strategy:</strong> Pair the Anvil with a complementary utility or a faster-firing secondary for close-quarters emergencies, capitalizing on its punch for critical engagements.</p>
+            <p><strong>The Downsides (And How to Work Around Them):</strong></p>
+            <ul>
+                <li><strong>Weapon switch time:</strong> There's a delay when swapping weapons. Practice the timing so you can swap smoothly without getting caught.</li>
+                <li><strong>You'll still need to reload Ferro:</strong> Don't forget to top off that Ferro between fights. Nothing worse than engaging with an empty Ferro.</li>
+                <li><strong>Close-quarters can be tricky:</strong> If someone rushes you, skip the Ferro entirely and go straight Stitcher. Save the Ferro for when you have distance.</li>
+            </ul>
 
-        <h2>Coming Soon: Interactive Loadout Builder!</h2>
-        <p class="call-to-action">Our upcoming interactive loadout builder will empower you to create, save, and share your personalized gear combinations for any scenario. Plan your perfect raid kit with ease!</p>
+            <p><strong>Why Raiders Love It:</strong> This combo is popular because it's <em>forgiving</em>. Lose a fight? No big deal. Craft another set with the materials Scrappy brings back. The Ferro teaches you precision, the Stitcher saves you when you miss, and together they cover most combat scenarios without breaking the bank.</p>
+        </div>
+
+        <div class="loadout-card">
+            <h3>🔨 The "Anvil Precision" (Solo Hard-Hitter)</h3>
+            <p><strong>Concept:</strong> A single-weapon loadout for players with deadly aim. The Anvil hand cannon delivers massive per-shot damage, perfect for ambushes and long-range picks.</p>
+            
+            <p><strong>Key Weapon: Anvil (Hand Cannon)</strong></p>
+            <ul>
+                <li><strong>Damage:</strong> Very effective against ARC armor plating and players</li>
+                <li><strong>Ammo Type:</strong> Heavy Ammo (6 rounds per magazine)</li>
+                <li><strong>Best For:</strong> Patient players who can land headshots consistently</li>
+            </ul>
+
+            <p><strong>Strategy:</strong> The Anvil is all about making every shot count. Position yourself carefully, take your time, and eliminate targets before they know where you are. Pair with bandages and a light shield to stay mobile.</p>
+        </div>
+
+        <div class="loadout-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a1a1a 100%); border-left: 4px solid #c83a3a;">
+            <h3>🔨 The Hammer - Your Secret Third Weapon</h3>
+            <p><strong>Here's What Nobody Tells You:</strong> You <em>always</em> have a hammer equipped in your third weapon slot. You can't unequip it, and honestly? Most people completely forget it exists until they're panicking in a firefight.</p>
+            
+            <p><strong>Primary Uses:</strong></p>
+            <ul>
+                <li><strong>Breaching:</strong> Break open crates and doors during raids</li>
+                <li><strong>Emergency Melee:</strong> When you're out of ammo or caught in close quarters</li>
+            </ul>
+
+            <p><strong>Why It's Actually Broken (In a Good Way):</strong></p>
+            <p>During playtesting, I kept forgetting about the hammer—until I didn't. Here's what makes it crazy: it deals <strong>very high damage</strong> in close combat, way more than you'd expect from a "utility tool." But the <em>real</em> secret? <strong>It's AOE.</strong></p>
+            
+            <p>Picture this: you're in tight quarters, two enemies rush you, you're frantically reloading—forget the reload. Pull out the hammer. Every swing hits <strong>both</strong> of them if they're standing close together. You're literally cleaving through multiple targets per swing.</p>
+
+            <p><strong>The Trade-Off:</strong></p>
+            <p>Each hammer swing drains your stamina, so you can't just spam it endlessly. But when your back's against the wall, when you've burned through all your ammo, or when someone rushes you during a reload—the hammer wins fights that guns can't.</p>
+
+            <p><strong>Pro Tip:</strong> Don't think of the hammer as a last resort. Think of it as a legitimate close-quarters option. Enemy pushed up too close? Instead of trying to hip-fire and missing, one hammer swing does more damage anyway. Just watch that stamina bar.</p>
+        </div>
+
+        <div class="coming-soon">
+            <h2>Coming Soon: Interactive Loadout Builder!</h2>
+            <p>Our upcoming interactive loadout builder will empower you to create, save, and share your personalized gear combinations for any scenario. Plan your perfect raid kit with ease!</p>
+        </div>
     </main>
+
+    <footer>
+        <p>All game content © Embark Studios AB. Not affiliated with or endorsed by Embark Studios.</p>
+    </footer>
 </body>
 </html>
-
