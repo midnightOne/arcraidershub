@@ -1,12 +1,111 @@
 [
   {
-    "name": "Energy Clip",
-    "description": "Ammo used for energy weapons. One clip will fully charge a single weapon.",
-    "value": "5",
+    "name": "Kettle I-IV",
+    "description": "Quick and accurate, but has low bullet velocity and takes a long time to reload.",
+    "value": "840",
+    "rarity": "common",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/kettle.webp",
+    "slug": "kettle"
+  },
+  {
+    "name": "Rattler I-IV",
+    "description": "A cheap offensive option, but has to be reloaded 2 bullets at a time.",
+    "value": "1750",
+    "rarity": "common",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/rattler.webp",
+    "slug": "rattler"
+  },
+  {
+    "name": "Arpeggio I-IV",
+    "description": "Has decent damage output and accuracy.",
+    "value": "5500",
+    "rarity": "uncommon",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/arpeggio.webp",
+    "slug": "arpeggio"
+  },
+  {
+    "name": "Ferro I-IV",
+    "description": "Packs a punch, but must be reloaded between every shot.",
+    "value": "475",
+    "rarity": "common",
+    "type": "battle rifle",
+    "imageUrl": "/images/items/ferro.webp",
+    "slug": "ferro"
+  },
+  {
+    "name": "Bettina I-IV",
+    "description": "Has slow fire rate and high damage output.",
+    "value": "8000",
+    "rarity": "epic",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/bettina.webp",
+    "slug": "bettina"
+  },
+  {
+    "name": "Burletta I-IV",
+    "description": "Semi-automatic pistol with decent damage output and accuracy. Can be fired as fast as you can pull the trigger.",
+    "value": "2000",
+    "rarity": "uncommon",
+    "type": "pistol",
+    "imageUrl": "/images/items/burletta.webp",
+    "slug": "burletta"
+  },
+  {
+    "name": "Hairpin I-IV",
+    "description": "Has a built-in silencer. Great for stealth, but tricky in combat.",
+    "value": "450",
+    "rarity": "common",
+    "type": "pistol",
+    "imageUrl": "/images/items/hairpin.webp",
+    "slug": "hairpin"
+  },
+  {
+    "name": "Venator I-IV",
+    "description": "Fires two shots at a time.",
+    "value": "7000",
     "rarity": "rare",
-    "type": "ammunition",
-    "imageUrl": "/images/items/energy_clip.webp",
-    "slug": "energy_clip"
+    "type": "pistol",
+    "imageUrl": "/images/items/venator.webp",
+    "slug": "venator"
+  },  
+  {
+    "name": "Anvil I-IV",
+    "description": "Has high damage output and headshot damage, but slow handling.",
+    "value": "5000",
+    "rarity": "uncommon",
+    "type": "hand cannon",
+    "imageUrl": "/images/items/anvil.webp",
+    "slug": "anvil"
+  },
+  {
+    "name": "Renegade I-IV",
+    "description": "Lever-action battle rifle with high damage output, accuracy, and headshot damage.",
+    "value": "7000",
+    "rarity": "rare",
+    "type": "battle rifle",
+    "imageUrl": "/images/items/renegade.webp",
+    "slug": "renegade"
+  },
+  {
+    "name": "Torrente I-IV",
+    "description": "Has a large ammo capacity, but is only accurate while crouched.",
+    "value": "5000",
+    "rarity": "rare",
+    "type": "LMG",
+    "imageUrl": "/images/items/torrente.webp",
+    "slug": "torrente"
+  },
+  {
+    "name": "Tempest I-IV",
+    "description": "Fully automatic assault rifle with moderate fire rate and accuracy.",
+    "value": "13000",
+    "rarity": "epic",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/tempest.webp",
+    "slug": "tempest"
   },
   {
     "name": "Heavy Ammo",
@@ -54,157 +153,346 @@
     "slug": "shotgun_ammo"
   },
   {
-    "name": "Arpeggio I",
-    "description": "Has decent damage output and accuracy.",
-    "value": "5500",
-    "rarity": "uncommon",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/arpeggio.webp",
-    "slug": "arpeggio"
+    "name": "Energy Clip",
+    "description": "Ammo used for energy weapons. One clip will fully charge a single weapon.",
+    "value": "5",
+    "rarity": "rare",
+    "type": "ammunition",
+    "imageUrl": "/images/items/energy_clip.webp",
+    "slug": "energy_clip"
   },
   {
-    "name": "Arpeggio II",
-    "description": "Has decent damage output and accuracy.",
-    "value": "8000",
-    "rarity": "uncommon",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/arpeggio.webp",
-    "slug": "arpeggio_t2"
-  },
-  {
-    "name": "Arpeggio III",
-    "description": "Has decent damage output and accuracy.",
-    "value": "",
-    "rarity": "uncommon",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/arpeggio.webp",
-    "slug": "arpeggio_t3"
-  },
-  {
-    "name": "Arpeggio IV",
-    "description": "Has decent damage output and accuracy.",
-    "value": "7000",
-    "rarity": "uncommon",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/arpeggio.webp",
-    "slug": "arpeggio_t4"
-  },
-  {
-    "name": "Bettina I",
-    "description": "Has slow fire rate and high damage output.",
-    "value": "8000",
-    "rarity": "epic",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/bettina.webp",
-    "slug": "bettina"
-  },
-  {
-    "name": "Kettle I",
-    "description": "Quick and accurate, but has low bullet velocity and takes a long time to reload.",
-    "value": "840",
+    "name": "Angled Grip I",
+    "description": "Slightly reduces horizontal recoil.",
+    "value": "640",
     "rarity": "common",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/kettle.webp",
-    "slug": "kettle"
+    "type": "modification",
+    "imageUrl": "/images/items/angled_grip_t2.webp",
+    "slug": "angled_grip_t1"
   },
   {
-    "name": "Kettle II",
-    "description": "Quick and accurate, but has low bullet velocity and takes a long time to reload.",
+    "name": "Angled Grip II",
+    "description": "Moderately reduces horizontal recoil.",
     "value": "2000",
-    "rarity": "common",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/kettle.webp",
-    "slug": "kettle_t2"
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "/images/items/angled_grip_t2.webp",
+    "slug": "angled_grip_t2"
   },
   {
-    "name": "Kettle III",
-    "description": "Quick and accurate, but has low bullet velocity and takes a long time to reload.",
-    "value": "",
-    "rarity": "common",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/kettle.webp",
-    "slug": "kettle_t3"
-  },
-  {
-    "name": "Kettle IV",
-    "description": "Quick and accurate, but has low bullet velocity and takes a long time to reload.",
-    "value": "",
-    "rarity": "common",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/kettle.webp",
-    "slug": "kettle_t4"
-  },
-  {
-    "name": "Rattler I",
-    "description": "A cheap offensive option, but has to be reloaded 2 bullets at a time.",
-    "value": "1750",
-    "rarity": "common",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/rattler.webp",
-    "slug": "rattler"
-  },
-  {
-    "name": "Rattler II",
-    "description": "A cheap offensive option, but has to be reloaded 2 bullets at a time.",
-    "value": "",
-    "rarity": "common",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/rattler.webp",
-    "slug": "rattler_t2"
-  },
-  {
-    "name": "Rattler III",
-    "description": "A cheap offensive option, but has to be reloaded 2 bullets at a time.",
+    "name": "Angled Grip III",
+    "description": "Significantly reduces horizontal recoil.",
     "value": "5000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/angled_grip_t3.webp",
+    "slug": "angled_grip_t3"
+  },
+  {
+    "name": "Anvil Splitter",
+    "description": "Tech mod for the Anvil that replaces its bullets with ones that split into 4 weaker projectiles.",
+    "value": "7000",
+    "rarity": "legendary",
+    "type": "modification",
+    "imageUrl": "/images/items/anvil_splitter.webp",
+    "slug": "anvil_splitter"
+  },
+  {
+    "name": "Compensator I",
+    "description": "Slightly reduces per-shot dispersion",
+    "value": "640",
     "rarity": "common",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/rattler.webp",
-    "slug": "rattler_t3"
+    "type": "modification",
+    "imageUrl": "/images/items/compensator_t1.webp",
+    "slug": "compensator_t1"
   },
   {
-    "name": "Rattler IV",
-    "description": "A cheap offensive option, but has to be reloaded 2 bullets at a time.",
+    "name": "Compensator II",
+    "description": "Moderately reduces per-shot dispersion",
+    "value": "2000",
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "/images/items/compensator_t2.webp",
+    "slug": "compensator_t2"
+  },
+  {
+    "name": "Compensator III",
+    "description": "Significantly reduces per-shot dispersion",
+    "value": "5000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/compensator_t3.webp",
+    "slug": "compensator_t3"
+  },
+  {
+    "name": "Extended Barrel",
+    "description": "Moderately increases bullet velocity.",
     "value": "",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/extended_barrel.webp",
+    "slug": "extended_barrel"
+  },
+  {
+    "name": "Extended Light Mag I",
+    "description": "Slightly extends the ammo capacity of the compatible weapons that use light ammo.",
+    "value": "640",
     "rarity": "common",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/rattler.webp",
-    "slug": "rattler_t4"
+    "type": "modification",
+    "imageUrl": "/images/items/extended_light_mag_t1.webp",
+    "slug": "extended_light_mag_t1"
   },
   {
-    "name": "Tempest I",
-    "description": "Fully automatic assault rifle with moderate fire rate and accuracy.",
-    "value": "13000",
-    "rarity": "epic",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/tempest.webp",
-    "slug": "tempest"
+    "name": "Extended Light Mag II",
+    "description": "Moderately extends the ammo capacity of the compatible weapons that use light ammo.",
+    "value": "2000",
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "/images/items/extended_light_mag_t1.webp",
+    "slug": "extended_light_mag_t2"
   },
   {
-    "name": "Tempest II",
-    "description": "Fully automatic assault rifle with moderate fire rate and accuracy.",
+    "name": "Extended Light Mag III",
+    "description": "Significantly extends the ammo capacity of the compatible weapons that use light ammo.",
+    "value": "5000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/extended_light_mag_t3.webp",
+    "slug": "extended_light_mag_t3"
+  },
+  {
+    "name": "Extended Medium Mag I",
+    "description": "Slightly extends the ammo capacity of compatible weapons that use medium ammo.",
+    "value": "640",
+    "rarity": "common",
+    "type": "modification",
+    "imageUrl": "",
+    "slug": "extended_medium_mag_t1"
+  },
+  {
+    "name": "Extended Medium Mag II",
+    "description": "Moderately extends the ammo capacity of compatible weapons that use medium ammo.",
+    "value": "2000",
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "/images/items/extended_medium_mag_t2.webp",
+    "slug": "extended_medium_mag_t2"
+  },
+  {
+    "name": "Extended Medium Mag III",
+    "description": "Significantly extends the ammo capacity of compatible weapons that use medium ammo.",
+    "value": "2000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/extended_medium_mag_t3.webp",
+    "slug": "extended_medium_mag_t3"
+  },
+  {
+    "name": "Extended Shotgun Mag I",
+    "description": "Slightly extends the ammo capacity of compatible weapons that use shotgun ammo.",
+    "value": "640",
+    "rarity": "common",
+    "type": "modification",
+    "imageUrl": "/images/items/extended_shotgun_mag.webp",
+    "slug": "extended_shotgun_mag_t1"
+  },
+  {
+    "name": "Extended Shotgun Mag II",
+    "description": "Moderately extends the ammo capacity of compatible weapons that use shotgun ammo.",
+    "value": "2000",
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "/images/items/extended_shotgun_mag_t2.webp",
+    "slug": "extended_shotgun_mag_t2"
+  },
+  {
+    "name": "Extended Shotgun Mag III",
+    "description": "Significantly extends the ammo capacity of compatible weapons that use shotgun ammo.",
+    "value": "5000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/extended_shotgun_mag_t3.webp",
+    "slug": "extended_shotgun_mag_t3"
+  },
+  {
+    "name": "Horizontal Grip",
+    "description": "Moderately reduces both vertical recoil and horizontal recoil.",
     "value": "",
     "rarity": "epic",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/tempest.webp",
-    "slug": "tempest_t2"
+    "type": "modification",
+    "imageUrl": "/images/items/horizontal_grip.webp",
+    "slug": "horizontal_grip"
   },
   {
-    "name": "Tempest III",
-    "description": "Fully automatic assault rifle with moderate fire rate and accuracy.",
-    "value": "",
-    "rarity": "epic",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/tempest.webp",
-    "slug": "tempest_t3"
+    "name": "Kinetic Converter",
+    "description": "Moderately increases fire rate.",
+    "value": "7000",
+    "rarity": "legendary",
+    "type": "modification",
+    "imageUrl": "/images/items/kinetic_converter.webp",
+    "slug": "kinetic_converter"
   },
   {
-    "name": "Tempest IV",
-    "description": "Fully automatic assault rifle with moderate fire rate and accuracy.",
-    "value": "",
+    "name": "Lightweight Stock",
+    "description": "Moderately improves ADS & draw speed.",
+    "value": "7000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/lightweight_stock.webp",
+    "slug": "lightweight_stock"
+  },
+  {
+    "name": "Muzzle Brake I",
+    "description": "Slightly reduces both vertical recoil & horizontal recoil.",
+    "value": "640",
+    "rarity": "common",
+    "type": "modification",
+    "imageUrl": "/images/items/muzzle_brake_t1.webp",
+    "slug": "muzzle_brake_t1"
+  },
+  {
+    "name": "Muzzle Brake II",
+    "description": "Moderately reduces both vertical recoil & horizontal recoil.",
+    "value": "2000",
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "/images/items/muzzle_brake_t2.webp",
+    "slug": "muzzle_brake_t2"
+  },
+  {
+    "name": "Muzzle Brake III",
+    "description": "Significantly reduces both vertical recoil & horizontal recoil.",
+    "value": "5000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "",
+    "slug": "muzzle_brake_t3"
+  },
+  {
+    "name": "Padded Stock",
+    "description": "Significantly improves stability.",
+    "value": "7000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/padded_stock.webp",
+    "slug": "padded_stock"
+  },
+  {
+    "name": "Shotgun Choke I",
+    "description": "Moderately reduces base dispersion.",
+    "value": "640",
+    "rarity": "common",
+    "type": "modification",
+    "imageUrl": "/images/items/shotgun_choke_t1.webp",
+    "slug": "shotgun_choke_t1"
+  },
+  {
+    "name": "Shotgun Choke II",
+    "description": "Moderately reduces base dispersion.",
+    "value": "2000",
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "/images/items/shotgun_choke_t1.webp",
+    "slug": "shotgun_choke_t2"
+  },
+  {
+    "name": "Shotgun Choke III",
+    "description": "Moderately reduces base dispersion.",
+    "value": "5000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/shotgun_choke_t1.webp",
+    "slug": "shotgun_choke_t3"
+  },
+  {
+    "name": "Shotgun Silencer",
+    "description": "Moderately reduces the amount of noise produced when firing.",
+    "value": "7000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "",
+    "slug": "shotgun_silencer"
+  },
+  {
+    "name": "Silencer I",
+    "description": "Slightly reduces the amount of noise produced when firing.",
+    "value": "2000",
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "/images/items/silencer_t1.webp",
+    "slug": "silencer"
+  },
+  {
+    "name": "Silencer II",
+    "description": "Moderately reduces the amount of noise produced when firing.",
+    "value": "5000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/silencer_t2.webp",
+    "slug": "silencer_t2"
+  },
+  {
+    "name": "Silencer III",
+    "description": "Significantly reduces the amount of noise produced when firing.",
+    "value": "7000",
     "rarity": "epic",
-    "type": "assault rifle",
-    "imageUrl": "/images/items/tempest.webp",
-    "slug": "tempest_t4"
+    "type": "modification",
+    "imageUrl": "/images/items/silencer_t3.webp",
+    "slug": "silencer_t3"
+  },
+  {
+    "name": "Stable Stock I",
+    "description": "Slightly improves dispersion & recoil recovery time.",
+    "value": "640",
+    "rarity": "common",
+    "type": "modification",
+    "imageUrl": "/images/items/stable_stock_t1.webp",
+    "slug": "stable_stock_t1"
+  },
+  {
+    "name": "Stable Stock II",
+    "description": "Slightly improves dispersion & recoil recovery time.",
+    "value": "",
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "",
+    "slug": "stable_stock_t2"
+  },
+  {
+    "name": "Stable Stock III",
+    "description": "Significantly improves dispersion & recoil recovery over time.",
+    "value": "5000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/stable_stock_t3.webp",
+    "slug": "stable_stock_t3"
+  },
+  {
+    "name": "Vertical Grip I",
+    "description": "Slightly reduces vertical recoil.",
+    "value": "640",
+    "rarity": "common",
+    "type": "modification",
+    "imageUrl": "/images/items/vertical_grip_t1.webp",
+    "slug": "vertical_grip_t1"
+  },
+  {
+    "name": "Vertical Grip II",
+    "description": "Moderately reduces vertical recoil.",
+    "value": "2000",
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "/images/items/vertical_grip_t2.webp",
+    "slug": "vertical_grip_t2"
+  },
+  {
+    "name": "Vertical Grip III",
+    "description": "Significantly reduces vertical recoil.",
+    "value": "5000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/vertical_grip_t3.webp",
+    "slug": "vertical_grip_t3"
   },
   {
     "name": "Combat Mk. 1",
@@ -277,86 +565,14 @@
     "type": "basic material",
     "imageUrl": "/images/items/rubber_parts.webp",
     "slug": "rubber_parts"
-  },
-  {
-    "name": "Ferro I",
-    "description": "Packs a punch, but must be reloaded between every shot.",
-    "value": "475",
-    "rarity": "common",
-    "type": "battle rifle",
-    "imageUrl": "/images/items/ferro.webp",
-    "slug": "ferro"
-  },
-  {
-    "name": "Ferro II",
-    "description": "Packs a punch, but must be reloaded between every shot.",
-    "value": "",
-    "rarity": "common",
-    "type": "battle rifle",
-    "imageUrl": "/images/items/ferro.webp",
-    "slug": "ferro_t2"
-  },
-  {
-    "name": "Ferro III",
-    "description": "Packs a punch, but must be reloaded between every shot.",
-    "value": "",
-    "rarity": "common",
-    "type": "battle rifle",
-    "imageUrl": "/images/items/ferro.webp",
-    "slug": "ferro_t3"
-  },
-  {
-    "name": "Ferro IV",
-    "description": "Packs a punch, but must be reloaded between every shot.",
-    "value": "3000",
-    "rarity": "common",
-    "type": "battle rifle",
-    "imageUrl": "/images/items/ferro.webp",
-    "slug": "ferro_t4"
-  },
-  {
-    "name": "Renegade I",
-    "description": "Lever-action battle rifle with high damage output, accuracy, and headshot damage.",
-    "value": "7000",
-    "rarity": "rare",
-    "type": "battle rifle",
-    "imageUrl": "/images/items/renegade_t3.webp",
-    "slug": "renegade"
-  },
-  {
-    "name": "Renegade II",
-    "description": "Lever-action battle rifle with high damage output, accuracy, and headshot damage.",
-    "value": "",
-    "rarity": "rare",
-    "type": "battle rifle",
-    "imageUrl": "/images/items/renegade_t3.webp",
-    "slug": "renegade_t2"
-  },
-  {
-    "name": "Renegade III",
-    "description": "Lever-action battle rifle with high damage output, accuracy, and headshot damage.",
-    "value": "13000",
-    "rarity": "rare",
-    "type": "battle rifle",
-    "imageUrl": "/images/items/renegade_t3.webp",
-    "slug": "renegade_t3"
-  },
-  {
-    "name": "Renegade IV",
-    "description": "Lever-action battle rifle with high damage output, accuracy, and headshot damage.",
-    "value": "",
-    "rarity": "rare",
-    "type": "battle rifle",
-    "imageUrl": "/images/items/renegade_t3.webp",
-    "slug": "renegade_t4"
-  },
+  },  
   {
     "name": "Anvil Blueprint",
     "description": "Has high damage output and headshot damage, but slow handling.",
     "value": "5000",
     "rarity": "",
     "type": "blueprint",
-    "imageUrl": "/images/items/recipe.webp",
+    "imageUrl": "/images/items/blueprint.webp",
     "slug": "anvil_blueprint"
   },
   {
@@ -365,7 +581,7 @@
     "value": "5000",
     "rarity": "",
     "type": "blueprint",
-    "imageUrl": "/images/items/recipe.webp",
+    "imageUrl": "/images/items/blueprint.webp",
     "slug": "bettina_blueprint"
   },
   {
@@ -374,7 +590,7 @@
     "value": "5000",
     "rarity": "",
     "type": "blueprint",
-    "imageUrl": "/images/items/recipe.webp",
+    "imageUrl": "/images/items/blueprint.webp",
     "slug": "equalizer_blueprint"
   },
   {
@@ -383,7 +599,7 @@
     "value": "5000",
     "rarity": "",
     "type": "blueprint",
-    "imageUrl": "/images/items/recipe.webp",
+    "imageUrl": "/images/items/blueprint.webp",
     "slug": "heavy_gun_parts_blueprint"
   },
   {
@@ -392,7 +608,7 @@
     "value": "5000",
     "rarity": "",
     "type": "blueprint",
-    "imageUrl": "/images/items/recipe.webp",
+    "imageUrl": "/images/items/blueprint.webp",
     "slug": "il_toro_blueprint"
   },
   {
@@ -401,7 +617,7 @@
     "value": "5000",
     "rarity": "",
     "type": "blueprint",
-    "imageUrl": "/images/items/recipe.webp",
+    "imageUrl": "/images/items/blueprint.webp",
     "slug": "jupiter_blueprint"
   },
   {
@@ -410,7 +626,7 @@
     "value": "5000",
     "rarity": "",
     "type": "blueprint",
-    "imageUrl": "/images/items/recipe.webp",
+    "imageUrl": "/images/items/blueprint.webp",
     "slug": "medium_gun_parts_blueprint"
   },
   {
@@ -419,7 +635,7 @@
     "value": "5000",
     "rarity": "",
     "type": "blueprint",
-    "imageUrl": "/images/items/recipe.webp",
+    "imageUrl": "/images/items/blueprint.webp",
     "slug": "osprey_blueprint"
   },
   {
@@ -428,7 +644,7 @@
     "value": "5000",
     "rarity": "",
     "type": "blueprint",
-    "imageUrl": "/images/items/recipe.webp",
+    "imageUrl": "/images/items/blueprint.webp",
     "slug": "torrente_blueprint"
   },
   {
@@ -437,7 +653,7 @@
     "value": "5000",
     "rarity": "",
     "type": "blueprint",
-    "imageUrl": "/images/items/recipe.webp",
+    "imageUrl": "/images/items/blueprint.webp",
     "slug": "trigger_nade_blueprint"
   },
   {
@@ -446,45 +662,10 @@
     "value": "5000",
     "rarity": "",
     "type": "blueprint",
-    "imageUrl": "/images/items/recipe.webp",
+    "imageUrl": "/images/items/blueprint.webp",
     "slug": "venator_blueprint"
   },
-  {
-    "name": "Anvil I",
-    "description": "Has high damage output and headshot damage, but slow handling.",
-    "value": "5000",
-    "rarity": "uncommon",
-    "type": "hand cannon",
-    "imageUrl": "/images/items/anvil_t1.webp",
-    "slug": "anvil"
-  },
-  {
-    "name": "Anvil II",
-    "description": "Single-action hand cannon with high damage output and heashot damage, but slow handling.",
-    "value": "7000",
-    "rarity": "uncommon",
-    "type": "hand cannon",
-    "imageUrl": "/images/items/anvil_t1.webp",
-    "slug": "anvil_t2"
-  },
-  {
-    "name": "Anvil III",
-    "description": "Single-action hand cannon with high damage output and heashot damage, but slow handling.",
-    "value": "7000",
-    "rarity": "uncommon",
-    "type": "hand cannon",
-    "imageUrl": "/images/items/anvil_t1.webp",
-    "slug": "anvil_t3"
-  },
-  {
-    "name": "Anvil IV",
-    "description": "Single-action hand cannon with high damage output and heashot damage, but slow handling.",
-    "value": "10000",
-    "rarity": "uncommon",
-    "type": "hand cannon",
-    "imageUrl": "/images/items/anvil_t1.webp",
-    "slug": "anvil_t4"
-  },
+  
   {
     "name": "Blue Gate Cellar Key",
     "description": "Unlocks certain cellar doors near the Blue Gate",
@@ -639,33 +820,6 @@
     "slug": "spaceport_warehouse_key"
   },
   {
-    "name": "Torrente I",
-    "description": "Has a large ammo capacity, but is only accurate while crouched.",
-    "value": "5000",
-    "rarity": "rare",
-    "type": "LMG",
-    "imageUrl": "/images/items/torrente.webp",
-    "slug": "torrente"
-  },
-  {
-    "name": "Torrente II",
-    "description": "Has a large ammo capacity, but is only accurate while crouched.",
-    "value": "",
-    "rarity": "rare",
-    "type": "LMG",
-    "imageUrl": "/images/items/torrente.webp",
-    "slug": "torrente_t2"
-  },
-  {
-    "name": "Torrente III",
-    "description": "Has a large ammo capacity, but is only accurate while crouched.",
-    "value": "",
-    "rarity": "rare",
-    "type": "LMG",
-    "imageUrl": "/images/items/torrente.webp",
-    "slug": "torrente_t3"
-  },
-  {
     "name": "Advanced ARC Powercell",
     "description": "Very valuable resource that drops from certain ARC enemies.",
     "value": "640",
@@ -691,122 +845,258 @@
     "type": "misc",
     "imageUrl": "",
     "slug": "roots"
+  },  
+  {
+    "name": "Agave",
+    "description": "A piece of an agave leaf. Can be used to regain a small amount of health.",
+    "value": "1000",
+    "rarity": "",
+    "type": "nature",
+    "imageUrl": "/images/items/agave.webp",
+    "slug": "agave"
   },
   {
-    "name": "Angled Grip I",
-    "description": "Slightly reduces horizontal recoil.",
+    "name": "Apricot",
+    "description": "A sun ripe apricot. Can be consumed for a small amount of stamina.",
     "value": "640",
-    "rarity": "common",
-    "type": "modification",
-    "imageUrl": "/images/items/angled_grip_t2.webp",
-    "slug": "angled_grip_t1"
+    "rarity": "",
+    "type": "nature",
+    "imageUrl": "/images/items/apricot.webp",
+    "slug": "apricot"
   },
   {
-    "name": "Angled Grip II",
-    "description": "Moderately reduces horizontal recoil.",
-    "value": "2000",
-    "rarity": "uncommon",
-    "type": "modification",
-    "imageUrl": "/images/items/angled_grip_t2.webp",
-    "slug": "angled_grip_t2"
+    "name": "Assorted Seeds",
+    "description": "A handful of seeds. Celeste might be looking for these.",
+    "value": "100",
+    "rarity": "",
+    "type": "nature",
+    "imageUrl": "/images/items/assorted_seeds.webp",
+    "slug": "assorted_seeds"
   },
   {
-    "name": "Angled Grip III",
-    "description": "Significantly reduces horizontal recoil.",
-    "value": "5000",
-    "rarity": "rare",
-    "type": "modification",
-    "imageUrl": "/images/items/angled_grip_t3.webp",
-    "slug": "angled_grip_t3"
-  },
-  {
-    "name": "Anvil Splitter",
-    "description": "Tech mod for the Anvil that replaces its bullets with ones that split into 4 weaker projectiles.",
-    "value": "7000",
-    "rarity": "legendary",
-    "type": "modification",
-    "imageUrl": "/images/items/anvil_splitter.webp",
-    "slug": "anvil_splitter"
-  },
-  {
-    "name": "Compensator I",
-    "description": "Slightly reduces per-shot dispersion",
+    "name": "Lemon",
+    "description": "Can be consumed for a small amount of stamina.",
     "value": "640",
-    "rarity": "common",
-    "type": "modification",
-    "imageUrl": "/images/items/compensator_t1.webp",
-    "slug": "compensator_t1"
+    "rarity": "",
+    "type": "nature",
+    "imageUrl": "/images/items/lemon.webp",
+    "slug": "lemon"
   },
   {
-    "name": "Compensator II",
-    "description": "Moderately reduces per-shot dispersion",
-    "value": "2000",
-    "rarity": "uncommon",
-    "type": "modification",
-    "imageUrl": "/images/items/compensator_t2.webp",
-    "slug": "compensator_t2"
+    "name": "Mushroom",
+    "description": "Can be consumed to regain a small amount of health.",
+    "value": "1000",
+    "rarity": "",
+    "type": "nature",
+    "imageUrl": "/images/items/mushroom.webp",
+    "slug": "mushroom"
   },
   {
-    "name": "Compensator III",
-    "description": "Significantly reduces per-shot dispersion",
-    "value": "5000",
-    "rarity": "rare",
-    "type": "modification",
-    "imageUrl": "/images/items/compensator_t3.webp",
-    "slug": "compensator_t3"
+    "name": "Olives",
+    "description": "Can be consumed for a small amount of stamina.",
+    "value": "640",
+    "rarity": "",
+    "type": "nature",
+    "imageUrl": "/images/items/olives.webp",
+    "slug": "olives"
   },
   {
-    "name": "Extended Barrel",
-    "description": "Moderately increases bullet velocity.",
+    "name": "Prickly Pear",
+    "description": "Can be consumed for a small amount of stamina.",
+    "value": "640",
+    "rarity": "",
+    "type": "nature",
+    "imageUrl": "/images/items/prickly_pear.webp",
+    "slug": "prickly_pear"
+  },
+  {
+    "name": "Resin",
+    "description": "Can be used to gradually restore a small amount of health over time.",
     "value": "",
-    "rarity": "rare",
-    "type": "modification",
-    "imageUrl": "/images/items/extended_barrel.webp",
-    "slug": "extended_barrel"
-  },
-  {
-    "name": "Extended Light Mag I",
-    "description": "Slightly extends the ammo capacity of the compatible weapons that use light ammo.",
-    "value": "640",
-    "rarity": "common",
-    "type": "modification",
-    "imageUrl": "/images/items/extended_light_mag_t1.webp",
-    "slug": "extended_light_mag_t1"
-  },
-  {
-    "name": "Extended Light Mag II",
-    "description": "Moderately extends the ammo capacity of the compatible weapons that use light ammo.",
-    "value": "2000",
-    "rarity": "uncommon",
-    "type": "modification",
-    "imageUrl": "/images/items/extended_light_mag_t1.webp",
-    "slug": "extended_light_mag_t2"
-  },
-  {
-    "name": "Extended Light Mag III",
-    "description": "Significantly extends the ammo capacity of the compatible weapons that use light ammo.",
-    "value": "5000",
-    "rarity": "rare",
-    "type": "modification",
-    "imageUrl": "/images/items/extended_light_mag_t3.webp",
-    "slug": "extended_light_mag_t3"
-  },
-  {
-    "name": "Extended Medium Mag I",
-    "description": "Slightly extends the ammo capacity of compatible weapons that use medium ammo.",
-    "value": "640",
-    "rarity": "common",
-    "type": "modification",
+    "rarity": "",
+    "type": "nature",
     "imageUrl": "",
-    "slug": "extended_medium_mag_t1"
+    "slug": "resin"
+  },
+  
+  {
+    "name": "Adrenaline Shot",
+    "description": "A serum that fully restores stamina and temporarily increases stamina regeneration.",
+    "value": "300",
+    "rarity": "common",
+    "type": "quick use",
+    "imageUrl": "/images/items/adrenaline_shot.webp",
+    "slug": "adrenaline_shot"
   },
   {
-    "name": "Extended Medium Mag II",
-    "description": "Moderately extends the ammo capacity of compatible weapons that use medium ammo.",
+    "name": "Agave Juice",
+    "description": "A concoction that temporarily increases stamina regeneration, at a small initial cost to health.",
+    "value": "",
+    "rarity": "",
+    "type": "quick use",
+    "imageUrl": "",
+    "slug": "agave_juice"
+  },
+  {
+    "name": "Bandage",
+    "description": "A medical item that gradually restores health over time.",
+    "value": "250",
+    "rarity": "common",
+    "type": "quick use",
+    "imageUrl": "/images/items/bandage.webp",
+    "slug": "bandage"
+  },
+  {
+    "name": "Barricade Kit",
+    "description": "A deployable cover that can block incoming damage until it breaks.",
+    "value": "640",
+    "rarity": "uncommon",
+    "type": "quick use",
+    "imageUrl": "/images/items/barricade_kit.webp",
+    "slug": "barricade_kit"
+  },
+  {
+    "name": "Binoculars",
+    "description": "A basic pair of binoculars with two levels of magnification.",
+    "value": "640",
+    "rarity": "common",
+    "type": "quick use",
+    "imageUrl": "/images/items/binoculars.webp",
+    "slug": "binoculars"
+  },
+  {
+    "name": "Blaze Grenade",
+    "description": "A grenade that detonates on impact, covering an area in fire that deals damage over time.",
+    "value": "1600",
+    "rarity": "rare",
+    "type": "quick use",
+    "imageUrl": "/images/items/blaze_grenade.webp",
+    "slug": "blaze_grenade"
+  },
+  {
+    "name": "Blue Light Stick",
+    "description": "A throwable chemical light that illuminates the area around it.",
+    "value": "150",
+    "rarity": "common",
+    "type": "quick use",
+    "imageUrl": "/images/items/blue_light_stick.webp",
+    "slug": "blue_light_stick"
+  },
+  {
+    "name": "Defibrillator",
+    "description": "An injection that quickly revives downed raiders and restores some health.",
+    "value": "1000",
+    "rarity": "rare",
+    "type": "quick use",
+    "imageUrl": "/images/items/defibrillator.webp",
+    "slug": "defibrillator"
+  },
+  {
+    "name": "Door Blocker",
+    "description": "A locking mechanism that can be placed on large metal doors to limit access.",
+    "value": "270",
+    "rarity": "common",
+    "type": "quick use",
+    "imageUrl": "/images/items/door_blocker.webp",
+    "slug": "door_blocker"
+  },
+  {
+    "name": "Fruit Mix",
+    "description": "A food item that moderately increases both health and stamina.",
+    "value": "",
+    "rarity": "",
+    "type": "quick use",
+    "imageUrl": "",
+    "slug": "fruit_mix"
+  },
+  {
+    "name": "Gas Grenade",
+    "description": "A grenade that creates a lingering toxic cloud on impact, draining the stamina of any Raider within its area of effect.",
+    "value": "270",
+    "rarity": "common",
+    "type": "quick use",
+    "imageUrl": "/images/items/gas_grenade.webp",
+    "slug": "gas_grenade"
+  },
+  {
+    "name": "Heavy Fuze Grenade",
+    "description": "A grenade that detonates after a delay, dealing explosive damage in its radius.",
+    "value": "1600",
+    "rarity": "rare",
+    "type": "quick use",
+    "imageUrl": "/images/items/heavy_fuze_grenade.webp",
+    "slug": "heavy_fuze_grenade"
+  },
+  {
+    "name": "Herbal Bandage",
+    "description": "An improvised medical item that gradually restores health over time.",
+    "value": "640",
+    "rarity": "uncommon",
+    "type": "quick use",
+    "imageUrl": "/images/items/herbal_bandage.webp",
+    "slug": "herbal_bandage"
+  },
+  {
+    "name": "Jolt Mine",
+    "description": "A proximity triggered mine that pops up and stuns anything within its radius.",
+    "value": "850",
+    "rarity": "uncommon",
+    "type": "quick use",
+    "imageUrl": "/images/items/jolt_mine.webp",
+    "slug": "jolt_mine"
+  },
+  {
+    "name": "Jump Mine",
+    "description": "A proximity triggered mine that pops up and explodes, dealing damage to anything within its radius.",
     "value": "2000",
     "rarity": "uncommon",
-    "type": "modification",
-    "imageUrl": "/images/items/extended_medium_mag_t2.webp",
-    "slug": "extended_medium_mag_t2"
+    "type": "quick use",
+    "imageUrl": "/images/items/jump_mine.webp",
+    "slug": "jump_mine"
+  },
+  {
+    "name": "Laser Trap: Fire",
+    "description": "A deployable laser trip wire that detonates a Blaze Grenade.",
+    "value": "",
+    "rarity": "uncommon",
+    "type": "quick use",
+    "imageUrl": "",
+    "slug": "laser_trap_fire"
+  },
+  {
+    "name": "Laser Trap: Gas",
+    "description": "A deployable laser trip wire that detonates a Gas Grenade.",
+    "value": "",
+    "rarity": "uncommon",
+    "type": "quick use",
+    "imageUrl": "",
+    "slug": "laser_trap_gas"
+  },
+  {
+    "name": "Li'l Smoke Grenade",
+    "description": "A grenade that pops a thick but small smoke cloud on impact, blocking visibility from ARC and other Raiders.",
+    "value": "300",
+    "rarity": "common",
+    "type": "quick use",
+    "imageUrl": "/images/items/lil_smoke_grenade.webp",
+    "slug": "lil_smoke_grenade"
+  },
+  {
+    "name": "Light Impact Grenade",
+    "description": "A grenade that detonates on impact, dealing explosive damage in a small radius.",
+    "value": "270",
+    "rarity": "common",
+    "type": "quick use",
+    "imageUrl": "/images/items/light_impact_grenade.webp",
+    "slug": "light_impact_grenade"
+  },
+  {
+    "name": "Lure Grenade",
+    "description": "A noisy device that sticks to surfaces, distracting nearby ARC machines and drawing their fire.",
+    "value": "1000",
+    "rarity": "uncommon",
+    "type": "quick use",
+    "imageUrl": "/images/items/lure_grenade.webp",
+    "slug": "lure_grenade"
   }
 ]

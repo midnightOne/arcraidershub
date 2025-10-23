@@ -318,18 +318,20 @@
                             <h3 class="item-name">${item.name}</h3>
                         </div>
                         <p class="item-description">${item.description || 'No description available.'}</p>
-                        <div class="item-footer">
+                        
+                    </div>
+                </div>
+            `).join('');
+        }
+        //Item footer removed for now, we don't have up to date values for the items
+        /*<div class="item-footer">
                             ${item.value ? `
                                 <div class="item-value">
                                     <span class="item-value-icon">💰</span>
                                     <span>${item.value}</span>
                                 </div>
                             ` : '<div></div>'}
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
+                        </div>*/
 
         // Event listeners
         document.getElementById('search-filter').addEventListener('input', filterItems);
