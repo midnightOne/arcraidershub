@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arc Raiders Items Database: Complete Item List & Stats</title>
+    <meta name="description" content="Explore the complete Arc Raiders items database. Find all ammunition types, materials, consumables, equipment, and more with detailed statistics and locations.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #141414; color: #e0e0e0; }
+        
+        /* Header */
+        header { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+        .logo-section { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 50px; width: auto; }
+        .site-title { font-size: 1.5em; font-weight: 600; color: #ffffff; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { color: #b0b0b0; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        nav a:hover, nav a.active { color: #3a7bc8; }
+        
+        main { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+        
+        .page-header { text-align: center; margin-bottom: 50px; }
+        .page-header h1 { font-size: 3em; margin-bottom: 15px; background: linear-gradient(135deg, #3a7bc8 0%, #5a9ae0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-header p { font-size: 1.15em; color: #b0b0b0; max-width: 800px; margin: 0 auto; }
+        
+        /* Filters */
+        .filters-section { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 25px; margin-bottom: 40px; }
+        .filters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .filter-group { }
+        .filter-label { font-size: 0.9em; color: #808080; margin-bottom: 8px; display: block; }
+        .filter-select { width: 100%; padding: 10px 15px; background: #252525; border: 1px solid #2a2a2a; border-radius: 8px; color: #e0e0e0; font-size: 0.95em; cursor: pointer; transition: all 0.3s ease; }
+        .filter-select:hover, .filter-select:focus { border-color: #3a7bc8; outline: none; }
+        .filter-search { width: 100%; padding: 10px 15px; background: #252525; border: 1px solid #2a2a2a; border-radius: 8px; color: #e0e0e0; font-size: 0.95em; }
+        .filter-search:focus { border-color: #3a7bc8; outline: none; }
+        .filter-search::placeholder { color: #606060; }
+        
+        .results-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #2a2a2a; }
+        .results-count { color: #b0b0b0; font-size: 1.1em; }
+        .results-count strong { color: #3a7bc8; }
+        
+        /* Items Grid */
+        .items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+        
+        .item-card { background: #1a1a1a; border: 1px solid #252525; border-radius: 12px; overflow: hidden; transition: all 0.3s ease; }
+        .item-card:hover { transform: translateY(-3px); border-color: #3a7bc8; box-shadow: 0 8px 25px rgba(58, 123, 200, 0.12); }
+        
+        .item-image { width: 100%; height: 160px; background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%); display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .item-image img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        
+        .item-content { padding: 20px; }
+        
+        .item-header { margin-bottom: 12px; }
+        .item-meta { display: flex; gap: 10px; margin-bottom: 10px; }
+        .item-rarity { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 600; text-transform: uppercase; }
+        .rarity-common { background: #3d3d3d; color: #ffffff; }
+        .rarity-uncommon { background: #2d5a2d; color: #7fff7f; }
+        .rarity-rare { background: #2d4d6d; color: #6ba3ff; }
+        .rarity-epic { background: #5d2d6d; color: #c97fff; }
+        .rarity-legendary { background: #6d4d2d; color: #ffb366; }
+        .item-type { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; background: #2a2a2a; color: #b0b0b0; }
+        
+        .item-name { font-size: 1.4em; color: #ffffff; font-weight: 600; margin-bottom: 8px; }
+        .item-description { color: #a0a0a0; font-size: 0.9em; line-height: 1.5; margin-bottom: 15px; min-height: 60px; }
+        
+        .item-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #2a2a2a; }
+        .item-value { display: flex; align-items: center; gap: 8px; color: #ffd700; font-weight: 600; }
+        .item-value-icon { font-size: 1.2em; }
+        
+        .no-results { text-align: center; padding: 60px 20px; color: #808080; }
+        .no-results-icon { font-size: 4em; margin-bottom: 20px; opacity: 0.3; }
+        .no-results-text { font-size: 1.3em; margin-bottom: 10px; }
+        .no-results-hint { font-size: 0.95em; }
+        
+        footer {
+            background: #161616;
+            border-top: 1px solid #2a2a2e;
+            padding: 50px 20px 30px 20px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: #ffffff;
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-section p {
+            color: #888;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #3a7bc8;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #2a2a2e;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .footer-disclaimer {
+            margin-top: 15px;
+            font-size: 0.85em;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; height: auto; padding: 20px; gap: 20px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .filters-grid { grid-template-columns: 1fr; }
+            .items-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; gap: 40px; }
+            .page-header h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="/logo.png" alt="Arc Raiders Hub Logo" class="logo-img">
+                <h1 class="site-title">Arc Raiders Hub</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/weapons/">Weapons</a></li>
+                    <li><a href="/items/" class="active">Items</a></li>
+                    <li><a href="/maps/">Maps</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Items Database</h1>
+            <p>Discover all items in Arc Raiders including ammunition, materials, consumables, equipment, and more.</p>
+        </div>
+
+        <div class="filters-section">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label class="filter-label" for="search-filter">Search Items</label>
+                    <input type="text" id="search-filter" class="filter-search" placeholder="Search by name...">
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="type-filter">Item Type</label>
+                    <select id="type-filter" class="filter-select">
+                        <option value="">All Types</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="rarity-filter">Rarity</label>
+                    <select id="rarity-filter" class="filter-select">
+                        <option value="">All Rarities</option>
+                        <option value="common">Common</option>
+                        <option value="uncommon">Uncommon</option>
+                        <option value="rare">Rare</option>
+                        <option value="epic">Epic</option>
+                        <option value="legendary">Legendary</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-info">
+            <div class="results-count">
+                Showing <strong id="results-count">0</strong> items
+            </div>
+        </div>
+
+        <div class="items-grid" id="items-container">
+            <!-- Items will be loaded here -->
+        </div>
+
+        <div class="no-results" id="no-results" style="display: none;">
+            <div class="no-results-icon">🔍</div>
+            <div class="no-results-text">No items found</div>
+            <div class="no-results-hint">Try adjusting your filters or search terms</div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Arc Raiders Hub</h3>
+                <p>Your comprehensive resource for Arc Raiders game information, including weapons databases, map guides, and the latest updates from Embark Studios.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/weapons/">Weapons</a></li>
+                    <li><a href="/items/">Items</a></li>
+                    <li><a href="/maps/">Maps</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="/guides/">Guides</a></li>
+                    <li><a href="/loadouts/">Loadouts</a></li>
+                    <li><a href="/skills/">Skills</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Arc Raiders Hub. All rights reserved.</p>
+            <p class="footer-disclaimer">This is a fan-made website and is not affiliated with Embark Studios. All game content and materials are trademarks and copyrights of their respective owners.</p>
+        </div>
+    </footer>
+
+    <script>
+        let allItems = [];
+        let filteredItems = [];
+
+        async function loadItems() {
+            try {
+                const response = await fetch('/data/items.json');
+                allItems = await response.json();
+                
+                // Extract unique types
+                const types = [...new Set(allItems.map(item => item.type))].filter(Boolean).sort();
+                const typeFilter = document.getElementById('type-filter');
+                types.forEach(type => {
+                    const option = document.createElement('option');
+                    option.value = type;
+                    option.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+                    typeFilter.appendChild(option);
+                });
+                
+                filteredItems = allItems;
+                renderItems();
+            } catch (error) {
+                console.error('Error loading items:', error);
+                document.getElementById('no-results').style.display = 'block';
+            }
+        }
+
+        function filterItems() {
+            const search = document.getElementById('search-filter').value.toLowerCase();
+            const type = document.getElementById('type-filter').value;
+            const rarity = document.getElementById('rarity-filter').value;
+
+            filteredItems = allItems.filter(item => {
+                const matchesSearch = item.name.toLowerCase().includes(search) || 
+                                    item.description.toLowerCase().includes(search);
+                const matchesType = !type || item.type === type;
+                const matchesRarity = !rarity || item.rarity === rarity;
+                return matchesSearch && matchesType && matchesRarity;
+            });
+
+            renderItems();
+        }
+
+        function renderItems() {
+            const container = document.getElementById('items-container');
+            const noResults = document.getElementById('no-results');
+            const countEl = document.getElementById('results-count');
+
+            countEl.textContent = filteredItems.length;
+
+            if (filteredItems.length === 0) {
+                container.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            container.innerHTML = filteredItems.map(item => `
+                <div class="item-card">
+                    <div class="item-image">
+                        <img src="${item.imageUrl}" alt="${item.name}" 
+                             onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%2250%25%22 x=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 font-size=%2250%22 fill=%22%233a7bc8%22 opacity=%220.3%22%3E%F0%9F%93%A6%3C/text%3E%3C/svg%3E';">
+                    </div>
+                    <div class="item-content">
+                        <div class="item-header">
+                            <div class="item-meta">
+                                ${item.rarity ? `<span class="item-rarity rarity-${item.rarity.toLowerCase()}">${item.rarity}</span>` : ''}
+                                ${item.type ? `<span class="item-type">${item.type}</span>` : ''}
+                            </div>
+                            <h3 class="item-name">${item.name}</h3>
+                        </div>
+                        <p class="item-description">${item.description || 'No description available.'}</p>
+                        <div class="item-footer">
+                            ${item.value ? `
+                                <div class="item-value">
+                                    <span class="item-value-icon">💰</span>
+                                    <span>${item.value}</span>
+                                </div>
+                            ` : '<div></div>'}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Event listeners
+        document.getElementById('search-filter').addEventListener('input', filterItems);
+        document.getElementById('type-filter').addEventListener('change', filterItems);
+        document.getElementById('rarity-filter').addEventListener('change', filterItems);
+
+        // Load items on page load
+        loadItems();
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,812 @@
+[
+  {
+    "name": "Energy Clip",
+    "description": "Ammo used for energy weapons. One clip will fully charge a single weapon.",
+    "value": "5",
+    "rarity": "rare",
+    "type": "ammunition",
+    "imageUrl": "/images/items/energy_clip.webp",
+    "slug": "energy_clip"
+  },
+  {
+    "name": "Heavy Ammo",
+    "description": "Heavy bullets used mainly with sniper rifles and hand cannons.",
+    "value": "12",
+    "rarity": "common",
+    "type": "ammunition",
+    "imageUrl": "/images/items/heavy_ammo.webp",
+    "slug": "heavy_ammo"
+  },
+  {
+    "name": "Launcher Ammo",
+    "description": "Anti-ARC payloads used mainly by the Hullcracker.",
+    "value": "10",
+    "rarity": "rare",
+    "type": "ammunition",
+    "imageUrl": "/images/items/launcher_ammo.webp",
+    "slug": "launcher_ammo"
+  },
+  {
+    "name": "Light Ammo",
+    "description": "Light bullets used mainly with SMGs and light handguns.",
+    "value": "4",
+    "rarity": "common",
+    "type": "ammunition",
+    "imageUrl": "/images/items/light_ammo.webp",
+    "slug": "light_ammo"
+  },
+  {
+    "name": "Medium Ammo",
+    "description": "Medium bullets used with some assault rifles and battle rifles.",
+    "value": "6",
+    "rarity": "common",
+    "type": "ammunition",
+    "imageUrl": "/images/items/medium_ammo.webp",
+    "slug": "medium_ammo"
+  },
+  {
+    "name": "Shotgun Ammo",
+    "description": "Shotgun shells used for shotguns.",
+    "value": "20",
+    "rarity": "common",
+    "type": "ammunition",
+    "imageUrl": "/images/items/shotgun_ammo.webp",
+    "slug": "shotgun_ammo"
+  },
+  {
+    "name": "Arpeggio I",
+    "description": "Has decent damage output and accuracy.",
+    "value": "5500",
+    "rarity": "uncommon",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/arpeggio.webp",
+    "slug": "arpeggio"
+  },
+  {
+    "name": "Arpeggio II",
+    "description": "Has decent damage output and accuracy.",
+    "value": "8000",
+    "rarity": "uncommon",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/arpeggio.webp",
+    "slug": "arpeggio_t2"
+  },
+  {
+    "name": "Arpeggio III",
+    "description": "Has decent damage output and accuracy.",
+    "value": "",
+    "rarity": "uncommon",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/arpeggio.webp",
+    "slug": "arpeggio_t3"
+  },
+  {
+    "name": "Arpeggio IV",
+    "description": "Has decent damage output and accuracy.",
+    "value": "7000",
+    "rarity": "uncommon",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/arpeggio.webp",
+    "slug": "arpeggio_t4"
+  },
+  {
+    "name": "Bettina I",
+    "description": "Has slow fire rate and high damage output.",
+    "value": "8000",
+    "rarity": "epic",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/bettina.webp",
+    "slug": "bettina"
+  },
+  {
+    "name": "Kettle I",
+    "description": "Quick and accurate, but has low bullet velocity and takes a long time to reload.",
+    "value": "840",
+    "rarity": "common",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/kettle.webp",
+    "slug": "kettle"
+  },
+  {
+    "name": "Kettle II",
+    "description": "Quick and accurate, but has low bullet velocity and takes a long time to reload.",
+    "value": "2000",
+    "rarity": "common",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/kettle.webp",
+    "slug": "kettle_t2"
+  },
+  {
+    "name": "Kettle III",
+    "description": "Quick and accurate, but has low bullet velocity and takes a long time to reload.",
+    "value": "",
+    "rarity": "common",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/kettle.webp",
+    "slug": "kettle_t3"
+  },
+  {
+    "name": "Kettle IV",
+    "description": "Quick and accurate, but has low bullet velocity and takes a long time to reload.",
+    "value": "",
+    "rarity": "common",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/kettle.webp",
+    "slug": "kettle_t4"
+  },
+  {
+    "name": "Rattler I",
+    "description": "A cheap offensive option, but has to be reloaded 2 bullets at a time.",
+    "value": "1750",
+    "rarity": "common",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/rattler.webp",
+    "slug": "rattler"
+  },
+  {
+    "name": "Rattler II",
+    "description": "A cheap offensive option, but has to be reloaded 2 bullets at a time.",
+    "value": "",
+    "rarity": "common",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/rattler.webp",
+    "slug": "rattler_t2"
+  },
+  {
+    "name": "Rattler III",
+    "description": "A cheap offensive option, but has to be reloaded 2 bullets at a time.",
+    "value": "5000",
+    "rarity": "common",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/rattler.webp",
+    "slug": "rattler_t3"
+  },
+  {
+    "name": "Rattler IV",
+    "description": "A cheap offensive option, but has to be reloaded 2 bullets at a time.",
+    "value": "",
+    "rarity": "common",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/rattler.webp",
+    "slug": "rattler_t4"
+  },
+  {
+    "name": "Tempest I",
+    "description": "Fully automatic assault rifle with moderate fire rate and accuracy.",
+    "value": "13000",
+    "rarity": "epic",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/tempest.webp",
+    "slug": "tempest"
+  },
+  {
+    "name": "Tempest II",
+    "description": "Fully automatic assault rifle with moderate fire rate and accuracy.",
+    "value": "",
+    "rarity": "epic",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/tempest.webp",
+    "slug": "tempest_t2"
+  },
+  {
+    "name": "Tempest III",
+    "description": "Fully automatic assault rifle with moderate fire rate and accuracy.",
+    "value": "",
+    "rarity": "epic",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/tempest.webp",
+    "slug": "tempest_t3"
+  },
+  {
+    "name": "Tempest IV",
+    "description": "Fully automatic assault rifle with moderate fire rate and accuracy.",
+    "value": "",
+    "rarity": "epic",
+    "type": "assault rifle",
+    "imageUrl": "/images/items/tempest.webp",
+    "slug": "tempest_t4"
+  },
+  {
+    "name": "Combat Mk. 1",
+    "description": "Basic combat augment. Supports stronger shields, but with limited backpack capacity and Quick Use slots.",
+    "value": "640",
+    "rarity": "uncommon",
+    "type": "augment",
+    "imageUrl": "/images/items/combat_mk1.webp",
+    "slug": "combat_mk1"
+  },
+  {
+    "name": "Looting Mk. 1",
+    "description": "Basic looting augment. More backpack slots and weight capacity, but low defensive and tactical capability.",
+    "value": "640",
+    "rarity": "uncommon",
+    "type": "augment",
+    "imageUrl": "/images/items/looting_mk1.webp",
+    "slug": "looting_mk1"
+  },
+  {
+    "name": "Tactical Mk. 1",
+    "description": "Basic tactical augment. More Quick Use slots for more tactical choice, but limited survivability and slightly lower looting potential.",
+    "value": "640",
+    "rarity": "uncommon",
+    "type": "augment",
+    "imageUrl": "/images/items/tactical_mk1.webp",
+    "slug": "tactical_mk1"
+  },
+  {
+    "name": "Chemicals",
+    "description": "Used to craft medical supplies, explosives, and utility items.",
+    "value": "50",
+    "rarity": "common",
+    "type": "basic material",
+    "imageUrl": "/images/items/chemicals.webp",
+    "slug": "chemicals"
+  },
+  {
+    "name": "Fabric",
+    "description": "Used to craft medical supplies and shields",
+    "value": "50",
+    "rarity": "common",
+    "type": "basic material",
+    "imageUrl": "/images/items/fabric.webp",
+    "slug": "fabric"
+  },
+  {
+    "name": "Metal Parts",
+    "description": "Used to craft a wide range of items.",
+    "value": "75",
+    "rarity": "common",
+    "type": "basic material",
+    "imageUrl": "/images/items/metal_parts.webp",
+    "slug": "metal_parts"
+  },
+  {
+    "name": "Plastic Parts",
+    "description": "Used to craft a wide range of items.",
+    "value": "60",
+    "rarity": "common",
+    "type": "basic material",
+    "imageUrl": "/images/items/plastic_parts.webp",
+    "slug": "plastic_parts"
+  },
+  {
+    "name": "Rubber Parts",
+    "description": "Used to craft a wide range of items.",
+    "value": "50",
+    "rarity": "common",
+    "type": "basic material",
+    "imageUrl": "/images/items/rubber_parts.webp",
+    "slug": "rubber_parts"
+  },
+  {
+    "name": "Ferro I",
+    "description": "Packs a punch, but must be reloaded between every shot.",
+    "value": "475",
+    "rarity": "common",
+    "type": "battle rifle",
+    "imageUrl": "/images/items/ferro.webp",
+    "slug": "ferro"
+  },
+  {
+    "name": "Ferro II",
+    "description": "Packs a punch, but must be reloaded between every shot.",
+    "value": "",
+    "rarity": "common",
+    "type": "battle rifle",
+    "imageUrl": "/images/items/ferro.webp",
+    "slug": "ferro_t2"
+  },
+  {
+    "name": "Ferro III",
+    "description": "Packs a punch, but must be reloaded between every shot.",
+    "value": "",
+    "rarity": "common",
+    "type": "battle rifle",
+    "imageUrl": "/images/items/ferro.webp",
+    "slug": "ferro_t3"
+  },
+  {
+    "name": "Ferro IV",
+    "description": "Packs a punch, but must be reloaded between every shot.",
+    "value": "3000",
+    "rarity": "common",
+    "type": "battle rifle",
+    "imageUrl": "/images/items/ferro.webp",
+    "slug": "ferro_t4"
+  },
+  {
+    "name": "Renegade I",
+    "description": "Lever-action battle rifle with high damage output, accuracy, and headshot damage.",
+    "value": "7000",
+    "rarity": "rare",
+    "type": "battle rifle",
+    "imageUrl": "/images/items/renegade_t3.webp",
+    "slug": "renegade"
+  },
+  {
+    "name": "Renegade II",
+    "description": "Lever-action battle rifle with high damage output, accuracy, and headshot damage.",
+    "value": "",
+    "rarity": "rare",
+    "type": "battle rifle",
+    "imageUrl": "/images/items/renegade_t3.webp",
+    "slug": "renegade_t2"
+  },
+  {
+    "name": "Renegade III",
+    "description": "Lever-action battle rifle with high damage output, accuracy, and headshot damage.",
+    "value": "13000",
+    "rarity": "rare",
+    "type": "battle rifle",
+    "imageUrl": "/images/items/renegade_t3.webp",
+    "slug": "renegade_t3"
+  },
+  {
+    "name": "Renegade IV",
+    "description": "Lever-action battle rifle with high damage output, accuracy, and headshot damage.",
+    "value": "",
+    "rarity": "rare",
+    "type": "battle rifle",
+    "imageUrl": "/images/items/renegade_t3.webp",
+    "slug": "renegade_t4"
+  },
+  {
+    "name": "Anvil Blueprint",
+    "description": "Has high damage output and headshot damage, but slow handling.",
+    "value": "5000",
+    "rarity": "",
+    "type": "blueprint",
+    "imageUrl": "/images/items/recipe.webp",
+    "slug": "anvil_blueprint"
+  },
+  {
+    "name": "Bettina Blueprint",
+    "description": "Has slow fire rate and high damage output.",
+    "value": "5000",
+    "rarity": "",
+    "type": "blueprint",
+    "imageUrl": "/images/items/recipe.webp",
+    "slug": "bettina_blueprint"
+  },
+  {
+    "name": "Equalizer Blueprint",
+    "description": "A high capacity experimental beam rifle.",
+    "value": "5000",
+    "rarity": "",
+    "type": "blueprint",
+    "imageUrl": "/images/items/recipe.webp",
+    "slug": "equalizer_blueprint"
+  },
+  {
+    "name": "Heavy Gun Parts Blueprint",
+    "description": "Used directly in crafting items of all tiers.",
+    "value": "5000",
+    "rarity": "",
+    "type": "blueprint",
+    "imageUrl": "/images/items/recipe.webp",
+    "slug": "heavy_gun_parts_blueprint"
+  },
+  {
+    "name": "Il Toro Blueprint",
+    "description": "Has a large bullet spread, sharp falloff, and high damage output.",
+    "value": "5000",
+    "rarity": "",
+    "type": "blueprint",
+    "imageUrl": "/images/items/recipe.webp",
+    "slug": "il_toro_blueprint"
+  },
+  {
+    "name": "Jupiter Blueprint",
+    "description": "Fires projectiles at an incredible velocity, capable of damaging multiple targets with one shot.",
+    "value": "5000",
+    "rarity": "",
+    "type": "blueprint",
+    "imageUrl": "/images/items/recipe.webp",
+    "slug": "jupiter_blueprint"
+  },
+  {
+    "name": "Medium Gun Parts Blueprint",
+    "description": "Assorted spare parts used for rifles.",
+    "value": "5000",
+    "rarity": "",
+    "type": "blueprint",
+    "imageUrl": "/images/items/recipe.webp",
+    "slug": "medium_gun_parts_blueprint"
+  },
+  {
+    "name": "Osprey Blueprint",
+    "description": "Has reliable damage output and accuracy.",
+    "value": "5000",
+    "rarity": "",
+    "type": "blueprint",
+    "imageUrl": "/images/items/recipe.webp",
+    "slug": "osprey_blueprint"
+  },
+  {
+    "name": "Torrente Blueprint",
+    "description": "Has a large ammo capacity, but is only accurate while crouched.",
+    "value": "5000",
+    "rarity": "",
+    "type": "blueprint",
+    "imageUrl": "/images/items/recipe.webp",
+    "slug": "torrente_blueprint"
+  },
+  {
+    "name": "Trigger Nade Blueprint",
+    "description": "A remote-detonated grenade that can stick to surfaces and ARC, dealing explosive damage when triggered.",
+    "value": "5000",
+    "rarity": "",
+    "type": "blueprint",
+    "imageUrl": "/images/items/recipe.webp",
+    "slug": "trigger_nade_blueprint"
+  },
+  {
+    "name": "Venator Blueprint",
+    "description": "Fires two shots at a time.",
+    "value": "5000",
+    "rarity": "",
+    "type": "blueprint",
+    "imageUrl": "/images/items/recipe.webp",
+    "slug": "venator_blueprint"
+  },
+  {
+    "name": "Anvil I",
+    "description": "Has high damage output and headshot damage, but slow handling.",
+    "value": "5000",
+    "rarity": "uncommon",
+    "type": "hand cannon",
+    "imageUrl": "/images/items/anvil_t1.webp",
+    "slug": "anvil"
+  },
+  {
+    "name": "Anvil II",
+    "description": "Single-action hand cannon with high damage output and heashot damage, but slow handling.",
+    "value": "7000",
+    "rarity": "uncommon",
+    "type": "hand cannon",
+    "imageUrl": "/images/items/anvil_t1.webp",
+    "slug": "anvil_t2"
+  },
+  {
+    "name": "Anvil III",
+    "description": "Single-action hand cannon with high damage output and heashot damage, but slow handling.",
+    "value": "7000",
+    "rarity": "uncommon",
+    "type": "hand cannon",
+    "imageUrl": "/images/items/anvil_t1.webp",
+    "slug": "anvil_t3"
+  },
+  {
+    "name": "Anvil IV",
+    "description": "Single-action hand cannon with high damage output and heashot damage, but slow handling.",
+    "value": "10000",
+    "rarity": "uncommon",
+    "type": "hand cannon",
+    "imageUrl": "/images/items/anvil_t1.webp",
+    "slug": "anvil_t4"
+  },
+  {
+    "name": "Blue Gate Cellar Key",
+    "description": "Unlocks certain cellar doors near the Blue Gate",
+    "value": "100",
+    "rarity": "uncommon",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "blue_gate_cellar_key"
+  },
+  {
+    "name": "Blue Gate Confiscation Room Key",
+    "description": "Unlocks a door to the confiscated goods area within the Blue Gate tunnels",
+    "value": "100",
+    "rarity": "epic",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "blue_gate_confiscation_room_key"
+  },
+  {
+    "name": "Blue Gate Village Key",
+    "description": "Unlocks a door to the Control Center Tower in The Dam.",
+    "value": "100",
+    "rarity": "uncommon",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "blue_gate_village_key"
+  },
+  {
+    "name": "Buried City Hospital Key",
+    "description": "Unlocks a door in the hospital in Buried City.",
+    "value": "100",
+    "rarity": "rare",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "buried_city_hospital_key"
+  },
+  {
+    "name": "Buried City JKV Employee Access Card",
+    "description": "Unlocks a door in the J Kozma Ventures company building in Buried City",
+    "value": "100",
+    "rarity": "uncommon",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "buried_city_jkv_employee_access_card"
+  },
+  {
+    "name": "Buried City Residential Master Key",
+    "description": "",
+    "value": "100",
+    "rarity": "uncommon",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "buried_city_residential_master_key"
+  },
+  {
+    "name": "Buried City Town Hall Key",
+    "description": "Unlocks the door to the Town Hall in Buried City",
+    "value": "100",
+    "rarity": "epic",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "buried_city_town_hall_key"
+  },
+  {
+    "name": "Dam Control Center Tower Key",
+    "description": "Unlocks a door to the Control Center Tower in The Dam.",
+    "value": "100",
+    "rarity": "uncommon",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "dam_control_center_tower_key"
+  },
+  {
+    "name": "Dam Staff Room Key",
+    "description": "Unlocks a door in the Research and Administration building in The Dam",
+    "value": "100",
+    "rarity": "uncommon",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "dam_staff_room_key"
+  },
+  {
+    "name": "Dam Surveillance Key",
+    "description": "Unlocks a door in the Water Treatment Control building in The Dam.",
+    "value": "100",
+    "rarity": "uncommon",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "dam_surveillance_key"
+  },
+  {
+    "name": "Dam Testing Annex Key",
+    "description": "Unlocks a door in the Testing Annex in The Dam.",
+    "value": "100",
+    "rarity": "uncommon",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "dam_testing_annex_key"
+  },
+  {
+    "name": "Outskirts Bunker Key",
+    "description": "A makeshift key that lets you open the Outskirts Bunker on Spaceport.",
+    "value": "100",
+    "rarity": "rare",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "outskirts_bunker_key"
+  },
+  {
+    "name": "Raider Hatch Key",
+    "description": "Unlocks a Raider Hatch.",
+    "value": "1000",
+    "rarity": "rare",
+    "type": "key",
+    "imageUrl": "/images/items/raider_hatch_key.webp",
+    "slug": "raider_hatch_key"
+  },
+  {
+    "name": "Spaceport Container Storage Key",
+    "description": "Unlocks a door in the Container Storage in Spaceport",
+    "value": "100",
+    "rarity": "uncommon",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "spaceport_container_storage_key"
+  },
+  {
+    "name": "Spaceport Ground Control Key",
+    "description": "",
+    "value": "100",
+    "rarity": "uncommon",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "spaceport_ground_control_key"
+  },
+  {
+    "name": "Spaceport Trench Tower Key",
+    "description": "Unlocks a door to the Trench Towers in Spaceport.",
+    "value": "100",
+    "rarity": "uncommon",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "spaceport_trench_tower_key"
+  },
+  {
+    "name": "Spaceport Warehouse Key",
+    "description": "Unlocks a door in the Shipping Warehouse in Spaceport.",
+    "value": "100",
+    "rarity": "uncommon",
+    "type": "key",
+    "imageUrl": "/images/items/key.webp",
+    "slug": "spaceport_warehouse_key"
+  },
+  {
+    "name": "Torrente I",
+    "description": "Has a large ammo capacity, but is only accurate while crouched.",
+    "value": "5000",
+    "rarity": "rare",
+    "type": "LMG",
+    "imageUrl": "/images/items/torrente.webp",
+    "slug": "torrente"
+  },
+  {
+    "name": "Torrente II",
+    "description": "Has a large ammo capacity, but is only accurate while crouched.",
+    "value": "",
+    "rarity": "rare",
+    "type": "LMG",
+    "imageUrl": "/images/items/torrente.webp",
+    "slug": "torrente_t2"
+  },
+  {
+    "name": "Torrente III",
+    "description": "Has a large ammo capacity, but is only accurate while crouched.",
+    "value": "",
+    "rarity": "rare",
+    "type": "LMG",
+    "imageUrl": "/images/items/torrente.webp",
+    "slug": "torrente_t3"
+  },
+  {
+    "name": "Advanced ARC Powercell",
+    "description": "Very valuable resource that drops from certain ARC enemies.",
+    "value": "640",
+    "rarity": "rare",
+    "type": "misc",
+    "imageUrl": "/images/items/advanced_arc_powercell.webp",
+    "slug": "advanced_arc_powercell"
+  },
+  {
+    "name": "Fertilizer",
+    "description": "May be worth a few coins.",
+    "value": "1000",
+    "rarity": "",
+    "type": "misc",
+    "imageUrl": "/images/items/fertilizer.webp",
+    "slug": "fertilizer"
+  },
+  {
+    "name": "Roots",
+    "description": "May be worth a few coins.",
+    "value": "",
+    "rarity": "",
+    "type": "misc",
+    "imageUrl": "",
+    "slug": "roots"
+  },
+  {
+    "name": "Angled Grip I",
+    "description": "Slightly reduces horizontal recoil.",
+    "value": "640",
+    "rarity": "common",
+    "type": "modification",
+    "imageUrl": "/images/items/angled_grip_t2.webp",
+    "slug": "angled_grip_t1"
+  },
+  {
+    "name": "Angled Grip II",
+    "description": "Moderately reduces horizontal recoil.",
+    "value": "2000",
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "/images/items/angled_grip_t2.webp",
+    "slug": "angled_grip_t2"
+  },
+  {
+    "name": "Angled Grip III",
+    "description": "Significantly reduces horizontal recoil.",
+    "value": "5000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/angled_grip_t3.webp",
+    "slug": "angled_grip_t3"
+  },
+  {
+    "name": "Anvil Splitter",
+    "description": "Tech mod for the Anvil that replaces its bullets with ones that split into 4 weaker projectiles.",
+    "value": "7000",
+    "rarity": "legendary",
+    "type": "modification",
+    "imageUrl": "/images/items/anvil_splitter.webp",
+    "slug": "anvil_splitter"
+  },
+  {
+    "name": "Compensator I",
+    "description": "Slightly reduces per-shot dispersion",
+    "value": "640",
+    "rarity": "common",
+    "type": "modification",
+    "imageUrl": "/images/items/compensator_t1.webp",
+    "slug": "compensator_t1"
+  },
+  {
+    "name": "Compensator II",
+    "description": "Moderately reduces per-shot dispersion",
+    "value": "2000",
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "/images/items/compensator_t2.webp",
+    "slug": "compensator_t2"
+  },
+  {
+    "name": "Compensator III",
+    "description": "Significantly reduces per-shot dispersion",
+    "value": "5000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/compensator_t3.webp",
+    "slug": "compensator_t3"
+  },
+  {
+    "name": "Extended Barrel",
+    "description": "Moderately increases bullet velocity.",
+    "value": "",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/extended_barrel.webp",
+    "slug": "extended_barrel"
+  },
+  {
+    "name": "Extended Light Mag I",
+    "description": "Slightly extends the ammo capacity of the compatible weapons that use light ammo.",
+    "value": "640",
+    "rarity": "common",
+    "type": "modification",
+    "imageUrl": "/images/items/extended_light_mag_t1.webp",
+    "slug": "extended_light_mag_t1"
+  },
+  {
+    "name": "Extended Light Mag II",
+    "description": "Moderately extends the ammo capacity of the compatible weapons that use light ammo.",
+    "value": "2000",
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "/images/items/extended_light_mag_t1.webp",
+    "slug": "extended_light_mag_t2"
+  },
+  {
+    "name": "Extended Light Mag III",
+    "description": "Significantly extends the ammo capacity of the compatible weapons that use light ammo.",
+    "value": "5000",
+    "rarity": "rare",
+    "type": "modification",
+    "imageUrl": "/images/items/extended_light_mag_t3.webp",
+    "slug": "extended_light_mag_t3"
+  },
+  {
+    "name": "Extended Medium Mag I",
+    "description": "Slightly extends the ammo capacity of compatible weapons that use medium ammo.",
+    "value": "640",
+    "rarity": "common",
+    "type": "modification",
+    "imageUrl": "",
+    "slug": "extended_medium_mag_t1"
+  },
+  {
+    "name": "Extended Medium Mag II",
+    "description": "Moderately extends the ammo capacity of compatible weapons that use medium ammo.",
+    "value": "2000",
+    "rarity": "uncommon",
+    "type": "modification",
+    "imageUrl": "/images/items/extended_medium_mag_t2.webp",
+    "slug": "extended_medium_mag_t2"
+  }
+]
