@@ -7,13 +7,13 @@
     <meta name="description" content="Explore all confirmed Arc Raiders maps: Dam Battlegrounds, Spaceport, Buried City, Stella Montis, and Blue Gate. Find tactical information, loot zones, and crucial extraction strategies.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #0a0a0a; color: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #141414; color: #e0e0e0; }
         
         /* Header */
         header { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; }
         .header-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
         .logo-section { display: flex; align-items: center; gap: 15px; }
-        .logo-img { height: 50px; width: auto; filter: invert(1); }
+        .logo-img { height: 50px; width: auto; }
         .site-title { font-size: 1.5em; font-weight: 600; color: #ffffff; }
         nav ul { display: flex; list-style: none; gap: 30px; }
         nav a { color: #b0b0b0; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
@@ -24,6 +24,118 @@
         .page-header { text-align: center; margin-bottom: 50px; }
         .page-header h1 { font-size: 3em; margin-bottom: 15px; background: linear-gradient(135deg, #3a7bc8 0%, #5a9ae0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .page-header p { font-size: 1.15em; color: #b0b0b0; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+        
+        /* Map Featured Box */
+        .map-featured {
+            background: #22252b;
+            border-left: 3px solid #3a7bc8;
+            padding: 28px 32px;
+            margin: 40px 0;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .map-featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 50%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+        
+        .map-featured.dam::before { background-image: url('../images/maps/dam-hero.png'); }
+        .map-featured.buried-city::before { background-image: url('../images/maps/buried-city-hero.jpg'); }
+        .map-featured.spaceport::before { background-image: url('../images/maps/spaceport-hero.png'); }
+        .map-featured.blue-gate::before { background-image: url('../images/maps/blue-gate-hero.png'); }
+        
+        .map-featured::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(34, 37, 43, 1) 0%, rgba(34, 37, 43, 1) 60%, rgba(34, 37, 43, 0) 80%);
+            z-index: 1;
+        }
+        
+        .map-featured-content {
+            position: relative;
+            z-index: 2;
+            max-width: 70%;
+        }
+        
+        .map-featured h3 {
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-size: 1.8em;
+            margin-top: 0;
+            border: none;
+            padding-bottom: 0;
+        }
+        
+        .map-featured h3 a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .map-featured h3 a:hover {
+            color: #3a7bc8;
+        }
+        
+        .map-featured .map-meta-inline {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .map-featured .map-meta-inline span {
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        .map-featured .map-meta-inline strong {
+            color: #aaa;
+        }
+        
+        .map-featured p {
+            color: #ddd;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        
+        .map-featured .map-link {
+            color: #3a7bc8;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 8px;
+        }
+        
+        .map-featured .map-link:hover {
+            color: #5a9ae0;
+        }
+        
+        @media (max-width: 768px) {
+            .map-featured::before {
+                width: 100%;
+                opacity: 0.2;
+            }
+            
+            .map-featured-content {
+                max-width: 100%;
+            }
+        }
         
         h2 { color: #ffffff; font-size: 2em; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #2a2a2a; }
         h3 { color: #b8b8b8; font-size: 1.4em; margin: 25px 0 15px; }
@@ -36,8 +148,63 @@
         .coming-soon h2 { border: none; margin-top: 0; margin-bottom: 15px; }
         .coming-soon p { color: #b0b0b0; font-style: italic; }
         
-        footer { background-color: #0f0f0f; text-align: center; padding: 40px 20px; margin-top: 80px; border-top: 1px solid #252525; }
-        footer p { margin: 8px 0; font-size: 0.9em; color: #808080; }
+        footer { 
+            background: #161616; 
+            border-top: 1px solid #2a2a2e; 
+            padding: 50px 20px 30px 20px; 
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: #ffffff;
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-section p {
+            color: #888;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #3a7bc8;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
         
         @media (max-width: 768px) {
             .header-container { flex-direction: column; height: auto; padding: 20px; }
@@ -69,52 +236,69 @@
 
     <main>
         <div class="page-header">
-            <h1>Explore the Worlds of ARC Raiders</h1>
+            <h1>Explore the Maps of ARC Raiders</h1>
             <p>Understanding the terrain, hazards, and key locations is vital for successful raids and extractions.</p>
         </div>
 
         <h2>Confirmed Maps in ARC Raiders</h2>
 
-        <h3><a href="/maps/dam-battlegrounds/" style="color: #3a7bc8; text-decoration: none;">Dam Battlegrounds</a></h3>
-        <ul>
-            <li><strong>Availability:</strong> Always Available</li>
-            <li><strong>Risk Level:</strong> Medium</li>
-            <li><strong>Description:</strong> The foundational map, offering diverse terrain from open areas to vertical zones and close-quarters sections. Ideal for newcomers to learn game mechanics and for consistent farming runs.</li>
-            <li><strong>Key Features:</strong> Consistent spawns, balanced PvE and PvP encounters, multiple extraction points.</li>
-        </ul>
-        <p><a href="/maps/dam-battlegrounds/" style="color: #3a7bc8; text-decoration: none; font-weight: 600;">→ View Full Dam Battlegrounds Guide</a></p>
+        <div class="map-featured dam">
+            <div class="map-featured-content">
+                <h3><a href="/maps/dam-battlegrounds/">Dam Battlegrounds</a></h3>
+                <div class="map-meta-inline">
+                    <span><strong>Availability:</strong> Always Available</span>
+                    <span><strong>Risk Level:</strong> Medium</span>
+                </div>
+                <p>The foundational map, offering diverse terrain from open areas to vertical zones and close-quarters sections. Ideal for newcomers to learn game mechanics and for consistent farming runs.</p>
+                <a href="/maps/dam-battlegrounds/" class="map-link">→ View Full Dam Battlegrounds Guide</a>
+            </div>
+        </div>
 
-        <h3><a href="/maps/spaceport/" style="color: #3a7bc8; text-decoration: none;">Spaceport</a></h3>
-        <ul>
-            <li><strong>Availability:</strong> Limited Time</li>
-            <li><strong>Risk Level:</strong> High</li>
-            <li><strong>Description:</strong> A high-tech facility brimming with advanced loot but fraught with increased danger. This high-risk, high-reward environment is recommended for experienced Raiders with optimized gear.</li>
-            <li><strong>Key Features:</strong> High-value loot, intense PvP zones, advanced enemy types.</li>
-        </ul>
-        <p><a href="/maps/spaceport/" style="color: #3a7bc8; text-decoration: none; font-weight: 600;">→ View Full Spaceport Guide</a></p>
+        <div class="map-featured spaceport">
+            <div class="map-featured-content">
+                <h3><a href="/maps/spaceport/">Spaceport</a></h3>
+                <div class="map-meta-inline">
+                    <span><strong>Availability:</strong> Limited Time</span>
+                    <span><strong>Risk Level:</strong> High</span>
+                </div>
+                <p>A high-tech facility brimming with advanced loot but fraught with increased danger. This high-risk, high-reward environment is recommended for experienced Raiders with optimized gear.</p>
+                <a href="/maps/spaceport/" class="map-link">→ View Full Spaceport Guide</a>
+            </div>
+        </div>
 
-        <h3><a href="/maps/buried-city/" style="color: #3a7bc8; text-decoration: none;">Buried City</a></h3>
-        <ul>
-            <li><strong>Availability:</strong> Limited Time</li>
-            <li><strong>Risk Level:</strong> High</li>
-            <li><strong>Description:</strong> Delve into underground ruins featuring unique environmental hazards and specialized loot. This map demands careful navigation and environmental awareness, favoring stealthier approaches.</li>
-            <li><strong>Key Features:</strong> Environmental hazards, unique loot, predominantly close-quarters combat.</li>
-        </ul>
-        <p><a href="/maps/buried-city/" style="color: #3a7bc8; text-decoration: none; font-weight: 600;">→ View Full Buried City Guide</a></p>
+        <div class="map-featured buried-city">
+            <div class="map-featured-content">
+                <h3><a href="/maps/buried-city/">Buried City</a></h3>
+                <div class="map-meta-inline">
+                    <span><strong>Availability:</strong> Limited Time</span>
+                    <span><strong>Risk Level:</strong> High</span>
+                </div>
+                <p>Delve into underground ruins featuring unique environmental hazards and specialized loot. This map demands careful navigation and environmental awareness, favoring stealthier approaches.</p>
+                <a href="/maps/buried-city/" class="map-link">→ View Full Buried City Guide</a>
+            </div>
+        </div>
 
-        <h3><a href="/maps/stella-montis/" style="color: #3a7bc8; text-decoration: none;">Stella Montis</a></h3>
-        <ul>
-            <li><strong>Availability:</strong> Upcoming</li>
-            <li><strong>Description:</strong> A newly confirmed map, promising fresh environments and strategic challenges.</li>
-        </ul>
-        <p><a href="/maps/stella-montis/" style="color: #3a7bc8; text-decoration: none; font-weight: 600;">→ View Stella Montis Details</a></p>
+        <div class="map-featured">
+            <div class="map-featured-content">
+                <h3><a href="/maps/stella-montis/">Stella Montis</a></h3>
+                <div class="map-meta-inline">
+                    <span><strong>Availability:</strong> Upcoming</span>
+                </div>
+                <p>A newly confirmed map, promising fresh environments and strategic challenges.</p>
+                <a href="/maps/stella-montis/" class="map-link">→ View Stella Montis Details</a>
+            </div>
+        </div>
 
-        <h3><a href="/maps/blue-gate/" style="color: #3a7bc8; text-decoration: none;">Blue Gate</a></h3>
-        <ul>
-            <li><strong>Availability:</strong> Upcoming</li>
-            <li><strong>Description:</strong> Another confirmed map set to expand the diverse battlegrounds of ARC Raiders.</li>
-        </ul>
-        <p><a href="/maps/blue-gate/" style="color: #3a7bc8; text-decoration: none; font-weight: 600;">→ View Blue Gate Details</a></p>
+        <div class="map-featured blue-gate">
+            <div class="map-featured-content">
+                <h3><a href="/maps/blue-gate/">Blue Gate</a></h3>
+                <div class="map-meta-inline">
+                    <span><strong>Availability:</strong> Upcoming</span>
+                </div>
+                <p>Another confirmed map set to expand the diverse battlegrounds of ARC Raiders.</p>
+                <a href="/maps/blue-gate/" class="map-link">→ View Blue Gate Details</a>
+            </div>
+        </div>
 
         <h2>Tactical Information for Map Success</h2>
 
@@ -141,7 +325,33 @@
     </main>
 
     <footer>
-        <p>All game content © Embark Studios AB. Not affiliated with or endorsed by Embark Studios.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Arc Raiders Hub</h3>
+                <p>Your community-driven resource for Arc Raiders guides, maps, loadouts, and the latest game updates. Built by players, for players.</p>
+                <p style="margin-top: 20px; font-size: 0.85em;">All game content © Embark Studios AB. Not affiliated with or endorsed by Embark Studios.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="../guides/index.html">Guides</a></li>
+                    <li><a href="index.html">Maps</a></li>
+                    <li><a href="../skills/index.html">Skills</a></li>
+                    <li><a href="../loadouts/index.html">Loadouts</a></li>
+                    <li><a href="../weapons/index.html">Weapons</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Community</h3>
+                <ul class="footer-links">
+                    <li><a href="../blog/index.html">Blog</a></li>
+                    <li><a href="https://github.com/RaidTheory/arcraiders-data" target="_blank" rel="noopener">Game Data</a></li>
+                    <li><a href="https://arcraiders.com" target="_blank" rel="noopener">Official Site</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

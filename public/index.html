@@ -7,10 +7,10 @@
     <meta name="description" content="Your ultimate Arc Raiders resource hub. Explore comprehensive guides, interactive maps, weapon databases, skill trees, and optimized loadouts for the extraction shooter Arc Raiders.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #0a0a0a; color: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #141414; color: #e0e0e0; }
         
         /* Modern Header */
-        header { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; }
+        header { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border-bottom: 1px solid #2a2a2e; position: sticky; top: 0; z-index: 1000; }
         .header-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
         .logo-section { display: flex; align-items: center; gap: 15px; }
         .logo-img { height: 50px; width: auto; }
@@ -21,45 +21,153 @@
         nav a { color: #b0b0b0; text-decoration: none; font-weight: 500; transition: color 0.3s ease; font-size: 0.95em; }
         nav a:hover { color: #3a7bc8; }
         
-        /* Hero Section */
-        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 80px 20px; text-align: center; border-bottom: 1px solid #2a2a2a; }
-        .hero h1 { font-size: 3.5em; margin-bottom: 20px; background: linear-gradient(135deg, #3a7bc8 0%, #5a9ae0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .hero p { font-size: 1.3em; color: #b0b0b0; max-width: 800px; margin: 0 auto; }
+        /* Hero Section with Background Image */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background-image: url('https://arcraiders.com/images/features/features-keyart.jpg');
+            background-size: cover;
+            background-position: center center;
+            margin-bottom: 0;
+        }
         
-        main { max-width: 1400px; margin: 0 auto; padding: 60px 20px; }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            background: linear-gradient(to bottom, transparent 0%, rgba(20, 20, 20, 0.7) 40%, #141414 100%);
+        }
+        
+        .hero-content {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            padding: 0 60px;
+            z-index: 2;
+            text-align: left;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            color: #ddd;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            font-size: 1.3em;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        
+        main { max-width: 1400px; margin: 0 auto; padding: 60px 20px; background-color: #141414; }
         
         .intro { text-align: center; margin-bottom: 60px; }
-        .intro h2 { color: #ffffff; font-size: 2.5em; margin-bottom: 20px; }
-        .intro p { color: #b0b0b0; font-size: 1.15em; max-width: 900px; margin: 0 auto; line-height: 1.8; }
+        .intro h2 { color: #ffffff; font-size: 2.5em; margin-bottom: 20px; font-weight: 700; letter-spacing: -0.5px; }
+        .intro p { color: #aaa; font-size: 1.15em; max-width: 900px; margin: 0 auto; line-height: 1.8; }
         
         /* Card Grid */
         .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin: 40px 0; }
-        .card { background: #141414; border-radius: 12px; padding: 35px; border: 1px solid #252525; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .card { background: #1a1a1a; border-radius: 12px; padding: 35px; border: 1px solid #2a2a2e; transition: all 0.3s ease; position: relative; overflow: hidden; }
         .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #3a7bc8 0%, #5a9ae0 100%); transform: scaleX(0); transition: transform 0.3s ease; }
         .card:hover::before { transform: scaleX(1); }
         .card:hover { transform: translateY(-5px); border-color: #3a7bc8; box-shadow: 0 10px 30px rgba(58, 123, 200, 0.15); }
         .card-icon { font-size: 2.5em; margin-bottom: 15px; }
         .card h2 { color: #ffffff; font-size: 1.8em; margin-bottom: 15px; font-weight: 600; }
-        .card p { color: #a0a0a0; margin-bottom: 25px; line-height: 1.6; }
+        .card p { color: #aaa; margin-bottom: 25px; line-height: 1.6; }
         .card a { display: inline-block; background: linear-gradient(135deg, #2d5a8f 0%, #3a7bc8 100%); color: #ffffff; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 500; transition: all 0.3s ease; }
         .card a:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(58, 123, 200, 0.3); }
         
         /* Coming Soon Box */
-        .coming-soon { background: #1a1a1a; border-left: 3px solid #3a7bc8; padding: 30px; border-radius: 8px; margin: 60px 0; }
-        .coming-soon h3 { color: #ffffff; margin-bottom: 15px; font-size: 1.5em; }
-        .coming-soon p { color: #a0a0a0; line-height: 1.7; }
+        .coming-soon { background: #22252b; border-left: 3px solid #3a7bc8; padding: 30px; border-radius: 8px; margin: 60px 0; }
+        .coming-soon h3 { color: #ffffff; margin-bottom: 15px; font-size: 1.5em; font-weight: 700; }
+        .coming-soon p { color: #ddd; line-height: 1.7; }
         
         /* Footer */
-        footer { background-color: #0f0f0f; color: #808080; text-align: center; padding: 40px 20px; margin-top: 80px; border-top: 1px solid #252525; }
-        footer p { margin: 8px 0; font-size: 0.9em; }
-        footer a { color: #3a7bc8; text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
+        footer { 
+            background: #161616; 
+            border-top: 1px solid #2a2a2e; 
+            padding: 50px 20px 30px 20px; 
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: #ffffff;
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-section p {
+            color: #888;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #3a7bc8;
+        }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid #2a2a2e;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
         
         @media (max-width: 768px) {
             .header-container { flex-direction: column; height: auto; padding: 20px; }
             nav ul { flex-direction: column; gap: 15px; align-items: center; }
-            .hero h1 { font-size: 2.5em; }
+            .hero { height: 400px; }
+            .hero-content { padding: 0 20px; bottom: 30px; }
+            .hero-content h1 { font-size: 2.5em; }
+            .hero-content p { font-size: 1.1em; }
             .section-grid { grid-template-columns: 1fr; }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
         }
     </style>
 </head>
@@ -87,8 +195,10 @@
     </header>
 
     <div class="hero">
-        <h1>Master ARC Raiders</h1>
-        <p>Your ultimate resource for strategies, weapons, skills, and everything you need to survive and thrive in the extraction shooter</p>
+        <div class="hero-content">
+            <h1>Master ARC Raiders</h1>
+            <p>Your ultimate resource for strategies, weapons, skills, and everything you need to survive and thrive in the extraction shooter</p>
+        </div>
     </div>
 
     <main>
@@ -141,8 +251,33 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Arc Raiders Guide Hub. Fan-made resource for the Arc Raiders community.</p>
-        <p style="margin-top: 5px;">All game content © Embark Studios AB. Not affiliated with or endorsed by Embark Studios.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Arc Raiders Hub</h3>
+                <p>Your community-driven resource for Arc Raiders guides, maps, loadouts, and the latest game updates. Built by players, for players.</p>
+                <p style="margin-top: 20px; font-size: 0.85em;">All game content © Embark Studios AB. Not affiliated with or endorsed by Embark Studios.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="guides/index.html">Guides</a></li>
+                    <li><a href="maps/index.html">Maps</a></li>
+                    <li><a href="skills/index.html">Skills</a></li>
+                    <li><a href="loadouts/index.html">Loadouts</a></li>
+                    <li><a href="weapons/index.html">Weapons</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Community</h3>
+                <ul class="footer-links">
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="https://github.com/RaidTheory/arcraiders-data" target="_blank" rel="noopener">Game Data</a></li>
+                    <li><a href="https://arcraiders.com" target="_blank" rel="noopener">Official Site</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
