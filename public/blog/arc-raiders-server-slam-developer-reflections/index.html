@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arc Raiders Devs Reflect on Server Slam: Changes Coming to Full Release</title>
+    <meta name="description" content="Embark Studios shares key takeaways from the Arc Raiders Server Slam weekend. Read about Flying ARC vision nerfs, Dam Tower accessibility changes, and a player's 15-hour experience with personal takes on each update.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #0a0a0a; color: #e0e0e0; }
+        
+        /* Header */
+        header { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+        .logo-section { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 50px; width: auto; filter: invert(1); }
+        .site-title { font-size: 1.5em; font-weight: 600; color: #ffffff; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { color: #b0b0b0; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        nav a:hover, nav a.active { color: #3a7bc8; }
+        
+        main { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        
+        .breadcrumb { color: #666; margin-bottom: 30px; font-size: 0.9em; }
+        .breadcrumb a { color: #3a7bc8; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        
+        article header { background: none; position: static; border: none; margin-bottom: 40px; }
+        .article-meta { color: #3a7bc8; font-size: 0.9em; font-weight: 600; margin-bottom: 15px; }
+        h1 { font-size: 2.5em; line-height: 1.2; margin-bottom: 20px; color: #ffffff; }
+        .article-intro { font-size: 1.2em; color: #b0b0b0; line-height: 1.8; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid #2a2a2a; }
+        
+        .content-section { margin-bottom: 50px; }
+        .content-section h2 { font-size: 1.8em; margin-bottom: 20px; color: #ffffff; margin-top: 40px; }
+        .content-section h3 { font-size: 1.4em; margin-bottom: 15px; color: #3a7bc8; margin-top: 30px; }
+        
+        .dev-quote { background: linear-gradient(135deg, #1a1a2a 0%, #0f0f1f 100%); border-left: 4px solid #3a7bc8; padding: 25px; margin: 30px 0; border-radius: 8px; }
+        .dev-quote p { color: #e0e0e0; font-style: italic; line-height: 1.8; }
+        .quote-source { color: #3a7bc8; font-size: 0.9em; margin-top: 10px; font-style: normal; }
+        .quote-source a { color: #3a7bc8; text-decoration: none; }
+        .quote-source a:hover { text-decoration: underline; }
+        
+        .player-take { background: linear-gradient(135deg, #1a2a1a 0%, #0f1f0f 100%); border-left: 4px solid #5ac878; padding: 25px; margin: 30px 0; border-radius: 8px; }
+        .player-take-header { color: #5ac878; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .player-take-header::before { content: "💭"; font-size: 1.2em; }
+        .player-take p { color: #e0e0e0; line-height: 1.8; margin-bottom: 15px; }
+        .player-take p:last-child { margin-bottom: 0; }
+        
+        .content-section p { color: #b0b0b0; line-height: 1.8; margin-bottom: 20px; }
+        .content-section strong { color: #ffffff; font-weight: 600; }
+        .content-section em { color: #3a7bc8; font-style: italic; }
+        
+        .stats-image { margin: 40px 0; text-align: center; }
+        .stats-image img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid #2a2a2a; }
+        .stats-image p { color: #666; font-size: 0.9em; margin-top: 15px; font-style: italic; }
+        
+        .closing { background: linear-gradient(135deg, #2a1a1a 0%, #1f0f0f 100%); border-left: 4px solid #c83a7b; padding: 25px; margin: 50px 0; border-radius: 8px; text-align: center; }
+        .closing p { color: #ffffff; font-size: 1.2em; font-weight: 600; }
+        
+        /* Comments Section */
+        .comments-section { margin-top: 60px; padding-top: 40px; border-top: 2px solid #2a2a2a; }
+        .comments-header { margin-bottom: 30px; }
+        .comments-header h2 { font-size: 1.8em; color: #ffffff; margin-bottom: 15px; }
+        .comments-cta { color: #b0b0b0; line-height: 1.8; margin-bottom: 30px; }
+        .comments-cta strong { color: #3a7bc8; }
+        
+        .comment-form { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border: 1px solid #2a2a2a; border-radius: 12px; padding: 30px; margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; color: #b0b0b0; font-weight: 600; margin-bottom: 8px; font-size: 0.95em; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px 15px; background: #0a0a0a; border: 1px solid #2a2a2a; border-radius: 6px; color: #e0e0e0; font-family: inherit; font-size: 0.95em; transition: border-color 0.3s ease; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #3a7bc8; }
+        .form-group textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+        .comment-submit { background: linear-gradient(135deg, #3a7bc8 0%, #2a5a9a 100%); color: #ffffff; padding: 12px 30px; border: none; border-radius: 6px; font-weight: 600; font-size: 1em; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .comment-submit:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(58, 123, 200, 0.3); }
+        .comment-notice { margin-top: 15px; padding: 12px; background: #1a1a2a; border-left: 3px solid #3a7bc8; border-radius: 4px; font-size: 0.9em; color: #b0b0b0; font-style: italic; }
+        
+        footer { background: #0f0f0f; border-top: 1px solid #2a2a2a; padding: 30px 20px; text-align: center; color: #666; margin-top: 80px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../../logo.png" alt="ARC Raiders Logo" class="logo-img">
+                <span class="site-title">Arc Raiders Hub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../guides/index.html">Guides</a></li>
+                    <li><a href="../../maps/index.html">Maps</a></li>
+                    <li><a href="../../skills/index.html">Skills</a></li>
+                    <li><a href="../../loadouts/index.html">Loadouts</a></li>
+                    <li><a href="../../weapons/index.html">Weapons</a></li>
+                    <li><a href="../index.html" class="active">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>›</span>
+            <a href="../index.html">Blog</a>
+            <span>›</span>
+            Arc Raiders Server Slam Developer Reflections
+        </div>
+
+        <article>
+            <header>
+                <div class="article-meta">October 22, 2025 • 8 min read</div>
+                <h1>Arc Raiders Devs Reflect on Server Slam and What's Changing for Full Release</h1>
+                <p class="article-intro">The developers at Embark Studios have shared their key takeaways from the Server Slam weekend, and I've got some personal takes after 15 hours of intense "server-slamming." From addressing the all-seeing Flying ARCs to rethinking Dam Tower accessibility, here's what's changing before the October 30th launch.</p>
+            </header>
+
+            <div class="content-section">
+                <p>We have fresh news from the devs on what they think of the Server Slam results and community feedback. Having personally played for 15 hours straight during the weekend, I've got some thoughts on each of these changes. Let's dive in.</p>
+
+                <h2>🚁 The Flying ARCs: Vision Nerf Incoming</h2>
+
+                <div class="dev-quote">
+                    <p>"The Flying ARCs: It turns out their awareness was a bit too high, allowing them to essentially see through trees and bushes. This made their vision unintentionally over-powered, but we've adjusted what they can see now, so expect a fairer fight at launch."</p>
+                    <p class="quote-source">— <a href="https://arcraiders.com/en/news/server-slam-thank-you/" target="_blank" rel="noopener">Embark Studios, Server Slam Thank You</a></p>
+                </div>
+
+                <div class="player-take">
+                    <div class="player-take-header">Player Experience: The Bush That Wasn't Safe</div>
+                    <p>Comments on Discord and even in proximity chat were <em>definitely</em> screaming for this change. I was talking to a teammate about how nice it was that in this game bushes "actually worked," and then he said: <strong>"No. I've been sniped by the ARC in the bushes."</strong></p>
+                    
+                    <p>Even though I personally didn't find the Flying ARCs to be that "all-seeing," I vividly remember this happening to me: I was fighting with a group of guys at the central swamp lift extraction point (which has a lot of foliage and bushes around), and I lost track of one of the enemy players in the bushes. Maybe 20 seconds later, a Wasp orbiting the area started shooting <em>through the tree and the bush</em> where my opponent had disappeared.</p>
+                    
+                    <p>This damaged the guy AND gave me his exact location. Let's just say he didn't extract that day.</p>
+                    
+                    <p><strong>The takeaway?</strong> Looks like we can expect bushes to actually be safe(ish) now. This is a huge quality-of-life improvement for stealth gameplay and makes tactical positioning actually matter.</p>
+                </div>
+
+                <h2>🗼 The Dam Tower: RIP to the 200-Meter Drop</h2>
+
+                <div class="dev-quote">
+                    <p>"The Dam Tower: We watched many of you bravely, and perhaps a little too easily, access the Dam Control Tower on Dam Battlegrounds. It was fun to watch, but a bit too accessible for a key loot location. That's been fixed to keep the challenge sharp."</p>
+                    <p class="quote-source">— <a href="https://arcraiders.com/en/news/server-slam-thank-you/" target="_blank" rel="noopener">Embark Studios, Server Slam Thank You</a></p>
+                </div>
+
+                <div class="player-take">
+                    <div class="player-take-header">Player Experience: The Drop I'll Miss Most</div>
+                    <p><strong>Oof.</strong> I was hoping not to see this change announced. The first time I saw the Dam Tower drop was months ago on YouTube during Tech Test 2, and I was <em>dying</em> to try it myself. During the Server Slam, I finally did it—and I absolutely loved it.</p>
+                    
+                    <p>Here's the thing: I didn't love it for bypassing the keycard requirement. I loved it for <strong>the sheer emotion of dropping down a 200-meter tower</strong>, not knowing if I'd hit the spacebar at the right moment or lose all my loot to fall damage.</p>
+                    
+                    <p>I even posted about this on Discord:</p>
+                    
+                    <p style="padding-left: 20px; border-left: 2px solid #5ac878; font-style: italic;">"The exhilaration you get from making yourself drop down, not knowing if you'll hit spacebar at the right moment or die, is so good! Since the game has parkour, parkour should be an integral part of gameplay—not just 'rolling around.' Being able to ledge-grab ARCs mid-air, ride them, or drop from a tall building to grab loot is what sets this game apart."</p>
+
+                    <h3>But Here's My Real Take:</h3>
+                    <p>I wasn't just talking about the tower specifically. What I want is for <strong>parkour-based risk/reward mechanics</strong> to become a core part of the game. Imagine:</p>
+                    <ul style="margin-left: 25px; margin-bottom: 20px; color: #b0b0b0;">
+                        <li>Loot locations accessible only if you're willing to risk the drop</li>
+                        <li>Locked doors that can only be opened from the inside—forcing you to take a dangerous route in</li>
+                        <li>Escape routes from hotspots where you have to decide: drop down with all your loot, or fight through ARCs?</li>
+                    </ul>
+                    
+                    <p>The more navigation abilities we have, the more fun and unpredictable the game becomes. <strong>I agree that parkour shouldn't replace keycards</strong> (especially since those keycards spawn on <em>other</em> maps and can't even be used on Dam Battlegrounds—I found two during the weekend). But it would be fantastic to have separate, lesser-loot locations that reward skillful movement.</p>
+                    
+                    <p>Parkour shouldn't be the <em>only</em> way—but it should be <em>a</em> way. Risk vs. reward. Skill expression. That's what makes extraction shooters memorable.</p>
+                </div>
+
+                <h2>🎨 Visual Quality: The Ultra Settings Debate</h2>
+
+                <div class="content-section">
+                    <p>Beyond the gameplay changes, the devs acknowledged feedback that Tech Test 2 looked visually better than the Server Slam build, even on max settings with high-end hardware.</p>
+                    
+                    <p>Since this was my first test, I can't personally compare—but I <strong>definitely agree</strong> that players should have full control over their settings. If you have the hardware to run "ULTRA," it should look <em>ultra</em>. That said, the game is beautiful regardless, and I'm confident the team will dial this in before launch.</p>
+                </div>
+
+                <h2>📊 By the Numbers: Server Slam Stats</h2>
+
+                <div class="stats-image">
+                    <img src="https://arcraiders.com/images/articles/server-slam-thank-you/ArcRaiders_KeyArt_SlamInfographic.jpg" alt="Arc Raiders Server Slam Statistics Infographic">
+                    <p>Community stats from the Server Slam weekend (via Embark Studios)</p>
+                </div>
+
+                <h2>🚀 What's Next: Launch on October 30th</h2>
+
+                <p>The developers are using these final days to implement all the fixes and improvements based on our feedback. The full launch is scheduled for <strong>October 30th, 2025</strong>.</p>
+                
+                <p>As someone who played for 15 hours straight during the Server Slam, I can say with confidence: this game has something special. The core loop is addictive, the gunplay feels fantastic, and the extraction tension is real. These tweaks based on community feedback show that Embark is listening—and that's exactly what you want to see from a development team.</p>
+                
+                <p>You can read the full developer post here: <a href="https://arcraiders.com/en/news/server-slam-thank-you/" target="_blank" rel="noopener" style="color: #3a7bc8; text-decoration: none; font-weight: 600;">Server Slam Thank You — Embark Studios</a></p>
+            </div>
+
+            <div class="closing">
+                <p>See you topside, Raider! 🎮</p>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section">
+                <div class="comments-header">
+                    <h2>💬 Join the Discussion</h2>
+                    <p class="comments-cta">What are your thoughts on these Server Slam changes? Were you in the <strong>"nerf the Flying ARCs" camp</strong>, or did you think their vision was fine? And what about the Dam Tower parkour—are you sad to see it go, or do you think it needed to be fixed? Let us know in the comments below!</p>
+                </div>
+
+                <div class="comment-form">
+                    <div class="form-group">
+                        <label for="comment-name">Name</label>
+                        <input type="text" id="comment-name" name="name" placeholder="Enter your raider name...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment-email">Email (optional, won't be published)</label>
+                        <input type="email" id="comment-email" name="email" placeholder="your@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment-text">Your Comment</label>
+                        <textarea id="comment-text" name="comment" placeholder="Share your thoughts on the Server Slam changes..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="comment-submit" onclick="alert('Comments will be enabled soon! For now, join the discussion on our Discord or Reddit.')">Post Comment</button>
+                    
+                    <div class="comment-notice">
+                        💡 Comments are coming soon! In the meantime, join our community discussions on Discord and Reddit.
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>All game content © Embark Studios AB. Not affiliated with or endorsed by Embark Studios.</p>
+    </footer>
+</body>
+</html>
+

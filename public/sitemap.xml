@@ -81,5 +81,25 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog Section -->
+  <url>
+    <loc>https://arcraidershub.com/blog/</loc>
+    <lastmod>2025-10-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://arcraidershub.com/blog/arc-raiders-server-slam-developer-reflections/</loc>
+    <lastmod>2025-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
+
+
+
+
 
