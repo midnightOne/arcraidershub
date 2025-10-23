@@ -7,75 +7,258 @@
     <meta name="description" content="Embark Studios shares key takeaways from the Arc Raiders Server Slam weekend. Read about Flying ARC vision nerfs, Dam Tower accessibility changes, and a player's 15-hour experience with personal takes on each update.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #0a0a0a; color: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #141414; color: #e0e0e0; }
         
         /* Header */
-        header { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; }
+        header { background: #161616; border-bottom: 1px solid #2a2a2e; position: sticky; top: 0; z-index: 1000; }
         .header-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
         .logo-section { display: flex; align-items: center; gap: 15px; }
-        .logo-img { height: 50px; width: auto; filter: invert(1); }
+        .logo-img { height: 50px; width: auto; }
         .site-title { font-size: 1.5em; font-weight: 600; color: #ffffff; }
         nav ul { display: flex; list-style: none; gap: 30px; }
         nav a { color: #b0b0b0; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
         nav a:hover, nav a.active { color: #3a7bc8; }
         
-        main { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        main { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
         
-        .breadcrumb { color: #666; margin-bottom: 30px; font-size: 0.9em; }
-        .breadcrumb a { color: #3a7bc8; text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
+        /* Content card */
+        article { 
+            background: #1a1a1a; 
+            border-radius: 12px; 
+            padding: 0; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        /* Hero image */
+        .hero-image {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background-image: url('https://arcraiders.com/images/features/feature-3.jpg');
+            background-size: cover;
+            background-position: center top;
+            margin-bottom: 0;
+        }
+        
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 250px;
+            background: linear-gradient(to bottom, transparent 0%, rgba(26, 26, 30, 0.7) 40%, #1a1a1a 100%);
+        }
+        
+        .hero-content {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            padding: 40px 60px;
+            z-index: 2;
+        }
+        
+        .hero-content .article-meta {
+            color: #aaa;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero-content h1 {
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-image { height: 400px; }
+            .hero-content { padding: 30px 20px; }
+        }
+        
+        .article-content {
+            padding: 40px 60px 60px 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .article-content { padding: 30px 20px; }
+        }
+        
+        .breadcrumb { color: #666; margin-bottom: 30px; font-size: 0.9em; padding: 0 60px; }
+        .breadcrumb a { color: #888; text-decoration: none; }
+        .breadcrumb a:hover { color: #3a7bc8; }
         .breadcrumb span { margin: 0 8px; }
         
-        article header { background: none; position: static; border: none; margin-bottom: 40px; }
-        .article-meta { color: #3a7bc8; font-size: 0.9em; font-weight: 600; margin-bottom: 15px; }
-        h1 { font-size: 2.5em; line-height: 1.2; margin-bottom: 20px; color: #ffffff; }
-        .article-intro { font-size: 1.2em; color: #b0b0b0; line-height: 1.8; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid #2a2a2a; }
+        @media (max-width: 768px) {
+            .breadcrumb { padding: 0 20px; }
+        }
+        
+        .article-meta { color: #888; font-size: 0.9em; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        h1 { font-size: 2.5em; line-height: 1.2; margin-bottom: 20px; color: #ffffff; letter-spacing: -0.5px; }
+        .article-intro { font-size: 1.2em; color: #aaa; line-height: 1.8; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid #2a2a2e; }
         
         .content-section { margin-bottom: 50px; }
-        .content-section h2 { font-size: 1.8em; margin-bottom: 20px; color: #ffffff; margin-top: 40px; }
-        .content-section h3 { font-size: 1.4em; margin-bottom: 15px; color: #3a7bc8; margin-top: 30px; }
+        .content-section h2 { font-size: 1.9em; margin-bottom: 20px; color: #ffffff; margin-top: 55px; font-weight: 700; letter-spacing: -0.5px; }
+        .content-section h3 { font-size: 1.4em; margin-bottom: 15px; color: #3a7bc8; margin-top: 30px; font-weight: 600; }
         
-        .dev-quote { background: linear-gradient(135deg, #1a1a2a 0%, #0f0f1f 100%); border-left: 4px solid #3a7bc8; padding: 25px; margin: 30px 0; border-radius: 8px; }
-        .dev-quote p { color: #e0e0e0; font-style: italic; line-height: 1.8; }
-        .quote-source { color: #3a7bc8; font-size: 0.9em; margin-top: 10px; font-style: normal; }
+        .dev-quote { background: #22252b; border-left: 3px solid #555; padding: 28px 32px; margin: 40px 0; border-radius: 4px; position: relative; overflow: hidden; }
+        .dev-quote p { color: #ddd; font-style: italic; line-height: 1.8; position: relative; z-index: 2; }
+        .quote-source { color: #888; font-size: 0.9em; margin-top: 16px; font-style: normal; position: relative; z-index: 2; }
         .quote-source a { color: #3a7bc8; text-decoration: none; }
         .quote-source a:hover { text-decoration: underline; }
         
-        .player-take { background: linear-gradient(135deg, #1a2a1a 0%, #0f1f0f 100%); border-left: 4px solid #5ac878; padding: 25px; margin: 30px 0; border-radius: 8px; }
-        .player-take-header { color: #5ac878; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .player-take-header::before { content: "💭"; font-size: 1.2em; }
-        .player-take p { color: #e0e0e0; line-height: 1.8; margin-bottom: 15px; }
+        /* Dam Tower quote with background image */
+        .dam-tower-quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://assets-prd.ignimgs.com/2024/08/19/arcraiders-gamescom-screenshot-03-1724106930907.png?width=1400&format=jpg&auto=webp&quality=80');
+            background-size: cover;
+            background-position: center top;
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        .dam-tower-quote::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(34, 37, 43, 0.9) 0%, rgba(34, 37, 43, 0.7) 50%, rgba(34, 37, 43, 0.85) 100%);
+            z-index: 1;
+        }
+        
+        /* Flying ARCs quote with background GIF */
+        .flying-arcs-quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://assets-prd.ignimgs.com/2021/12/09/arc-raiders-reveal-gif-lightdrones-1639052314901.gif?width=1400');
+            background-size: cover;
+            background-position: center top;
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        .flying-arcs-quote::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(34, 37, 43, 0.9) 0%, rgba(34, 37, 43, 0.7) 50%, rgba(34, 37, 43, 0.85) 100%);
+            z-index: 1;
+        }
+        
+        .player-take { background: #22252b; border-left: 3px solid #3a7bc8; padding: 28px 32px; margin: 40px 0; border-radius: 4px; }
+        .player-take-header { color: #3a7bc8; font-weight: 600; margin-bottom: 16px; font-size: 0.95em; text-transform: uppercase; letter-spacing: 0.5px; }
+        .player-take p { color: #ddd; line-height: 1.8; margin-bottom: 16px; }
         .player-take p:last-child { margin-bottom: 0; }
         
-        .content-section p { color: #b0b0b0; line-height: 1.8; margin-bottom: 20px; }
-        .content-section strong { color: #ffffff; font-weight: 600; }
+        .content-section p { color: #aaa; line-height: 1.8; margin-bottom: 24px; font-size: 1.05em; }
+        .content-section strong { color: #eee; font-weight: 600; }
         .content-section em { color: #3a7bc8; font-style: italic; }
         
         .stats-image { margin: 40px 0; text-align: center; }
-        .stats-image img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid #2a2a2a; }
-        .stats-image p { color: #666; font-size: 0.9em; margin-top: 15px; font-style: italic; }
+        .stats-image img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #2a2a2e; }
+        .stats-image p { color: #888; font-size: 0.9em; margin-top: 15px; font-style: italic; }
         
-        .closing { background: linear-gradient(135deg, #2a1a1a 0%, #1f0f0f 100%); border-left: 4px solid #c83a7b; padding: 25px; margin: 50px 0; border-radius: 8px; text-align: center; }
-        .closing p { color: #ffffff; font-size: 1.2em; font-weight: 600; }
+        .closing { background: #22252b; border-left: 3px solid #555; padding: 25px; margin: 50px 0 0 0; border-radius: 4px; text-align: center; }
+        .closing p { color: #ddd; font-size: 1.1em; font-weight: 500; }
         
         /* Comments Section */
-        .comments-section { margin-top: 60px; padding-top: 40px; border-top: 2px solid #2a2a2a; }
+        .comments-section { margin-top: 60px; padding-top: 40px; border-top: 1px solid #2a2a2e; }
         .comments-header { margin-bottom: 30px; }
         .comments-header h2 { font-size: 1.8em; color: #ffffff; margin-bottom: 15px; }
         .comments-cta { color: #b0b0b0; line-height: 1.8; margin-bottom: 30px; }
         .comments-cta strong { color: #3a7bc8; }
         
-        .comment-form { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border: 1px solid #2a2a2a; border-radius: 12px; padding: 30px; margin-bottom: 20px; }
+        .comment-form { background: #22252b; border: 1px solid #2a2a2e; border-radius: 8px; padding: 30px; margin-bottom: 20px; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; color: #b0b0b0; font-weight: 600; margin-bottom: 8px; font-size: 0.95em; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px 15px; background: #0a0a0a; border: 1px solid #2a2a2a; border-radius: 6px; color: #e0e0e0; font-family: inherit; font-size: 0.95em; transition: border-color 0.3s ease; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px 15px; background: #16161a; border: 1px solid #2a2a2e; border-radius: 6px; color: #e0e0e0; font-family: inherit; font-size: 0.95em; transition: border-color 0.3s ease; }
         .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #3a7bc8; }
         .form-group textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
         .comment-submit { background: linear-gradient(135deg, #3a7bc8 0%, #2a5a9a 100%); color: #ffffff; padding: 12px 30px; border: none; border-radius: 6px; font-weight: 600; font-size: 1em; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .comment-submit:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(58, 123, 200, 0.3); }
-        .comment-notice { margin-top: 15px; padding: 12px; background: #1a1a2a; border-left: 3px solid #3a7bc8; border-radius: 4px; font-size: 0.9em; color: #b0b0b0; font-style: italic; }
+        .comment-notice { margin-top: 15px; padding: 12px; background: #22252b; border-left: 3px solid #3a7bc8; border-radius: 4px; font-size: 0.9em; color: #aaa; font-style: italic; }
         
-        footer { background: #0f0f0f; border-top: 1px solid #2a2a2a; padding: 30px 20px; text-align: center; color: #666; margin-top: 80px; }
+        footer { 
+            background: #161616; 
+            border-top: 1px solid #2a2a2e; 
+            padding: 50px 20px 30px 20px; 
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: #ffffff;
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-section p {
+            color: #888;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #3a7bc8;
+        }
+        
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid #2a2a2e;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -109,18 +292,24 @@
         </div>
 
         <article>
-            <header>
-                <div class="article-meta">October 22, 2025 • 8 min read</div>
-                <h1>Arc Raiders Devs Reflect on Server Slam and What's Changing for Full Release</h1>
-                <p class="article-intro">The developers at Embark Studios have shared their key takeaways from the Server Slam weekend, and I've got some personal takes after 15 hours of intense "server-slamming." From addressing the all-seeing Flying ARCs to rethinking Dam Tower accessibility, here's what's changing before the October 30th launch.</p>
-            </header>
+            <!-- Hero Image with Title Overlay -->
+            <div class="hero-image">
+                <div class="hero-content">
+                    <div class="article-meta">October 22, 2025 • 8 min read</div>
+                    <h1>Arc Raiders Devs Reflect on Server Slam and What's Changing for Full Release</h1>
+                </div>
+            </div>
 
-            <div class="content-section">
-                <p>We have fresh news from the devs on what they think of the Server Slam results and community feedback. Having personally played for 15 hours straight during the weekend, I've got some thoughts on each of these changes. Let's dive in.</p>
+            <!-- Article Content -->
+            <div class="article-content">
+                <p class="article-intro">The developers at Embark Studios have shared their key takeaways from the Server Slam weekend, and I've got some personal takes after 15 hours of intense "server-slamming." From addressing the all-seeing Flying ARCs to rethinking Dam Tower accessibility, here's what's changing before the October 30th launch.</p>
+
+                <div class="content-section">
+                <p>We have fresh news from the devs on what they think of the Server Slam results and community feedback. Having personally played for a total of 15 hours  during the weekend, I've got some thoughts on each of these changes. Let's dive in.</p>
 
                 <h2>The flying ARCs: Vision nerf</h2>
 
-                <div class="dev-quote">
+                <div class="dev-quote flying-arcs-quote">
                     <p>"The Flying ARCs: It turns out their awareness was a bit too high, allowing them to essentially see through trees and bushes. This made their vision unintentionally over-powered, but we've adjusted what they can see now, so expect a fairer fight at launch."</p>
                     <p class="quote-source">— <a href="https://arcraiders.com/en/news/server-slam-thank-you/" target="_blank" rel="noopener">Embark Studios, Server Slam Thank You</a></p>
                 </div>
@@ -138,7 +327,7 @@
 
                 <h2>Dam control tower: No more ledge-grab to bypass keycard</h2>
 
-                <div class="dev-quote">
+                <div class="dev-quote dam-tower-quote">
                     <p>"The Dam Tower: We watched many of you bravely, and perhaps a little too easily, access the Dam Control Tower on Dam Battlegrounds. It was fun to watch, but a bit too accessible for a key loot location. That's been fixed to keep the challenge sharp."</p>
                     <p class="quote-source">— <a href="https://arcraiders.com/en/news/server-slam-thank-you/" target="_blank" rel="noopener">Embark Studios, Server Slam Thank You</a></p>
                 </div>
@@ -204,12 +393,12 @@
                 <div class="comment-form">
                     <div class="form-group">
                         <label for="comment-name">Name</label>
-                        <input type="text" id="comment-name" name="name" placeholder="Enter your raider name...">
+                        <input type="text" id="comment-name" name="name" placeholder="Raider name...">
                     </div>
                     
                     <div class="form-group">
                         <label for="comment-email">Email (optional, won't be published)</label>
-                        <input type="email" id="comment-email" name="email" placeholder="your@email.com">
+                        <input type="email" id="comment-email" name="email" placeholder="raider@email.com">
                     </div>
                     
                     <div class="form-group">
@@ -224,11 +413,38 @@
                     </div>
                 </div>
             </div>
+            </div><!-- End article-content -->
         </article>
     </main>
 
     <footer>
-        <p>All game content © Embark Studios AB. Not affiliated with or endorsed by Embark Studios.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Arc Raiders Hub</h3>
+                <p>Your community-driven resource for Arc Raiders guides, maps, loadouts, and the latest game updates. Built by players, for players.</p>
+                <p style="margin-top: 20px; font-size: 0.85em;">All game content © Embark Studios AB. Not affiliated with or endorsed by Embark Studios.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="../../guides/index.html">Guides</a></li>
+                    <li><a href="../../maps/index.html">Maps</a></li>
+                    <li><a href="../../skills/index.html">Skills</a></li>
+                    <li><a href="../../loadouts/index.html">Loadouts</a></li>
+                    <li><a href="../../weapons/index.html">Weapons</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Community</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Blog</a></li>
+                    <li><a href="https://github.com/RaidTheory/arcraiders-data" target="_blank" rel="noopener">Game Data</a></li>
+                    <li><a href="https://arcraiders.com" target="_blank" rel="noopener">Official Site</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
