@@ -1,0 +1,130 @@
+/* Header Styles - Shared across all pages */
+header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    border-bottom: 1px solid #2a2a2e;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.site-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 8px 0;
+}
+
+nav a:hover,
+nav a.active {
+    color: #3a7bc8;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 15px 8px;
+        gap: 8px;
+    }
+
+    .logo-section {
+        gap: 10px;
+    }
+
+    .logo-img {
+        height: 36px;
+    }
+
+    .site-title {
+        font-size: 1.1em;
+    }
+
+    nav {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 0;
+        padding: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: #3a7bc8 #0f0f0f;
+    }
+
+    nav ul::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    nav ul::-webkit-scrollbar-track {
+        background: #0f0f0f;
+    }
+
+    nav ul::-webkit-scrollbar-thumb {
+        background: #3a7bc8;
+        border-radius: 3px;
+    }
+
+    nav li {
+        flex-shrink: 0;
+    }
+
+    nav a {
+        padding: 6px 14px;
+        font-size: 0.9em;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 1em;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+}
+
