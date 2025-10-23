@@ -23,6 +23,18 @@ header {
     gap: 15px;
 }
 
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
 .logo-img {
     height: 50px;
     width: auto;
@@ -32,6 +44,7 @@ header {
     font-size: 1.5em;
     font-weight: 600;
     color: #ffffff;
+    margin: 0;
 }
 
 nav ul {
@@ -66,6 +79,10 @@ nav a.active {
     }
 
     .logo-section {
+        gap: 10px;
+    }
+
+    .logo-link {
         gap: 10px;
     }
 
