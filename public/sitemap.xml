@@ -10,7 +10,7 @@
   <!-- Main Section Pages -->
   <url>
     <loc>https://arcraidershub.com/guides/</loc>
-    <lastmod>2025-10-21</lastmod>
+    <lastmod>2025-10-24</lastmod>
   </url>
 
   <url>
@@ -74,6 +74,17 @@
   <url>
     <loc>https://arcraidershub.com/blog/arc-raiders-server-slam-developer-reflections/</loc>
     <lastmod>2025-10-22</lastmod>
+  </url>
+
+  <!-- Guide Articles -->
+  <url>
+    <loc>https://arcraidershub.com/guides/arc-raiders-beginners-guide/</loc>
+    <lastmod>2025-10-24</lastmod>
+  </url>
+
+  <url>
+    <loc>https://arcraidershub.com/guides/raiding-the-harvester-guide/</loc>
+    <lastmod>2025-10-24</lastmod>
   </url>
 
 </urlset>

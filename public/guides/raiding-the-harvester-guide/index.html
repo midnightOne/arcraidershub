@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raiding the Harvester: A Step-by-Step Guide to Scoring Epic Loot in ARC Raiders</title>
+    <meta name="description" content="Master the high-stakes Harvester puzzle and walk away with legendary weapon blueprints. Learn how to bypass the Queen, solve the container puzzle, and extract with the best loot in the game.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/header.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #141414; color: #e0e0e0; }
+        
+        
+        main { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        
+        /* Content card */
+        article { 
+            background: #1a1a1a; 
+            border-radius: 12px; 
+            padding: 0; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        /* Hero image */
+        .hero-image {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background-image: url('/images/maps/spaceport-hero.png');
+            background-size: cover;
+            background-position: center top;
+            margin-bottom: 0;
+        }
+        
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 250px;
+            background: linear-gradient(to bottom, transparent 0%, rgba(26, 26, 30, 0.7) 40%, #1a1a1a 100%);
+        }
+        
+        .hero-content {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            padding: 40px 60px;
+            z-index: 2;
+        }
+        
+        .hero-content .article-meta {
+            color: #aaa;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero-content h1 {
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-image { height: 400px; }
+            .hero-content { padding: 30px 20px; }
+        }
+        
+        .article-content {
+            padding: 40px 60px 60px 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .article-content { padding: 30px 20px; }
+        }
+        
+        .breadcrumb { color: #666; margin-bottom: 30px; font-size: 0.9em; padding: 0 60px; }
+        .breadcrumb a { color: #888; text-decoration: none; }
+        .breadcrumb a:hover { color: #3a7bc8; }
+        .breadcrumb span { margin: 0 8px; }
+        
+        @media (max-width: 768px) {
+            .breadcrumb { padding: 0 20px; }
+        }
+        
+        .article-meta { color: #888; font-size: 0.9em; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        h1 { font-size: 2.5em; line-height: 1.2; margin-bottom: 20px; color: #ffffff; letter-spacing: -0.5px; }
+        .article-intro { font-size: 1.2em; color: #aaa; line-height: 1.8; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid #2a2a2e; }
+        
+        .content-section { margin-bottom: 50px; }
+        .content-section h2 { font-size: 1.9em; margin-bottom: 20px; color: #ffffff; margin-top: 55px; font-weight: 700; letter-spacing: -0.5px; }
+        .content-section h3 { font-size: 1.4em; margin-bottom: 15px; color: #3a7bc8; margin-top: 30px; font-weight: 600; }
+        
+        .content-section p { color: #aaa; line-height: 1.8; margin-bottom: 24px; font-size: 1.05em; }
+        .content-section strong { color: #eee; font-weight: 600; }
+        .content-section em { color: #3a7bc8; font-style: italic; }
+        
+        ul { margin: 15px 0 25px 25px; }
+        li { margin-bottom: 12px; color: #a0a0a0; line-height: 1.7; }
+        ul ul { margin-top: 10px; margin-bottom: 10px; }
+        
+        ol { margin: 15px 0 25px 25px; }
+        ol li { margin-bottom: 12px; color: #a0a0a0; line-height: 1.7; }
+        
+        .pro-tip { background: #22252b; border-left: 3px solid #3a7bc8; padding: 28px 32px; margin: 40px 0; border-radius: 4px; }
+        .pro-tip-header { color: #3a7bc8; font-weight: 600; margin-bottom: 16px; font-size: 0.95em; text-transform: uppercase; letter-spacing: 0.5px; }
+        .pro-tip p { color: #ddd; line-height: 1.8; margin-bottom: 16px; }
+        .pro-tip p:last-child { margin-bottom: 0; }
+        
+        .warning-box { background: #2b2522; border-left: 3px solid #d4a574; padding: 28px 32px; margin: 40px 0; border-radius: 4px; }
+        .warning-header { color: #d4a574; font-weight: 600; margin-bottom: 16px; font-size: 0.95em; text-transform: uppercase; letter-spacing: 0.5px; }
+        .warning-box p { color: #ddd; line-height: 1.8; margin-bottom: 16px; }
+        .warning-box p:last-child { margin-bottom: 0; }
+        
+        .step-image { margin: 40px 0; text-align: center; }
+        .step-image img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #2a2a2e; }
+        .step-image p { color: #888; font-size: 0.9em; margin-top: 15px; font-style: italic; }
+        
+        .mock-image-placeholder {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border: 2px dashed #444;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 40px 0;
+            color: #888;
+            font-style: italic;
+        }
+        
+        .closing { background: #22252b; border-left: 3px solid #555; padding: 25px; margin: 50px 0 0 0; border-radius: 4px; text-align: center; }
+        .closing p { color: #ddd; font-size: 1.1em; font-weight: 500; }
+        
+        footer { 
+            background: #161616; 
+            border-top: 1px solid #2a2a2e; 
+            padding: 50px 20px 30px 20px; 
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: #ffffff;
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-section p {
+            color: #888;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #3a7bc8;
+        }
+        
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid #2a2a2e;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>›</span>
+            <a href="../index.html">Guides</a>
+            <span>›</span>
+            Raiding the Harvester Guide
+        </div>
+
+        <article>
+            <!-- Hero Image with Title Overlay -->
+            <div class="hero-image">
+                <div class="hero-content">
+                    <div class="article-meta">Event Guide • 12 min read</div>
+                    <h1>Raiding the Harvester: A Step-by-Step Guide to Scoring Epic Loot</h1>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="article-content">
+                <p class="article-intro">What's up, Raiders? If you've been roaming the wasteland, you've probably seen the massive Queen guarding that sweet, sweet Harvester. Inside that husk is a high-stakes puzzle that drops some of the best loot in the game, including legendary weapon blueprints. This guide will break down everything you need to know to crack open the Harvester and walk away with some serious hardware. No filler, just the straight-up strats.</p>
+
+                <div class="content-section">
+                <h2>Step 1: Getting Past the Queen (Without Wasting Your Ammo)</h2>
+
+                <p>First things first, you can only tackle this event when the Harvester is active on your map, so check it before you load in. When you get there, you'll see the Queen. She's a beast, hits like a truck, and honestly, fighting her is a waste of time unless you're geared to the teeth and need her core for a level three refinery.</p>
+
+                <div class="step-image">
+                    <img src="/images/queen-harvester3.jpg" alt="The Queen ARC guarding the Harvester entrance - massive mechanical spider-like creature">
+                    <p>The Queen ARC - a formidable guardian you'll need to bypass to reach the Harvester</p>
+                </div>
+
+                <p>Instead of going toe-to-toe, here are a few much smarter ways to get past her:</p>
+
+                <ul>
+                    <li><strong>Prophetic Cloak:</strong> This gadget is your best friend. It makes you invisible to ARC machines, allowing you to sneak right by the Queen.</li>
+                    <li><strong>Ziplines:</strong> Speed is key. You can use a zipline to quickly move past her and get straight to the Harvester husk.</li>
+                    <li><strong>Smoke Grenades:</strong> Don't underestimate the power of a well-placed smoke grenade. They block the line of sight for all ARC machines, including the Queen, giving you the cover you need to get to the entrance.</li>
+                </ul>
+
+                <div class="pro-tip">
+                    <div class="pro-tip-header">Pro Tip: Timing is Everything</div>
+                    <p>The Queen has patrol patterns. Watch her movement for 30 seconds before making your move. She'll turn away from certain entrances, giving you a perfect window to slip by undetected.</p>
+                </div>
+
+                <h2>Step 2: Cracking Open the Harvester Husk</h2>
+
+                <p>Once you've bypassed the Queen, you need to get inside the Harvester. Look for the three main entry points on the ground level, which are the vents. Prying one open starts a 45-second timer. When that timer hits zero, the inside of the husk gets flooded with fire, so you'll need to be quick.</p>
+
+                <div class="step-image">
+                    <img src="/images/arc-harvester-schematic.jpg" alt="Harvester husk with three ground-level vents highlighted, showing the entry points">
+                    <p>Harvester schematic showing the main hull structure and entry points</p>
+                </div>
+
+                <p>There are six exit points: the three main vents (1) you used to enter and three auxiliary vents at the top (2). An audio cue for the fire sounds like 3 alarm sounds right before the flames erupt.</p>
+
+                <div class="warning-box">
+                    <div class="warning-header">Critical Warning</div>
+                    <p>When you hear the alarm, you have about 3 seconds before the fire starts. Don't try to finish what you're doing—get to an exit immediately!</p>
+                </div>
+
+                <h2>Step 3: The Container Puzzle</h2>
+
+                <p>Inside there are two levels. The upper deck is where you'll find breach points (3) that you need to search for the puzzle canisters. The lower deck is where you'll insert these canisters (4).</p>
+
+                <div class="step-image">
+                    <img src="/images/Harvester-guide-3.jpg" alt="Interior view of Harvester showing upper and lower decks, with breach points marked">
+                    <p>Interior layout of the Harvester showing the central core and various interaction points</p>
+                </div>
+
+                <p>Here's the loop for the first phase of the puzzle:</p>
+
+                <ol>
+                    <li>Head to the upper deck and breach containers (marked as 3 on the image) until you find the puzzle canisters.</li>
+                    <li>Drop the canisters down to the lower deck.</li>
+                    <li>On the lower deck, you'll find three hatches (marked as 4 on the image) around the central core. Breach one of these hatches to open a receptacle.</li>
+                    <li>Insert one of the canisters into the receptacle.</li>
+                    <li>Repeat this process for all the canisters.</li>
+                </ol>
+
+
+                <p>During this phase, the Harvester will sometimes trigger a "core overload shock" that will stun you and drain your shields. It won't kill you, so just wait it out. A pro tip is to unequip your shield before the shock to avoid having it drained. After two shock cycles - the next one will be the fire cycle, so count and be ready to run to an exit when it comes.</p>
+
+                <div class="pro-tip">
+                    <div class="pro-tip-header">Shield Management Trick</div>
+                    <p>When you see the core starting to charge up (visual and audio cues), quickly unequip your shield from your inventory. The shock will still stun you, but your shield won't lose charge. Re-equip it immediately after.</p>
+                </div>
+
+                <h2>Step 4: The Yellow modules and Final Loot</h2>
+
+                <p>After all the containers are locked in, the Harvester will enter its final phase, revealing yellow modules around the structure. You need to destroy these either by shooting them or hitting them with your hammer. Meleeing them is often a good strategy to avoid reloading issues caused by the core overload and making you waste time later.</p>
+
+                <div class="step-image">
+                    <img src="/images/Harvester-guide-5.jpg" alt="Yellow valves highlighted around the Harvester structure in final phase">
+                    <p>Yellow modules that need to be destroyed in the final phase of the Harvester puzzle</p>
+                </div>
+
+                <p>Once all the yellow modules are destroyed, three loot containers will drop from the center piller - that's your reward.</p>
+
+
+                <p>These containers hold some of the most sought-after loot in the game, including legendary weapon blueprints like the Jupiter sniper rifle and the Equalizer beam rifle. Be aware that other players may be waiting to ambush you as you finish the event, so be prepared for a fight on your way to extraction.</p>
+
+                <div class="warning-box">
+                    <div class="warning-header">Extraction Ambush Alert</div>
+                    <p>The sound of the Harvester completing carries across the map. Expect other Raiders to converge on your location. Have an escape route planned before you grab that loot!</p>
+                </div>
+
+                <h2>Pro Tips for a Smooth Run</h2>
+
+                <ul>
+                    <li><strong>Bring a Squad:</strong> While it's technically possible to do this solo, it's incredibly challenging. Having teammates to watch your back and help with the puzzle makes everything smoother. However, if you manage to pull off a solo run - you will be able to get the content of all three loot containers that is usually split between team members.</li>
+                    <li><strong>Utility is Key:</strong> Smokes, cloaks, and healing items can be the difference between success and failure. Don't skimp on utility items.</li>
+                    <li><strong>Know Your Exits:</strong> This can't be stressed enough. Knowing how to get out quickly when the fire starts is crucial. Practice the routes in your head.</li>
+                    <li><strong>Loot Everything:</strong> Besides the final prize, the breach points on the upper deck often contain valuable resources like circuitry and energy ammo. If you have the space, take everything you can find.</li>
+                </ul>
+
+                <div class="pro-tip">
+                    <div class="pro-tip-header">Advanced Strategy: The Decoy Method</div>
+                    <p>If you're running with a squad, have one player stay outside to watch for other Raiders while the rest work on the puzzle. They can provide early warning and even create distractions if needed.</p>
+                </div>
+
+                <h2>What You Can Expect to Find</h2>
+
+                <p>The Harvester event is one of the most rewarding activities in ARC Raiders. Here's what you might walk away with:</p>
+
+                <ul>
+                    <li><strong>Legendary Weapon Blueprints:</strong> Jupiter sniper rifle, Equalizer beam rifle, and other top-tier weapons</li>
+                    <li><strong>Rare Crafting Materials:</strong> Arc performance steel, Arc circuitry, advanced polymers, and energy cores</li>
+                    <li><strong>Unique Modifications:</strong> High-end weapon mods</li>
+                </ul>
+
+                <div class="step-image">
+                    <img src="/images/Harvester-guide-7.jpg" alt="Inventory screen showing legendary loot obtained from Harvester event">
+                    <p>Example of the legendary loot you can obtain from completing the Harvester event, including the Equalizer Blueprint</p>
+                </div>
+
+                <p>Remember, the risk matches the reward. This event attracts the most dangerous Raiders on the map, and the Queen isn't going anywhere. But for those brave enough to take on the challenge, the Harvester offers some of the best loot in the entire game.</p>
+                </div>
+
+                <div class="closing">
+                    <p>Good luck out there, Raiders. May your extractions be clean and your loot legendary! 🎯</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script src="/js/includes.js"></script>
+</body>
+</html>

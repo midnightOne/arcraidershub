@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arc Raiders Guides: The 5-Minute Extraction Rule & Solo Survival Strategies</title>
-    <meta name="description" content="Master the 5-minute extraction rule for safe solo raids. Learn extraction point timing, fast loot loops, matchmaking strategies, and why 10-minute runs beat risky 30-minute raids.">
+    <title>Arc Raiders Guides - Master the Extraction Shooter</title>
+    <meta name="description" content="Comprehensive Arc Raiders guides covering gameplay strategies, loot optimization, PvP tactics, and survival tips. Master the extraction shooter with our detailed walkthroughs.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/header.css">
     <style>
@@ -14,21 +14,25 @@
         
         main { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
         
-        .page-header { text-align: center; margin-bottom: 50px; }
+        .page-header { text-align: center; margin-bottom: 60px; }
         .page-header h1 { font-size: 3em; margin-bottom: 15px; background: linear-gradient(135deg, #3a7bc8 0%, #5a9ae0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .page-header p { font-size: 1.15em; color: #b0b0b0; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+        .page-header p { font-size: 1.2em; color: #b0b0b0; max-width: 700px; margin: 0 auto; }
         
-        h2 { color: #ffffff; font-size: 2em; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #2a2a2a; }
-        h3 { color: #b8b8b8; font-size: 1.4em; margin: 25px 0 15px; }
-        p { margin-bottom: 20px; color: #a0a0a0; line-height: 1.8; }
-        ul { margin: 15px 0 25px 25px; }
-        li { margin-bottom: 12px; color: #a0a0a0; line-height: 1.7; }
-        ul ul { margin-top: 10px; margin-bottom: 10px; }
-        strong { font-weight: 600; color: #ffffff; }
+        .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; margin-top: 40px; }
         
-        .coming-soon { background: #1a1a1a; border-left: 3px solid #3a7bc8; padding: 25px; border-radius: 8px; margin: 50px 0; }
-        .coming-soon h2 { border: none; margin-top: 0; margin-bottom: 15px; }
-        .coming-soon p { color: #b0b0b0; font-style: italic; }
+        .guide-card { background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border: 1px solid #2a2a2a; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, border-color 0.3s ease; }
+        .guide-card:hover { transform: translateY(-5px); border-color: #3a7bc8; }
+        
+        .guide-thumbnail { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .guide-meta { padding: 25px; }
+        .guide-type { color: #3a7bc8; font-size: 0.9em; font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .guide-card h2 { font-size: 1.5em; margin-bottom: 15px; color: #ffffff; }
+        .guide-card h2 a { color: #ffffff; text-decoration: none; transition: color 0.3s ease; }
+        .guide-card h2 a:hover { color: #3a7bc8; }
+        .guide-excerpt { color: #b0b0b0; margin-bottom: 20px; line-height: 1.8; }
+        .read-more { display: inline-block; color: #3a7bc8; font-weight: 600; text-decoration: none; transition: color 0.3s ease; }
+        .read-more:hover { color: #5a9ae0; }
+        .read-more::after { content: " →"; }
         
         footer { 
             background: #161616; 
@@ -87,12 +91,6 @@
                 gap: 40px;
             }
         }
-        
-        @media (max-width: 768px) {
-            .header-container { flex-direction: column; height: auto; padding: 20px; }
-            nav ul { flex-direction: column; gap: 15px; align-items: center; }
-            .page-header h1 { font-size: 2.2em; }
-        }
     </style>
 </head>
 <body>
@@ -100,145 +98,34 @@
 
     <main>
         <div class="page-header">
-            <h1>Master ARC Raiders</h1>
-            <p>Your Essential Guide Hub for conquering the extraction shooter.</p>
+            <h1>Arc Raiders Guides</h1>
+            <p>Master the extraction shooter with comprehensive strategies, tips, and walkthroughs from experienced Raiders.</p>
         </div>
 
-        <h2>Core gameplay explained: A Raider's Journey</h2>
-        <p>ARC Raiders is a high-stakes extraction shooter where every raid presents both opportunity and peril. Understanding the core gameplay loop is foundational to your success.</p>
+        <div class="guides-grid">
+            <article class="guide-card">
+                <a href="./guides/arc-raiders-beginners-guide/">
+                    <img src="/images/Items-grid.jpg" alt="Arc Raiders Beginner's Guide" class="guide-thumbnail">
+                </a>
+                <div class="guide-meta">
+                    <div class="guide-type">Beginner's Guide</div>
+                    <h2><a href="./guides/arc-raiders-beginners-guide/">Arc Raiders Beginner's Guide: Complete Survival Manual</a></h2>
+                    <p class="guide-excerpt">Everything new Raiders need to know: Speranza hideout management, topside survival, ARC robot combat, PvP tactics, and the proven 5-minute extraction rule that keeps you alive.</p>
+                    <a href="./guides/arc-raiders-beginners-guide/" class="read-more">Read full guide</a>
+                </div>
+            </article>
 
-        <h3>Preparation in Speranza:</h3>
-        <ul>
-            <li><strong>Planning & Pre-Deployment:</strong> Within Speranza, research quests, consult faction vendors (The Tribe, Speranza Survivors, The Commune), and prepare your optimal loadout based on your intended raid's map and difficulty.</li>
-            <li><strong>Hideout Management:</strong> Invest time crafting, managing resources, upgrading modules, and progressing your character's skills. Strategic Hideout usage is a raider's backbone.</li>
-            <li><strong>Loadout Selection:</strong> Choose between risk-free standard loadouts (no Safe pocket) or your personally curated gear (with a precious single Safe pocket slot for loot insurance).</li>
-        </ul>
-
-        <h3>Raid Deployment & On-Surface Objectives:</h3>
-        <ul>
-            <li><strong>Extraction Shooter Fundamentals:</strong> Deploy onto your selected map. Balance PvE encounters against ARC enemies, dynamic PvP threats from other Raiders, and focused objective completion (quests, loot zones, contracts, points of interest).</li>
-            <li><strong>Risk vs. Reward Decision-Making:</strong> Continuously assess your loot's value, your current health/shield status, and your proximity to extraction points. Should you push for more gear or play it safe?</li>
-            <li><strong>The Safe pocket Strategy:</strong> If using personal gear, whatever you place in your single Safe pocket slot is secured even if you're eliminated. Use this for blueprints, critical quest items, or high-value loot.</li>
-        </ul>
-
-        <h3>Extraction & Safe Return:</h3>
-        <ul>
-            <li><strong>Successful Extraction:</strong> Reaching a designated extraction point and safely departing ensures all your collected loot and quest progress is secured.</li>
-            <li><strong>Death & Loot Consequences:</strong> Elimination means the loss of all unextracted gear (except the single Safe pocket item on personal runs). Risk management is paramount.</li>
-        </ul>
-
-        <h3>Post-Raid in Speranza:</h3>
-        <ul>
-            <li><strong>Loot Organization & Crafting:</strong> Sort your extracted loot, use blueprints and materials for crafting new weapons, armor, and utilities, and sell excess items for resources.</li>
-            <li><strong>Hideout Progression:</strong> Upgrade your Hideout with the resources earned, unlocking improved crafting stations, new storage, and passive benefits.</li>
-            <li><strong>Skill Tree Advancement:</strong> Apply earned XP or points into your three skill trees (Survival, Mobility, Conditioning), persistently strengthening your Raider for subsequent raids.</li>
-        </ul>
-
-        <h2>Beginner Raider Essentials</h2>
-
-        <h3>Your First 10 Raids: A Survival Guide</h3>
-        <ul>
-            <li><strong>Start with Free Loadouts & Low-Risk Maps:</strong> Use standard loadouts on "Dam Battlegrounds" to learn mechanics without fearing permanent gear loss. Master movement, aiming, basic ARC enemy behavior, and extraction point locations.</li>
-            <li><strong>Prioritize Knowledge over Loot Initially:</strong> Your early goal is understanding the core loop, map layouts, enemy spawn patterns, and general game flow. Dying with beginner loot is expected and part of learning.</li>
-            <li><strong>Complete Tutorial & Early Quests:</strong> Follow the initial quest chains carefully. These offer structured introductions to core systems (crafting, safe pocket, skill tree access, faction interactions).</li>
-            <li><strong>Hideout Focus – Unlock Key Modules Early:</strong> Prioritize unlocking and upgrading the Workbench and Storage modules first. This expands your crafting options and inventory management, immediately improving efficiency.</li>
-            <li><strong>Understand Ammo & Weapon Compatibility:</strong> Familiarize yourself with the different ammo types (Light, Medium, Heavy) and which weapons use them. Running out of ammo mid-fight is a critical and avoidable mistake.</li>
-        </ul>
-
-        <h3>Core Mechanics Primer</h3>
-        <ul>
-            <li><strong>Stamina Management:</strong> Sprinting, climbing, and melee drain stamina. Going over-encumbered drastically slows regeneration. Skills in the Conditioning tree significantly improve stamina parameters.</li>
-            <li><strong>Shield vs. Health:</strong> Your shield recharges over time, while health requires bandages or medical utilities. Prioritize shield preservation.</li>
-            <li><strong>ARC Enemy Basics:</strong> ARC machines have distinct behaviors. Some are highly mobile scouts, others are heavily armored tanks. Target weak points and use terrain effectively.</li>
-            <li><strong>Sound & Stealth Awareness:</strong> Gunfire and movement are audible to other Raiders and ARC enemies. Playing stealthily can provide critical advantages in PvP engagements.</li>
-        </ul>
-
-        <h2>Intermediate to Advanced Tactics</h2>
-
-        <h3>Loadout Optimization</h3>
-        <ul>
-            <li><strong>Role-Based Loadout Design:</strong> Tailor your weapons and utilities to your intended playstyle. Are you a mid-range skirmisher, a close-quarters aggressive raider, or a long-range, stealthy looter?</li>
-            <li><strong>Balance Offensive & Defensive Utilities:</strong> Carry healing items, shield rechargers, and at least one offensive gadget (grenades, traps, or utility items). Overloading on offense leaves you vulnerable.</li>
-            <li><strong>Weapon Modding & Customization:</strong> Invest in mods for your primary weapons (scopes, silencers, stability improvements). Mods can drastically alter weapon viability.</li>
-        </ul>
-
-        <h3>Skill Tree Synergy</h3>
-        <ul>
-            <li><strong>Mobility + Survival for Aggressive Play:</strong> Speed and durability allow for aggressive flanks and rapid repositioning after combat.</li>
-            <li><strong>Conditioning + Survival for Heavy Loot Runs:</strong> Maximize stamina and carrying capacity for high-value extraction runs where you intend to loot extensively before extracting.</li>
-            <li><strong>Balanced Builds for Solo Play:</strong> Solo Raiders benefit from a balance across all three trees, ensuring they can adapt to various encounter types without squad support.</li>
-        </ul>
-
-        <h3>Map Mastery & Strategic Awareness</h3>
-        <ul>
-            <li><strong>Memorize Extraction Points:</strong> Know at least 2-3 extraction routes for every map. If one is contested or compromised, you need backup options immediately.</li>
-            <li><strong>Identify High-Value Loot Zones:</strong> Map certain areas for consistent rare item spawns, quest locations, or crafting blueprint spawns. Efficient raiders know where to go.</li>
-            <li><strong>Understand Time-Limited Maps (Spaceport, Buried City):</strong> These high-risk, high-reward environments rotate availability. When active, plan specific runs to capitalize on their unique loot tables.</li>
-            <li><strong>Vertical Gameplay Advantage:</strong> Use verticality (climbing, rooftops, overlooks) to scout for enemies, plan ambushes, and avoid direct confrontation when disadvantaged.</li>
-        </ul>
-
-        <h3>PvP Engagement Tips</h3>
-        <ul>
-            <li><strong>Always Assume You're Being Watched:</strong> Other Raiders are opportunistic. Stay alert, especially near high-loot zones and extraction points.</li>
-            <li><strong>Disengage When Necessary:</strong> There's no shame in retreating. If you're outgunned or outnumbered, repositioning or escaping is often smarter than a losing fight.</li>
-            <li><strong>Use Audio Cues Offensively:</strong> If you hear another Raider's gunfire, use that information to flank or ambush while they're engaged with ARC enemies.</li>
-            <li><strong>Extraction Point Ambushes are Common:</strong> Be extremely cautious as you approach extraction zones. Scout first, throw grenades into potential hiding spots, and be prepared for combat.</li>
-        </ul>
-
-        <h2>Solo Extraction Strategy: The 5-Minute Rule</h2>
-        <p><strong>Why Solo is Better for Farming Loot:</strong> Here's something I learned through actual gameplay—if you're focused on extracting and looting efficiently, go solo. The matchmaking tends to put solo players against other solos, which means everyone's less organized. When you queue as a 3-person team, you'll face other coordinated 3-person squads, which is great for PVP battles but significantly harder when you just want to loot and leave safely.</p>
-
-        <h3>Understanding Extraction Point Timers</h3>
-        <p>Every map has multiple extraction points, and each one operates on a timer. Here's the critical part most guides don't tell you: these extraction points close permanently based on their individual timers. When the last extraction point's timer runs out, the entire map wipes and everyone still on it dies. No exceptions.</p>
-
-        <h3>The 5-Minute Extraction Strategy</h3>
-        <p>This is the strategy that kept me alive during countless raids. <strong>Plan to be at your chosen extraction point 5 minutes before it closes.</strong> Not at the extraction point, but <em>plan your route</em> so you arrive with that buffer.</p>
-
-        <p><strong>Example Scenario:</strong></p>
-        <p>You're mid-raid, and two extraction points remain open:</p>
-        <ul>
-            <li><strong>Extraction Point A:</strong> 10 minutes remaining</li>
-            <li><strong>Extraction Point B:</strong> 2 minutes remaining</li>
-        </ul>
-
-        <p>If you're close to Extraction Point B, use it—but here's the key: you should have <em>planned for this</em> 5 minutes earlier. When Point B had 7 minutes left, you should have already been heading toward it while looting along the way.</p>
-
-        <h3>Why This Works (And Why Most Players Get It Wrong)</h3>
-        <ul>
-            <li><strong>Less Extraction Point Fights:</strong> Most players panic and rush to extractions at the last second. By extracting earlier, you avoid the chaos of desperate last-minute extractors and campers waiting for them.</li>
-            <li><strong>Don't Wait Until the End:</strong> The closer an extraction point gets to closing, the more dangerous it becomes. Everyone converges on the remaining options.</li>
-            <li><strong>Extract Before the Second-to-Last Closes:</strong> I always aimed to extract a couple minutes before the second available extraction point closes. This is the sweet spot—early enough to avoid crowds, but you've had time to loot.</li>
-        </ul>
-
-        <h3>The Fast Loot Loop Strategy</h3>
-        <p>Most server instances run for 30 minutes. I regularly did 5-10 minute runs and survived almost every time. Here's the flow:</p>
-        
-        <ol style="margin-left: 25px; margin-bottom: 20px;">
-            <li><strong>Spawn in</strong></li>
-            <li><strong>Immediately identify which extraction point will close first</strong> (check timers)</li>
-            <li><strong>Plot a route toward that extraction point</strong></li>
-            <li><strong>Loot everything along the way</strong> - but keep moving toward extraction</li>
-            <li><strong>Extract 5 minutes before it closes</strong></li>
-            <li><strong>Rinse and repeat</strong> with your fresh loot secured</li>
-        </ol>
-
-        <p><strong>Don't Overload Your Inventory:</strong> You're not staying for the full 30 minutes, so you don't need to carry everything. Take high-value items, stay mobile, and get out. Multiple safe 10-minute runs beat one risky 30-minute run where you die and lose everything.</p>
-
-        <h3>When to Switch to PVP Mode</h3>
-        <p>Once you've built up a stockpile of weapons and resources you can afford to lose, <em>then</em> start pushing for high-value loot locations and PVP engagements. But early on? Play it safe. Extract early. Build your arsenal. The PVP will still be there when you're ready.</p>
-
-        <h2>Event Strategies & Faction Contracts</h2>
-        <p>ARC Raiders features dynamic events, limited-time challenges, and faction-specific contracts that offer lucrative rewards but demand specific strategies:</p>
-
-        <ul>
-            <li><strong>Event-Driven Map Rotations:</strong> Stay informed about which maps and event modifiers are active. Events often boost specific loot types or introduce unique environmental challenges.</li>
-            <li><strong>Faction Reputation Matters:</strong> The Tribe, Speranza Survivors, and The Commune offer unique quests and vendor items. Prioritize one faction early to unlock higher-tier rewards faster.</li>
-            <li><strong>Timed Contracts – Efficiency is Key:</strong> Some quests have time limits or performance requirements. Plan your route and loadout accordingly before deployment.</li>
-        </ul>
-
-        <div class="coming-soon">
-            <h2>Coming Soon: Detailed Event Walkthroughs!</h2>
-            <p>In-depth analysis of each recurring event, boss fight strategies, and optimized quest routes. Stay tuned!</p>
+            <article class="guide-card">
+                <a href="./guides/raiding-the-harvester-guide/">
+                    <img src="/images/maps/spaceport-hero.png" alt="Harvester Raid Guide" class="guide-thumbnail">
+                </a>
+                <div class="guide-meta">
+                    <div class="guide-type">Event Guide</div>
+                    <h2><a href="./guides/raiding-the-harvester-guide/">Raiding the Harvester: A Step-by-Step Guide to Scoring Epic Loot</a></h2>
+                    <p class="guide-excerpt">Master the high-stakes Harvester puzzle and walk away with legendary weapon blueprints. Learn how to bypass the Queen, solve the container puzzle, and extract with the best loot in the game.</p>
+                    <a href="./guides/raiding-the-harvester-guide/" class="read-more">Read full guide</a>
+                </div>
+            </article>
         </div>
     </main>
 

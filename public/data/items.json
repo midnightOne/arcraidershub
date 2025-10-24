@@ -590,7 +590,7 @@
     "value": "5000",
     "rarity": "",
     "type": "blueprint",
-    "imageUrl": "/images/items/blueprint.webp",
+    "imageUrl": "/images/items/equalizer-bp.png",
     "slug": "equalizer_blueprint"
   },
   {
@@ -617,7 +617,7 @@
     "value": "5000",
     "rarity": "",
     "type": "blueprint",
-    "imageUrl": "/images/items/blueprint.webp",
+    "imageUrl": "/images/items/jupiter-bp.png",
     "slug": "jupiter_blueprint"
   },
   {

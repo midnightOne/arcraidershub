@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arc Raiders Beginner's Guide: Complete Survival Guide for New Raiders</title>
+    <meta name="description" content="Complete beginner's guide to Arc Raiders. Learn Speranza hideout management, topside survival, ARC robot combat, PvP tactics, and the 5-minute extraction rule that keeps you alive.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/header.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #141414; color: #e0e0e0; }
+        
+        
+        main { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        
+        /* Content card */
+        article { 
+            background: #1a1a1a; 
+            border-radius: 12px; 
+            padding: 0; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        /* Hero image */
+        .hero-image {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background-image: url('/images/Items-grid.jpg');
+            background-size: cover;
+            background-position: center top;
+            margin-bottom: 0;
+        }
+        
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 250px;
+            background: linear-gradient(to bottom, transparent 0%, rgba(26, 26, 30, 0.7) 40%, #1a1a1a 100%);
+        }
+        
+        .hero-content {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            padding: 40px 60px;
+            z-index: 2;
+        }
+        
+        .hero-content .article-meta {
+            color: #aaa;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero-content h1 {
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-image { height: 400px; }
+            .hero-content { padding: 30px 20px; }
+        }
+        
+        .article-content {
+            padding: 40px 60px 60px 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .article-content { padding: 30px 20px; }
+        }
+        
+        .breadcrumb { color: #666; margin-bottom: 30px; font-size: 0.9em; padding: 0 60px; }
+        .breadcrumb a { color: #888; text-decoration: none; }
+        .breadcrumb a:hover { color: #3a7bc8; }
+        .breadcrumb span { margin: 0 8px; }
+        
+        @media (max-width: 768px) {
+            .breadcrumb { padding: 0 20px; }
+        }
+        
+        .article-meta { color: #888; font-size: 0.9em; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        h1 { font-size: 2.5em; line-height: 1.2; margin-bottom: 20px; color: #ffffff; letter-spacing: -0.5px; }
+        .article-intro { font-size: 1.2em; color: #aaa; line-height: 1.8; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid #2a2a2e; }
+        
+        .content-section { margin-bottom: 50px; }
+        .content-section h2 { font-size: 1.9em; margin-bottom: 20px; color: #ffffff; margin-top: 55px; font-weight: 700; letter-spacing: -0.5px; }
+        .content-section h3 { font-size: 1.4em; margin-bottom: 15px; color: #3a7bc8; margin-top: 30px; font-weight: 600; }
+        
+        .content-section p { color: #aaa; line-height: 1.8; margin-bottom: 24px; font-size: 1.05em; }
+        .content-section strong { color: #eee; font-weight: 600; }
+        .content-section em { color: #3a7bc8; font-style: italic; }
+        
+        ul { margin: 15px 0 25px 25px; }
+        li { margin-bottom: 12px; color: #a0a0a0; line-height: 1.7; }
+        ul ul { margin-top: 10px; margin-bottom: 10px; }
+        
+        ol { margin: 15px 0 25px 25px; }
+        ol li { margin-bottom: 12px; color: #a0a0a0; line-height: 1.7; }
+        
+        .strategy-highlight { background: #22252b; border-left: 3px solid #3a7bc8; padding: 28px 32px; margin: 40px 0; border-radius: 4px; }
+        .strategy-highlight p { color: #ddd; line-height: 1.8; margin-bottom: 16px; }
+        .strategy-highlight p:last-child { margin-bottom: 0; }
+        .strategy-highlight strong { color: #ffffff; }
+        
+        .pro-tip { background: #22252b; border-left: 3px solid #5ac878; padding: 28px 32px; margin: 40px 0; border-radius: 4px; }
+        .pro-tip-header { color: #5ac878; font-weight: 600; margin-bottom: 16px; font-size: 0.95em; text-transform: uppercase; letter-spacing: 0.5px; }
+        .pro-tip p { color: #ddd; line-height: 1.8; margin-bottom: 16px; }
+        .pro-tip p:last-child { margin-bottom: 0; }
+        
+        .coming-soon { background: #1a1a1a; border-left: 3px solid #3a7bc8; padding: 25px; border-radius: 8px; margin: 50px 0; }
+        .coming-soon h2 { border: none; margin-top: 0; margin-bottom: 15px; }
+        .coming-soon p { color: #b0b0b0; font-style: italic; }
+        
+        footer { 
+            background: #161616; 
+            border-top: 1px solid #2a2a2e; 
+            padding: 50px 20px 30px 20px; 
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: #ffffff;
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-section p {
+            color: #888;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #3a7bc8;
+        }
+        
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid #2a2a2e;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>›</span>
+            <a href="../index.html">Guides</a>
+            <span>›</span>
+            Arc Raiders Beginner's Guide
+        </div>
+
+        <article>
+            <!-- Hero Image with Title Overlay -->
+            <div class="hero-image">
+                <div class="hero-content">
+                    <div class="article-meta">Beginner's Guide • 20 min read</div>
+                    <h1>Arc Raiders Beginner's Guide: Your Complete Survival Manual</h1>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="article-content">
+                <p class="article-intro">ARC Raiders is a high-stakes extraction shooter where you'll drop from the safety of your underground home—Speranza—to the dangerous surface, what's called "topside" in the lore. Your mission is to loot valuable resources, complete quests, and get out alive, all while battling deadly ARC robots and unpredictable enemy players. This guide will walk you through everything you need to know, from gearing up in the hideout to surviving the raid and making it back with your loot.</p>
+
+                <div class="content-section">
+                <h2>Part 1: Speranza - Gearing Up in Your Hideout</h2>
+                <p>Before you head topside, you need to prepare. Your success starts here.</p>
+
+                <h3>Loadouts: Free Runs vs. Custom Kits</h3>
+                <p>ARC Raiders is generous to new players. If you're low on cash or gear, you can always opt for a <strong>Free Loadout</strong>. This gives you a basic, no-cost set of equipment—usually a weapon, some ammo, bandages, a light shield, and a backpack. It's the perfect way to do low-risk runs to build up your stash without fear of losing your own hard-earned gear.</p>
+
+                <p>Once you've got some resources, you'll want to build a <strong>Custom Loadout</strong>. Here's a breakdown of your gear slots:</p>
+
+                <ul>
+                    <li><strong>Augment (Backpack):</strong> This determines your inventory space and carry weight. Different augments offer trade-offs. A Looting Augment gives you more space but only lets you equip light armor, while a Combat Augment offers fewer slots but allows for medium armor. Remember, you can't swap your backpack during a raid, so choose wisely beforehand.</li>
+                    <li><strong>Weapons (2 Slots):</strong> It's highly recommended to carry two weapons with different ammo types. For example:
+                        <ul>
+                            <li>An SMG (Light Ammo) is great for shredding the shields of other players.</li>
+                            <li>A rifle like the Feroh (Heavy Ammo) is essential for penetrating the thick armor of ARC robots.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Shield:</strong> This is one of the most important—and misunderstood—pieces of gear. A shield does not give you extra health; it provides damage reduction. This means when you get shot, you lose both shield charge and health at the same time. Even with a full shield, you can be knocked down if your health is low. Shields come in three main types:
+                        <ul>
+                            <li><strong>Light:</strong> Low damage reduction, but no movement penalty. Great for stealthy, fast-paced loot runs.</li>
+                            <li><strong>Medium:</strong> A good balance of protection and speed, with a minor movement penalty.</li>
+                            <li><strong>Heavy:</strong> The best damage reduction, but it significantly slows you down. Ideal for squad play and taking on tough ARC units.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Quick Access & Safe Pocket:</strong> Your quick access slots (or tactical slots) are for items you need fast, like shield rechargers and grenades. Your Safe Pocket is your secure stash; any item you place here will return with you to Speranza, even if you die topside. Always put your most valuable items—like rare blueprints—in here.</li>
+                </ul>
+
+                <h3>Crafting, Quests, and Upgrades</h3>
+                <ul>
+                    <li><strong>Tracking Resources:</strong> Instead of trying to memorize crafting recipes, you can track the resources you need from the workshop. This will put a small eye icon on those items during a raid, so you know exactly what to grab.</li>
+                    <li><strong>Quests:</strong> Always visit the traders in Speranza to pick up quests before a raid. They are a great source of XP and rewards. Quest items will be marked with a diamond icon topside.</li>
+                    <li><strong>Scrappy:</strong> After every raid (win or lose), visit your mechanical rooster companion, Scrappy. He passively collects basic crafting materials for you. Claim them often and upgrade him as soon as you can.</li>
+                    <li><strong>Upgrading Workbenches:</strong> Your top priority should be upgrading your workbenches. This unlocks the ability to craft better weapons, shields, and gear, which is crucial for surviving tougher raids.</li>
+                </ul>
+
+                <h3>The Skill Tree</h3>
+                <p>As you gain XP and level up, you'll earn skill points. The skill tree is divided into three branches:</p>
+                <ul>
+                    <li><strong>Conditioning (Red):</strong> Focuses on survivability, stamina, and health regeneration. This is the recommended tree for beginners, as more stamina is universally useful.</li>
+                    <li><strong>Mobility (Yellow):</strong> Enhances your movement with faster climbing, vaulting, and more efficient dodging.</li>
+                    <li><strong>Survival (Blue):</strong> Geared toward stealth, faster looting, and increased carry weight.</li>
+                </ul>
+
+                <h2>Part 2: Surviving Topside - The Raid</h2>
+                <p>You're geared up and ready to go. Here's how to make it out in one piece.</p>
+
+                <h3>Movement is Life</h3>
+                <p>Stamina management is key. You never want to be caught in a fight with an empty stamina bar.</p>
+                <ul>
+                    <li><strong>Holster Your Weapon:</strong> Press '5' (on PC) to put your weapon away. You'll run faster and consume less stamina.</li>
+                    <li><strong>Slide and Roll:</strong> You can slide down slopes by crouching while running. If you're jumping from a height, press the crouch key just before you land to perform a roll and avoid fall damage.</li>
+                    <li><strong>Shoulder Swap:</strong> This is a third-person shooter. Use the shoulder swap key ('X' on PC) to peek around corners safely without exposing your whole body.</li>
+                </ul>
+
+                <h3>Looting Smart</h3>
+                <p>Your primary goal is to get loot and get out.</p>
+                <ul>
+                    <li><strong>Dismantle on the Go:</strong> Your backpack space is limited. If you find lower-tier items or are running out of room, don't just drop them. You can dismantle (or salvage) them into basic resources like plastic parts, metal, and fabric. These base materials stack higher, saving you precious inventory space.</li>
+                    <li><strong>Prioritize Loot:</strong> A full stack of ammo is often more valuable than a piece of rare gear, as ammo can be very expensive to buy. Prioritize quest items, blueprints, and essential crafting materials.</li>
+                </ul>
+
+                <h3>Fighting the ARC: Know Your Enemy</h3>
+                <p>The ARC robots are a serious threat. Do not underestimate them. Each one has a weak point.</p>
+                <ul>
+                    <li><strong>Ticks:</strong> Small, spider-like bots. A single melee hit will take them out.</li>
+                    <li><strong>Wasps:</strong> Small flying drones. Shoot out two rotors on the same side to make them crash.</li>
+                    <li><strong>Hornets:</strong> Larger drones. Their front rotors are armored, so aim for the unarmored rotors at the back.</li>
+                    <li><strong>Snitch:</strong> A non-combat drone that glows red when it spots you. Destroy it immediately. If you don't, it will call in a squad of ARC reinforcements.</li>
+                    <li><strong>Rocketeer:</strong> The most dangerous standard drone. It fires devastating rockets that can wipe your whole squad. The best strategy is to avoid it entirely. If you must fight, use heavy ammo and stay in cover.</li>
+                    <li><strong>Leaper/Bastion:</strong> Large, ground-based units. Their weak points are the glowing yellow areas, like their eye or knee joints.</li>
+                </ul>
+
+                <h3>PvP: Engaging Other Raiders</h3>
+                <p>Sooner or later, you'll run into other players.</p>
+                <ul>
+                    <li><strong>Shields vs. Health:</strong> Remember, shields are just damage reduction. Always prioritize your health. The best healing sequence in a fight is: use one shield recharger, then a bandage to heal your health, then more shield charges as needed.</li>
+                    <li><strong>Sound is Everything:</strong> Listen for footsteps, gunfire, and the loud noise of players breaching containers. This can give you the drop on an enemy team or help you avoid a fight you can't win.</li>
+                    <li><strong>Raider Flares:</strong> When a player is downed, a large flare automatically shoots into the sky, marking their location. This can alert you to nearby combat, but be warned: players can also fire flares manually to set an ambush.</li>
+                    <li><strong>The Downed State:</strong> If you get downed, ARC robots will completely ignore you. You have a long two-minute timer before you die completely, giving your teammates plenty of time to revive you.</li>
+                </ul>
+
+                <h3>Extraction: The Final Hurdle</h3>
+                <p>Getting your loot out is the final and most critical step.</p>
+                <ul>
+                    <li><strong>Elevators:</strong> These are the primary extraction points. Activating one makes a loud announcement that can be heard across the map, attracting other players. Anyone inside the elevator when the doors close—friend or foe, alive or downed—will extract successfully.</li>
+                    <li><strong>Hitching a Ride:</strong> If you see another team extracting, you can try to rush the doors at the last second. Even if you get downed on your way in, you'll still make it out.</li>
+                    <li><strong>Raider Hatch Keys:</strong> These rare keys allow you to use special hatches for a private, super-fast extraction. The hatch only stays open for about 15 seconds, so be quick!</li>
+                </ul>
+
+                <h2>Advanced Strategy: The 5-Minute Extraction Rule</h2>
+                
+                <div class="strategy-highlight">
+                    <p><strong>Why Solo is Better for Farming Loot:</strong> Here's something I learned through actual gameplay—if you're focused on extracting and looting efficiently, go solo. The matchmaking tends to put solo players against other solos, which means everyone's less organized. When you queue as a 3-person team, you'll face other coordinated 3-person squads, which is great for PVP battles but significantly harder when you just want to loot and leave safely.</p>
+                </div>
+
+                <h3>Understanding Extraction Point Timers</h3>
+                <p>Every map has multiple extraction points, and each one operates on a timer. Here's the critical part most guides don't tell you: these extraction points close permanently based on their individual timers. When the last extraction point's timer runs out, the entire map wipes and everyone still on it dies. No exceptions.</p>
+
+                <h3>The 5-Minute Extraction Strategy</h3>
+                <p>This is the strategy that kept me alive during countless raids. <strong>Plan to be at your chosen extraction point 5 minutes before it closes.</strong> Not at the extraction point, but <em>plan your route</em> so you arrive with that buffer.</p>
+
+                <p><strong>Example Scenario:</strong></p>
+                <p>You're mid-raid, and two extraction points remain open:</p>
+                <ul>
+                    <li><strong>Extraction Point A:</strong> 10 minutes remaining</li>
+                    <li><strong>Extraction Point B:</strong> 2 minutes remaining</li>
+                </ul>
+
+                <p>If you're close to Extraction Point B, use it—but here's the key: you should have <em>planned for this</em> 5 minutes earlier. When Point B had 7 minutes left, you should have already been heading toward it while looting along the way.</p>
+
+                <h3>Why This Works (And Why Most Players Get It Wrong)</h3>
+                <ul>
+                    <li><strong>Less Extraction Point Fights:</strong> Most players panic and rush to extractions at the last second. By extracting earlier, you avoid the chaos of desperate last-minute extractors and campers waiting for them.</li>
+                    <li><strong>Don't Wait Until the End:</strong> The closer an extraction point gets to closing, the more dangerous it becomes. Everyone converges on the remaining options.</li>
+                    <li><strong>Extract Before the Second-to-Last Closes:</strong> I always aimed to extract a couple minutes before the second available extraction point closes. This is the sweet spot—early enough to avoid crowds, but you've had time to loot.</li>
+                </ul>
+
+                <h3>The Fast Loot Loop Strategy</h3>
+                <p>Most server instances run for 30 minutes. I regularly did 5-10 minute runs and survived almost every time. Here's the flow:</p>
+                
+                <ol>
+                    <li><strong>Spawn in</strong></li>
+                    <li><strong>Immediately identify which extraction point will close first</strong> (check timers)</li>
+                    <li><strong>Plot a route toward that extraction point</strong></li>
+                    <li><strong>Loot everything along the way</strong> - but keep moving toward extraction</li>
+                    <li><strong>Extract 5 minutes before it closes</strong></li>
+                    <li><strong>Rinse and repeat</strong> with your fresh loot secured</li>
+                </ol>
+
+                <div class="pro-tip">
+                    <div class="pro-tip-header">Pro Tip: Don't Overload Your Inventory</div>
+                    <p>You're not staying for the full 30 minutes, so you don't need to carry everything. Take high-value items, stay mobile, and get out. Multiple safe 10-minute runs beat one risky 30-minute run where you die and lose everything.</p>
+                </div>
+
+                <h3>When to Switch to PVP Mode</h3>
+                <p>Once you've built up a stockpile of weapons and resources you can afford to lose, <em>then</em> start pushing for high-value loot locations and PVP engagements. But early on? Play it safe. Extract early. Build your arsenal. The PVP will still be there when you're ready.</p>
+
+                <h2>Essential Beginner Tips Summary</h2>
+
+                <h3>Your First 10 Raids: A Survival Checklist</h3>
+                <ul>
+                    <li><strong>Start with Free Loadouts & Low-Risk Maps:</strong> Use standard loadouts on "Dam Battlegrounds" to learn mechanics without fearing permanent gear loss. Master movement, aiming, basic ARC enemy behavior, and extraction point locations.</li>
+                    <li><strong>Prioritize Knowledge over Loot Initially:</strong> Your early goal is understanding the core loop, map layouts, enemy spawn patterns, and general game flow. Dying with beginner loot is expected and part of learning.</li>
+                    <li><strong>Complete Tutorial & Early Quests:</strong> Follow the initial quest chains carefully. These offer structured introductions to core systems (crafting, safe pocket, skill tree access, faction interactions).</li>
+                    <li><strong>Hideout Focus – Unlock Key Modules Early:</strong> Prioritize unlocking and upgrading the Workbench and Storage modules first. This expands your crafting options and inventory management, immediately improving efficiency.</li>
+                    <li><strong>Understand Ammo & Weapon Compatibility:</strong> Familiarize yourself with the different ammo types (Light, Medium, Heavy) and which weapons use them. Running out of ammo mid-fight is a critical and avoidable mistake.</li>
+                </ul>
+
+                <h3>Core Mechanics Primer</h3>
+                <ul>
+                    <li><strong>Stamina Management:</strong> Sprinting, climbing, and melee drain stamina. Going over-encumbered drastically slows regeneration. Skills in the Conditioning tree significantly improve stamina parameters.</li>
+                    <li><strong>Shield vs. Health:</strong> Your shield recharges over time, while health requires bandages or medical utilities. Prioritize shield preservation.</li>
+                    <li><strong>ARC Enemy Basics:</strong> ARC machines have distinct behaviors. Some are highly mobile scouts, others are heavily armored tanks. Target weak points and use terrain effectively.</li>
+                    <li><strong>Sound & Stealth Awareness:</strong> Gunfire and movement are audible to other Raiders and ARC enemies. Playing stealthily can provide critical advantages in PvP engagements.</li>
+                </ul>
+
+                <h2>Event Strategies & Faction Contracts</h2>
+                <p>ARC Raiders features dynamic events, limited-time challenges, and faction-specific contracts that offer lucrative rewards but demand specific strategies:</p>
+
+                <ul>
+                    <li><strong>Event-Driven Map Rotations:</strong> Stay informed about which maps and event modifiers are active. Events often boost specific loot types or introduce unique environmental challenges.</li>
+                    <li><strong>Faction Reputation Matters:</strong> The Tribe, Speranza Survivors, and The Commune offer unique quests and vendor items. Prioritize one faction early to unlock higher-tier rewards faster.</li>
+                    <li><strong>Timed Contracts – Efficiency is Key:</strong> Some quests have time limits or performance requirements. Plan your route and loadout accordingly before deployment.</li>
+                </ul>
+
+                <div class="coming-soon">
+                    <h2>Coming Soon: Advanced Tactics & Event Walkthroughs!</h2>
+                    <p>In-depth analysis of each recurring event, boss fight strategies, and optimized quest routes. Stay tuned!</p>
+                </div>
+
+                <p style="text-align: center; font-size: 1.1em; color: #3a7bc8; margin-top: 40px;"><strong>Good luck out there, Raider. Stay sharp, loot smart, and make it back to Speranza. See ya topside! 🎯</strong></p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script src="/js/includes.js"></script>
+</body>
+</html>
