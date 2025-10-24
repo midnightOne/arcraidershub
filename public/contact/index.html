@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Arc Raiders Hub</title>
+    <meta name="description" content="Get in touch with Arc Raiders Hub. Contact us for questions, feedback, suggestions, or partnership inquiries about our gaming guides and resources.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/header.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; background-color: #141414; color: #e0e0e0; }
+        
+        main { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        
+        .page-header { text-align: center; margin-bottom: 50px; padding: 40px 0; }
+        .page-header h1 { font-size: 3em; margin-bottom: 15px; background: linear-gradient(135deg, #3a7bc8 0%, #5a9ae0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-header p { font-size: 1.15em; color: #b0b0b0; max-width: 700px; margin: 0 auto; }
+        
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+        
+        .contact-card { background: #1a1a1a; border-radius: 12px; padding: 40px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
+        
+        .contact-method { margin-bottom: 30px; }
+        .contact-method h3 { color: #3a7bc8; font-size: 1.4em; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .contact-method p { color: #aaa; line-height: 1.7; margin-bottom: 10px; }
+        .contact-method a { color: #3a7bc8; text-decoration: none; font-weight: 500; }
+        .contact-method a:hover { text-decoration: underline; }
+        
+        .contact-icon { font-size: 1.2em; }
+        
+        .response-time { background: #22252b; border-left: 3px solid #5ac878; padding: 20px; margin: 30px 0; border-radius: 4px; }
+        .response-time h4 { color: #5ac878; margin-bottom: 10px; }
+        .response-time p { color: #ddd; margin: 0; }
+        
+        .faq-section { background: #1a1a1a; border-radius: 12px; padding: 40px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); margin-bottom: 40px; }
+        .faq-section h2 { color: #ffffff; font-size: 2em; margin-bottom: 30px; text-align: center; }
+        
+        .faq-item { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid #2a2a2a; }
+        .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .faq-question { color: #3a7bc8; font-size: 1.2em; font-weight: 600; margin-bottom: 10px; }
+        .faq-answer { color: #aaa; line-height: 1.7; }
+        .faq-answer a { color: #3a7bc8; text-decoration: none; }
+        .faq-answer a:hover { text-decoration: underline; }
+        
+        .guidelines { background: #22252b; border-left: 3px solid #3a7bc8; padding: 25px; margin: 30px 0; border-radius: 4px; }
+        .guidelines h4 { color: #3a7bc8; margin-bottom: 15px; }
+        .guidelines ul { margin-left: 20px; }
+        .guidelines li { color: #ddd; margin-bottom: 8px; line-height: 1.6; }
+        
+        footer { 
+            background: #161616; 
+            border-top: 1px solid #2a2a2e; 
+            padding: 50px 20px 30px 20px; 
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1.2fr 0.8fr 0.8fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: #ffffff;
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-section p {
+            color: #888;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #3a7bc8;
+        }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid #2a2a2e;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+            .contact-card, .faq-section { padding: 30px 20px; }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="page-header">
+            <h1>Contact Us</h1>
+            <p>Have questions, feedback, or suggestions? We'd love to hear from you!</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-method">
+                    <h3><span class="contact-icon">📧</span> Email Support</h3>
+                    <p>For general inquiries, feedback, or support:</p>
+                    <p><a href="mailto:contact@arcraidershub.com">contact@arcraidershub.com</a></p>
+                </div>
+
+                <div class="contact-method">
+                    <h3><span class="contact-icon">🔒</span> Privacy & Legal</h3>
+                    <p>For privacy-related questions or legal matters:</p>
+                    <p><a href="mailto:privacy@arcraidershub.com">privacy@arcraidershub.com</a></p>
+                </div>
+
+                <div class="contact-method">
+                    <h3><span class="contact-icon">🤝</span> Partnerships</h3>
+                    <p>For business inquiries and partnership opportunities:</p>
+                    <p><a href="mailto:partnerships@arcraidershub.com">partnerships@arcraidershub.com</a></p>
+                </div>
+
+                <div class="response-time">
+                    <h4>Response Time</h4>
+                    <p>We typically respond to emails within 24-48 hours during business days.</p>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-method">
+                    <h3><span class="contact-icon">💡</span> Content Suggestions</h3>
+                    <p>Have ideas for new guides, want to report outdated information, or suggest improvements? We welcome all feedback to make our content better.</p>
+                </div>
+
+                <div class="contact-method">
+                    <h3><span class="contact-icon">🐛</span> Bug Reports</h3>
+                    <p>Found a broken link, display issue, or technical problem? Let us know so we can fix it quickly.</p>
+                </div>
+
+                <div class="contact-method">
+                    <h3><span class="contact-icon">🎮</span> Community</h3>
+                    <p>While we don't have official social media channels yet, we're always open to connecting with the Arc Raiders community.</p>
+                </div>
+
+                <div class="guidelines">
+                    <h4>Contact Guidelines</h4>
+                    <ul>
+                        <li>Be specific about your question or issue</li>
+                        <li>Include relevant details (page URL, browser, etc.)</li>
+                        <li>Be respectful and constructive in your feedback</li>
+                        <li>Allow 24-48 hours for a response</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Are you affiliated with Embark Studios or Arc Raiders?</div>
+                <div class="faq-answer">No, Arc Raiders Hub is a fan-created website and is not affiliated with, endorsed by, or connected to Embark Studios AB. We're passionate fans creating resources for the community.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How often do you update your guides and information?</div>
+                <div class="faq-answer">We strive to keep our content current with game updates and patches. Major updates are typically reflected within a few days, while smaller adjustments are made as needed.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I contribute content or corrections?</div>
+                <div class="faq-answer">Absolutely! We welcome community contributions. Please email us with your suggestions, corrections, or content ideas. We review all submissions and credit contributors when appropriate.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you have a mobile app?</div>
+                <div class="faq-answer">Currently, we only have this website, which is fully responsive and works great on mobile devices. We may consider a mobile app in the future based on community interest.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How can I report outdated or incorrect information?</div>
+                <div class="faq-answer">Please email us at <a href="mailto:contact@arcraidershub.com">contact@arcraidershub.com</a> with the specific page URL and details about what needs to be updated. We appreciate the community's help in keeping our content accurate.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I use your content on my website or stream?</div>
+                <div class="faq-answer">You're welcome to reference our guides and share links to our content. For more extensive use, please review our <a href="/terms-of-service/">Terms of Service</a> or contact us directly to discuss permissions.</div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script src="/js/includes.js"></script>
+</body>
+</html>
